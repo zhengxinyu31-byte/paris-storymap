@@ -1,0 +1,24 @@
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+*.log
+
+# 环境与密钥（地图 token 走构建期注入，配置文件不入仓）
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+config.local.*
+
+# 编辑器与系统
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# 临时文件
+.cache/
+tmp/
+*.tmp

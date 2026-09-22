@@ -1,0 +1,2982 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flux Brainstorming</title>
+  <style>
+    /* ─────────────────────────────────────────────────────────────
+       Flux Design Token System
+       基于 Flux 官方 Design Spec，使用 --f-* 前缀命名。
+       默认 light 主题，通过 data-theme="dark" 切换深色模式。
+       通过宿主 IframeBox 的 postMessage(ENV_UPDATE) 自动同步主题和语言。
+       ───────────────────────────────────────────────────────────── */
+
+    :root {
+      /* ── 字体族 ── */
+      --f-font-family-zh: 'PingFang SC', 'Noto Sans SC', 'Hiragino Sans GB', 'Helvetica Neue', Arial, sans-serif;
+      --f-font-family-en: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --f-font-family-code: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', monospace;
+      --f-font-family-display: 'PingFang SC', 'Noto Sans SC', 'SF Pro Display', 'Inter', system-ui, sans-serif;
+
+      --f-font-weight-regular: 400;
+      --f-font-weight-medium: 500;
+      --f-font-weight-semibold: 600;
+      --f-font-weight-bold: 700;
+      --f-font-weight-code: 450;
+
+      /* ── 间距 ── */
+      --f-spacer-0: 0px;
+      --f-spacer-4: 4px;
+      --f-spacer-6: 6px;
+      --f-spacer-8: 8px;
+      --f-spacer-12: 12px;
+      --f-spacer-16: 16px;
+      --f-spacer-24: 24px;
+      --f-spacer-32: 32px;
+      --f-spacer-40: 40px;
+
+      /* ── 圆角 ── */
+      --f-radius-2: 2px;
+      --f-radius-4: 4px;
+      --f-radius-6: 6px;
+      --f-radius-8: 8px;
+      --f-radius-10: 10px;
+      --f-radius-full: 9999px;
+
+      /* ── 动效 ── */
+      --f-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --f-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --f-dur-fast: 120ms;
+      --f-dur-base: 200ms;
+      --f-dur-slow: 320ms;
+    }
+
+    /* ── Dark 主题（默认） ── */
+    :root,
+    [data-theme="dark"] {
+      --f-bg-bg-base-default: #202328;
+      --f-bg-bg-base-secondary: #141517;
+      --f-bg-bg-base-tertiary: #212225;
+      --f-bg-bg-overlay-l1: #e0e6f20a;
+      --f-bg-bg-overlay-l2: #e0e6f20f;
+      --f-bg-bg-overlay-l3: #e0e6f214;
+      --f-bg-bg-overlay-l4: #e0e6f21f;
+      --f-bg-bg-menu: #202123;
+      --f-bg-bg-brand: #62cbff;
+      --f-bg-bg-brand-hover: #34b3f2;
+      --f-bg-bg-brand-sub: #1577f9;
+      --f-bg-bg-invert: #dadde5;
+
+      --f-text-text-default: #eeeeee;
+      --f-text-text-secondary: #9599a6;
+      --f-text-text-tertiary: #666b75;
+      --f-text-text-disabled: #555a63;
+      --f-text-text-brand: #25b6ff;
+      --f-text-text-onbrand: #0c0c0d;
+
+      --f-icon-icon-default: #dadce1;
+      --f-icon-icon-secondary: #9599a6;
+      --f-icon-icon-tertiary: #666b75;
+      --f-icon-icon-brand: #25b6ff;
+
+      --f-border-border-neutral-l1: #242428;
+      --f-border-border-neutral-l2: #303135;
+      --f-border-border-neutral-l3: #39393e;
+      --f-border-border-brand: #25b6ff;
+      --f-border-border-brand-sub: #1577f9;
+
+      --f-accent-accent-teal: #2dd288;
+      --f-accent-accent-coral: #ff9392;
+      --f-accent-accent-amber: #dcb364;
+      --f-accent-accent-cyan: #04cbe5;
+      --f-accent-accent-blue: #7bb8ff;
+      --f-accent-accent-magenta: #ec93ff;
+      --f-accent-accent-violet: #bfa5ff;
+
+      --f-status-success-default: #33c192;
+      --f-status-alert-default: #e9b721;
+      --f-status-warning-default: #f38612;
+      --f-status-error-default: #f65a5a;
+      --f-status-primary-default: #387bff;
+
+      --f-tag-tag-blue-text: #68b1ee;
+      --f-tag-tag-blue-bg: #6dbdff33;
+      --f-tag-tag-blue-border: #6dbdff4d;
+      --f-tag-tag-green-text: #61c490;
+      --f-tag-tag-green-bg: #60dc9a33;
+      --f-tag-tag-green-border: #60dc9a4d;
+      --f-tag-tag-red-text: #f07676;
+      --f-tag-tag-red-bg: #f7606029;
+      --f-tag-tag-red-border: #f760604d;
+      --f-tag-tag-purple-text: #a291f0;
+      --f-tag-tag-purple-bg: #a48fff1f;
+      --f-tag-tag-purple-border: #a48fff4d;
+
+      --f-shadow-elevation-100:
+        0 0.5px 0 0 rgba(255, 255, 255, 0.06) inset,
+        0 0.5px 0 0 rgba(255, 255, 255, 0.06),
+        0 2px 6px 0 rgba(0, 0, 0, 0.2);
+      --f-shadow-elevation-200:
+        0 0.5px 0 0 rgba(255, 255, 255, 0.06) inset,
+        0 4px 8px 0 rgba(0, 0, 0, 0.3);
+      --f-shadow-elevation-300:
+        0 0.5px 0 0 rgba(255, 255, 255, 0.08) inset,
+        0 6px 12px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /* ── Light 主题 ── */
+    [data-theme="light"] {
+      --f-bg-bg-base-default: #f7f7f9;
+      --f-bg-bg-base-secondary: #ffffff;
+      --f-bg-bg-base-tertiary: #ecedf1;
+      --f-bg-bg-overlay-l1: #8888880f;
+      --f-bg-bg-overlay-l2: #8888881a;
+      --f-bg-bg-overlay-l3: #88888824;
+      --f-bg-bg-overlay-l4: #88888833;
+      --f-bg-bg-menu: #ffffff;
+      --f-bg-bg-brand: #58c7ff;
+      --f-bg-bg-brand-hover: #7dd4ff;
+      --f-bg-bg-brand-sub: #4495ff;
+      --f-bg-bg-invert: #36393d;
+
+      --f-text-text-default: #1a1a1a;
+      --f-text-text-secondary: #666666;
+      --f-text-text-tertiary: #8a9096;
+      --f-text-text-disabled: #b2b2b2;
+      --f-text-text-brand: #009ce9;
+      --f-text-text-onbrand: #090a0b;
+
+      --f-icon-icon-default: #31353a;
+      --f-icon-icon-secondary: #5b6066;
+      --f-icon-icon-tertiary: #8a9096;
+      --f-icon-icon-brand: #58c7ff;
+
+      --f-border-border-neutral-l1: #e9eaed;
+      --f-border-border-neutral-l2: #e4e6e8;
+      --f-border-border-neutral-l3: #dfdfe0;
+      --f-border-border-brand: #58c7ff;
+      --f-border-border-brand-sub: #4495ff;
+
+      --f-accent-accent-teal: #00b983;
+      --f-accent-accent-coral: #ff6b45;
+      --f-accent-accent-amber: #f2a90c;
+      --f-accent-accent-cyan: #00b6f5;
+      --f-accent-accent-blue: #3f85ff;
+      --f-accent-accent-magenta: #f53cff;
+      --f-accent-accent-violet: #9570ff;
+
+      --f-status-success-default: #15a877;
+      --f-status-alert-default: #fec700;
+      --f-status-warning-default: #ff9b36;
+      --f-status-error-default: #fa5246;
+      --f-status-primary-default: #2f74ff;
+
+      --f-tag-tag-blue-text: #4999e3;
+      --f-tag-tag-blue-bg: #389efe1f;
+      --f-tag-tag-blue-border: #389efe4d;
+      --f-tag-tag-green-text: #32a767;
+      --f-tag-tag-green-bg: #3ab6721f;
+      --f-tag-tag-green-border: #3ab6724d;
+      --f-tag-tag-red-text: #dc5353;
+      --f-tag-tag-red-bg: #ff3e3e1f;
+      --f-tag-tag-red-border: #ff3e3e47;
+      --f-tag-tag-purple-text: #735ed3;
+      --f-tag-tag-purple-bg: #8b71ff1f;
+      --f-tag-tag-purple-border: #8b71ff3d;
+
+      --f-shadow-elevation-100:
+        0 0 6px 0 rgba(93, 113, 121, 0.06),
+        0 2px 3px 0 rgba(93, 113, 121, 0.1);
+      --f-shadow-elevation-200:
+        0 2px 6px 0 rgba(93, 113, 121, 0.08),
+        0 2px 12px 0 rgba(93, 113, 121, 0.14);
+      --f-shadow-elevation-300:
+        0 0 2px 0 rgba(93, 113, 121, 0.16),
+        0 4px 12px 0 rgba(93, 113, 121, 0.12),
+        0 6px 20px 0 rgba(174, 185, 189, 0.2);
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       Semantic Aliases — 向后兼容 + fragment 作者快捷引用
+       将 Flux 官方 token 映射为更简短的语义别名。
+       fragment <style> 块中可使用这些别名覆盖。
+       ───────────────────────────────────────────────────────────── */
+    :root,
+    [data-theme="dark"],
+    [data-theme="light"] {
+      --bg-app:          var(--f-bg-bg-base-secondary);
+      --bg-surface:      var(--f-bg-bg-base-default);
+      --bg-subtle:       var(--f-bg-bg-base-tertiary);
+      --bg-muted:        var(--f-bg-bg-overlay-l2);
+      --border:          var(--f-border-border-neutral-l2);
+      --border-strong:   var(--f-border-border-neutral-l3);
+      --text-primary:    var(--f-text-text-default);
+      --text-secondary:  var(--f-text-text-secondary);
+      --text-tertiary:   var(--f-text-text-tertiary);
+      --accent:          var(--f-bg-bg-brand);
+      --accent-soft:     var(--f-bg-bg-overlay-l3);
+      --accent-strong:   var(--f-bg-bg-brand-hover);
+      --success:         var(--f-status-success-default);
+      --warning:         var(--f-status-warning-default);
+      --error:           var(--f-status-error-default);
+      --selected-bg:     var(--f-bg-bg-overlay-l3);
+      --selected-border: var(--f-border-border-brand);
+      --selected-ring:   rgba(37, 182, 255, 0.22);
+
+      --font-display:    var(--f-font-family-display);
+      --font-body:       var(--f-font-family-zh);
+      --font-mono:       var(--f-font-family-code);
+
+      --radius-xs:       var(--f-radius-6);
+      --radius-sm:       var(--f-radius-8);
+      --radius-md:       var(--f-radius-10);
+      --radius-lg:       18px;
+      --radius-xl:       24px;
+      --radius-pill:     var(--f-radius-full);
+
+      --shadow-1:        var(--f-shadow-elevation-100);
+      --shadow-2:        var(--f-shadow-elevation-200);
+      --shadow-3:        var(--f-shadow-elevation-300);
+      --shadow-focus:    0 0 0 4px var(--selected-ring);
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.5rem;
+      --space-6: 2rem;
+      --space-7: 3rem;
+      --space-8: 4rem;
+
+      --ease-out:        var(--f-ease-out);
+      --ease-in-out:     var(--f-ease-in-out);
+      --dur-fast:        var(--f-dur-fast);
+      --dur-base:        var(--f-dur-base);
+      --dur-slow:        var(--f-dur-slow);
+    }
+
+    /* ── Light 别名覆盖（selected-ring 需要跟随主题变化） ── */
+    [data-theme="light"] {
+      --selected-ring: rgba(0, 156, 233, 0.18);
+    }
+
+    /* ── 字体族切换：英文通过 lang 属性 ── */
+    html[lang="en"],
+    html[lang^="en-"] {
+      --font-body: var(--f-font-family-en);
+      --font-display: var(--f-font-family-en);
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       Reset & base
+       ───────────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-app);
+      color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      font-size: 15px;
+      letter-spacing: -0.005em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    ::selection { background: var(--accent-soft); color: var(--accent-strong); }
+
+    /* ─────────────────────────────────────────────────────────────
+       Layout chrome (header / main / indicator)
+       ───────────────────────────────────────────────────────────── */
+    .header {
+      background: var(--bg-surface);
+      padding: var(--space-3) var(--space-6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      backdrop-filter: saturate(1.2);
+    }
+    .header h1 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 0.02em;
+    }
+    .header .status {
+      font-size: 0.72rem;
+      color: var(--success);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-weight: 500;
+    }
+    .header .status::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(51, 193, 146, 0.18);
+    }
+
+    .main { flex: 1; overflow-y: auto; scroll-behavior: smooth; }
+    .main::-webkit-scrollbar { width: 10px; height: 10px; }
+    .main::-webkit-scrollbar-track { background: transparent; }
+    .main::-webkit-scrollbar-thumb {
+      background: var(--border-strong);
+      border-radius: var(--radius-pill);
+      border: 2px solid var(--bg-app);
+    }
+    .main::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); }
+
+    #claude-content {
+      padding: var(--space-7) var(--space-6);
+      min-height: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .content-section {
+      display: none;
+      animation: fadeInUp var(--dur-slow) var(--ease-out);
+    }
+    .content-section.active { display: block; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .indicator-bar {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: var(--space-3) var(--space-6);
+      flex-shrink: 0;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-4);
+    }
+    .indicator-bar span {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+    .indicator-bar .selected-text {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    #nav-btn-up, #nav-btn-down {
+      width: 28px; height: 28px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+      transition: all var(--dur-fast) var(--ease-out);
+    }
+    #nav-btn-up:hover:not(:disabled),
+    #nav-btn-down:hover:not(:disabled) {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+    #nav-btn-up:disabled, #nav-btn-down:disabled { opacity: 0.35; cursor: not-allowed; }
+    #nav-page-count {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      min-width: 2.5rem;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       Typography
+       ───────────────────────────────────────────────────────────── */
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-display);
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-2);
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-1);
+    }
+    h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+    }
+    p { color: var(--text-primary); }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      margin-bottom: var(--space-6);
+    }
+
+    .section { margin-bottom: var(--space-6); }
+    .label {
+      display: inline-block;
+      font-size: 0.68rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+      padding: 2px 8px;
+      background: var(--bg-subtle);
+      border-radius: var(--radius-xs);
+    }
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.88em;
+      background: var(--bg-subtle);
+      padding: 0.15em 0.4em;
+      border-radius: var(--radius-xs);
+      color: var(--accent-strong);
+    }
+    pre {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      overflow-x: auto;
+      margin-bottom: var(--space-4);
+    }
+    pre code { background: none; padding: 0; color: inherit; }
+
+    /* ─────────────────────────────────────────────────────────────
+       Options (A/B/C choice cards)
+       ───────────────────────────────────────────────────────────── */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    .option {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid transparent;
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-5);
+      cursor: pointer;
+      transition: border-color var(--dur-fast) var(--ease-out),
+                  transform var(--dur-fast) var(--ease-out),
+                  box-shadow var(--dur-base) var(--ease-out),
+                  background var(--dur-fast) var(--ease-out);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+    }
+    .option:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-2);
+    }
+    .option.selected {
+      background: var(--selected-bg);
+      border-color: var(--selected-border);
+      box-shadow: var(--shadow-focus), var(--shadow-2);
+    }
+    .option .letter {
+      background: var(--bg-muted);
+      color: var(--text-secondary);
+      width: 2rem; height: 2rem;
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      transition: all var(--dur-base) var(--ease-out);
+    }
+    .option.selected .letter {
+      background: var(--accent);
+      color: var(--f-text-text-onbrand);
+      transform: scale(1.05);
+    }
+    .option .content { flex: 1; min-width: 0; }
+    .option .content h3 {
+      font-size: 1rem;
+      margin-bottom: var(--space-1);
+    }
+    .option .content p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       Cards (visual design options)
+       ───────────────────────────────────────────────────────────── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-5);
+    }
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid transparent;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform var(--dur-base) var(--ease-out),
+                  box-shadow var(--dur-base) var(--ease-out),
+                  border-color var(--dur-fast) var(--ease-out);
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-3);
+    }
+    .card.selected {
+      border-color: var(--selected-border);
+      box-shadow: var(--shadow-focus), var(--shadow-3);
+    }
+    .card-image {
+      background:
+        linear-gradient(135deg, var(--bg-subtle) 0%, var(--bg-muted) 100%);
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .card-body { padding: var(--space-5); }
+    .card-body h3 { margin-bottom: var(--space-1); }
+    .card-body p { color: var(--text-secondary); font-size: 0.9rem; }
+
+    /* ─────────────────────────────────────────────────────────────
+       Mockup containers
+       ───────────────────────────────────────────────────────────── */
+    .mockup {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: var(--space-5);
+      box-shadow: var(--shadow-2);
+    }
+    .mockup-header {
+      background: var(--bg-subtle);
+      padding: var(--space-2) var(--space-4);
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .mockup-header::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border-strong);
+      box-shadow: 14px 0 0 var(--border-strong), 28px 0 0 var(--border-strong);
+      margin-right: 28px;
+    }
+    .mockup-body { padding: var(--space-5); }
+
+    .mobile-mockup {
+      max-width: 375px;
+      margin: 0 auto var(--space-5) auto;
+      border: 10px solid var(--f-bg-bg-base-secondary);
+      border-radius: 40px;
+      overflow: hidden;
+      background: var(--bg-surface);
+      box-shadow: var(--shadow-3);
+      position: relative;
+    }
+    .mobile-mockup::before {
+      content: '';
+      position: absolute;
+      top: 10px; left: 50%;
+      transform: translateX(-50%);
+      width: 110px; height: 22px;
+      background: var(--f-bg-bg-base-secondary);
+      border-radius: 0 0 14px 14px;
+      z-index: 2;
+    }
+    .mobile-mockup .mockup-header {
+      background: var(--bg-subtle);
+      padding: var(--space-4) var(--space-3) var(--space-2);
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-mockup .mockup-header::before { display: none; }
+    .mobile-mockup .mockup-body {
+      min-height: 600px;
+      padding: var(--space-5);
+      position: relative;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       Layout utilities
+       ───────────────────────────────────────────────────────────── */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-5);
+    }
+    @media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
+
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      margin: var(--space-4) 0;
+    }
+    .pros, .cons {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+    }
+    .pros h4 {
+      color: var(--success);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: var(--space-3);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .cons h4 {
+      color: var(--error);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: var(--space-3);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .pros h4::before { content: '✓'; font-size: 1rem; }
+    .cons h4::before { content: '✗'; font-size: 1rem; }
+    .pros ul, .cons ul {
+      margin-left: 1.1rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .pros li, .cons li { margin-bottom: var(--space-1); }
+
+    /* ─────────────────────────────────────────────────────────────
+       Generic elements
+       ───────────────────────────────────────────────────────────── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--space-5);
+      font-size: 0.9rem;
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-3) var(--space-4);
+      text-align: left;
+    }
+    tr:last-child td { border-bottom: none; }
+    th {
+      background: var(--bg-subtle);
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    tr:hover td { background: var(--bg-subtle); }
+
+    ul, ol { padding-left: 1.4rem; margin-bottom: var(--space-4); }
+    li { margin-bottom: var(--space-1); }
+
+    a {
+      color: var(--f-text-text-brand);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--dur-fast);
+    }
+    a:hover { border-bottom-color: var(--f-text-text-brand); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: var(--space-6) 0;
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       Wireframe / placeholder
+       ───────────────────────────────────────────────────────────── */
+    .placeholder {
+      background: linear-gradient(
+        90deg,
+        var(--bg-subtle) 0%,
+        var(--bg-muted) 50%,
+        var(--bg-subtle) 100%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 2s linear infinite;
+      border-radius: var(--radius-md);
+      padding: var(--space-6);
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 0.85rem;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .mock-nav {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+      color: var(--f-text-text-onbrand);
+      padding: var(--space-3) var(--space-5);
+      display: flex;
+      gap: var(--space-5);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+    .mock-sidebar {
+      background: var(--bg-subtle);
+      padding: var(--space-4);
+      min-width: 200px;
+      border-right: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+    .mock-content {
+      padding: var(--space-5);
+      flex: 1;
+      min-width: 0;
+    }
+    .mock-button {
+      background: var(--accent);
+      color: var(--f-text-text-onbrand);
+      border: none;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--dur-fast) var(--ease-out);
+      box-shadow: var(--shadow-1);
+    }
+    .mock-button:hover {
+      background: var(--accent-strong);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-2);
+    }
+    .mock-input {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: var(--space-2) var(--space-3);
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+    }
+    .mock-input:focus {
+      outline: none;
+      border-color: var(--f-border-border-brand);
+      box-shadow: var(--shadow-focus);
+    }
+
+    /* ─────────────────────────────────────────────────────────────
+       Flux Tag styles
+       ───────────────────────────────────────────────────────────── */
+    .flux-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: var(--f-radius-4);
+      font-size: 12px;
+      line-height: 18px;
+      border: 1px solid;
+    }
+    .flux-tag-blue { color: var(--f-tag-tag-blue-text); background: var(--f-tag-tag-blue-bg); border-color: var(--f-tag-tag-blue-border); }
+    .flux-tag-green { color: var(--f-tag-tag-green-text); background: var(--f-tag-tag-green-bg); border-color: var(--f-tag-tag-green-border); }
+    .flux-tag-red { color: var(--f-tag-tag-red-text); background: var(--f-tag-tag-red-bg); border-color: var(--f-tag-tag-red-border); }
+    .flux-tag-purple { color: var(--f-tag-tag-purple-text); background: var(--f-tag-tag-purple-bg); border-color: var(--f-tag-tag-purple-border); }
+
+    /* ─────────────────────────────────────────────────────────────
+       Utility classes
+       ───────────────────────────────────────────────────────────── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .stack-sm > * + * { margin-top: var(--space-2); }
+    .stack-md > * + * { margin-top: var(--space-4); }
+    .stack-lg > * + * { margin-top: var(--space-6); }
+    .text-muted { color: var(--text-secondary); }
+    .text-subtle { color: var(--text-tertiary); }
+    .surface {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+    }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* FROZEN — 协议见 visual-companion.md */
+.mc-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 20px;
+  background-color: var(--f-bg-bg-menu);
+}
+
+/* 覆盖 inline hidden 的隐藏方式，确保 display 与 flex 切换可控 */
+.mc-footer[hidden] {
+  display: none;
+}
+
+.mc-footer-info {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: var(--f-font-weight-regular);
+  color: var(--f-text-text-secondary);
+}
+
+.mc-footer-count {
+  color: var(--f-text-text-default);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: var(--f-font-weight-semibold);
+  margin: 0;
+}
+
+/* 计数区：组内数字与文案 4px，两组之间 12px（设计稿 node 340-18924） */
+.mc-footer-default {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--f-spacer-12);
+}
+.mc-footer-stat,
+.mc-footer-annos {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--f-spacer-4);
+}
+.mc-footer-annos[hidden] {
+  display: none;
+}
+.mc-footer-anno-count {
+  color: var(--f-text-text-default);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: var(--f-font-weight-semibold);
+  margin: 0;
+}
+
+/* 默认态 / 批注态 文案切换：默认只显示 default，批注态只显示 annotating */
+.mc-footer-annotating {
+  display: none;
+}
+body.mc-anno-active .mc-footer-default {
+  display: none;
+}
+body.mc-anno-active .mc-footer-annotating[data-lang='zh'] {
+  display: inline;
+}
+html[lang='en'] body.mc-anno-active .mc-footer-annotating[data-lang='zh'],
+html[lang^='en-'] body.mc-anno-active .mc-footer-annotating[data-lang='zh'] {
+  display: none;
+}
+html[lang='en'] body.mc-anno-active .mc-footer-annotating[data-lang='en'],
+html[lang^='en-'] body.mc-anno-active .mc-footer-annotating[data-lang='en'] {
+  display: inline;
+}
+
+.mc-footer-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--f-spacer-8);
+}
+
+.mc-footer-submit-tip {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  display: none;
+  padding: 7px var(--f-spacer-8);
+  border: 1px solid var(--f-border-border-neutral-l1);
+  border-radius: var(--f-radius-8);
+  background-color: var(--f-bg-bg-base-secondary);
+  color: var(--f-text-text-default);
+  box-shadow: var(--f-shadow-elevation-100);
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+body.mc-anno-active .mc-footer-actions:hover .mc-footer-submit-tip,
+body.mc-anno-active .mc-footer-actions:focus-within .mc-footer-submit-tip {
+  display: block;
+}
+
+.mc-footer-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--f-spacer-4);
+  height: 32px;
+  padding: 0 var(--f-spacer-16);
+  border: none;
+  border-radius: 8px;
+  background-color: var(--f-bg-bg-invert);
+  color: var(--f-bg-bg-base-secondary);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: var(--f-font-weight-semibold);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.mc-footer-submit:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.mc-footer-submit:active:not(:disabled) {
+  opacity: 0.7;
+}
+
+.mc-footer-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mc-footer-submit-arrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1;
+}
+
+body.has-mc-footer {
+  padding-bottom: 48px;
+}
+
+[data-mc-toggle] {
+  cursor: pointer;
+  user-select: none;
+}
+[data-mc-toggle][aria-disabled='true'],
+[data-mc-toggle][disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+[data-mc-toggle]:focus-visible {
+  outline: 2px solid var(--f-border-border-brand);
+  outline-offset: 2px;
+}
+
+.mc-footer [data-lang='en'] {
+  display: none;
+}
+html[lang='en'] .mc-footer [data-lang='zh'],
+html[lang^='en-'] .mc-footer [data-lang='zh'] {
+  display: none;
+}
+html[lang='en'] .mc-footer [data-lang='en'],
+html[lang^='en-'] .mc-footer [data-lang='en'] {
+  display: inline;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   批注（Annotation）—— 见 visual-companion.md「批注模式」
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── 右下角批注入口按钮（三态：默认 / 激活 / hover tooltip） ── */
+.mc-anno-toggle {
+  position: fixed;
+  right: 17px;
+  top: calc(50% + 63px); /* 与宿主分页器同轴，并保持设计稿标注的 12px 间距 */
+  z-index: 1001;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  box-sizing: border-box;
+  padding: 2px;
+  border: 1px solid var(--f-border-border-neutral-l1);
+  border-radius: var(--f-radius-full);
+  background-color: var(--f-bg-bg-base-secondary);
+  color: var(--f-icon-icon-default);
+  cursor: pointer;
+  box-shadow: var(--f-shadow-elevation-100);
+  transition:
+    color var(--f-dur-fast) var(--f-ease-out),
+    background-color var(--f-dur-fast) var(--f-ease-out),
+    border-color var(--f-dur-fast) var(--f-ease-out);
+}
+.mc-anno-toggle[hidden] {
+  display: none;
+}
+/* hover：overlay-l1 圆形底色，不带描边和阴影（设计稿 node 340-18284） */
+.mc-anno-toggle:hover {
+  background-color: var(--f-bg-bg-base-secondary);
+  background-image: linear-gradient(
+    var(--f-bg-bg-overlay-l1),
+    var(--f-bg-bg-overlay-l1)
+  );
+  border-color: transparent;
+  box-shadow: none;
+}
+/* 激活态：深色实心圆钮 + 反色图标（对齐设计稿 node 340-18441）。
+   底色用 --f-bg-bg-invert，图标用 --f-bg-bg-base-secondary（与 invert 天然反色，
+   亮/暗主题下均保证对比度）。 */
+.mc-anno-toggle[aria-pressed='true'] {
+  background-color: var(--f-bg-bg-invert);
+  background-image: none;
+  border-color: var(--f-bg-bg-invert);
+  color: var(--f-bg-bg-base-secondary);
+}
+.mc-anno-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.mc-anno-toggle-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* 入口按钮左侧 tooltip（打开/关闭批注模式）——浅色（对齐设计稿 node 340-19418）：
+   白底 + neutral-l1 描边 + text-default 深字 + radius-8 + 12/18 字 + 柔和阴影 */
+.mc-anno-toggle-tip {
+  position: absolute;
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  white-space: nowrap;
+  padding: 7px var(--f-spacer-8);
+  border-radius: var(--f-radius-8);
+  background-color: var(--f-bg-bg-base-secondary);
+  border: 1px solid var(--f-border-border-neutral-l1);
+  color: var(--f-text-text-default);
+  font-size: 12px;
+  line-height: 18px;
+  pointer-events: none;
+  box-shadow: var(--f-shadow-elevation-100);
+}
+.mc-anno-toggle:hover .mc-anno-toggle-tip[data-lang='zh'] {
+  display: inline-block;
+}
+/* tooltip 语言可见性（默认中文，英文环境切换） */
+.mc-anno-toggle-tip[data-lang='en'] {
+  display: none;
+}
+html[lang='en'] .mc-anno-toggle:hover .mc-anno-toggle-tip[data-lang='zh'],
+html[lang^='en-'] .mc-anno-toggle:hover .mc-anno-toggle-tip[data-lang='zh'] {
+  display: none;
+}
+html[lang='en'] .mc-anno-toggle:hover .mc-anno-toggle-tip[data-lang='en'],
+html[lang^='en-'] .mc-anno-toggle:hover .mc-anno-toggle-tip[data-lang='en'] {
+  display: inline-block;
+}
+
+/* ── 批注模式下的画布交互 ── */
+/* 不可批注区域统一弱化，当前已选选项抬高到遮罩之上
+   （设计稿 node 654-20188）。遮罩使用主题背景 token，同时适配明暗主题。 */
+body.mc-anno-active::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background-color: var(--f-bg-bg-base-secondary);
+  opacity: 0.5;
+  pointer-events: none;
+}
+body.mc-anno-active #claude-content {
+  pointer-events: none;
+}
+body.mc-anno-active .mc-anno-target {
+  position: relative;
+  z-index: 901;
+  pointer-events: auto;
+}
+
+/* 自定义评论光标：完整复用设计稿 node 340-18345 导出的 SVG（含白色衬底与双层阴影）。
+   ⚠️ CSS cursor 的 SVG data-uri 无法引用 --f-* 变量，图标颜色固定取设计稿中
+   icon-default / icon-onaccent 的 light 色值；光标由系统层绘制，属 token 规则例外。 */
+body.mc-anno-active .mc-anno-target {
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none"><g filter="url(%23filter0_dd_340_18345)"><path d="M10.1584 23.5083C10.3054 23.8792 10.3381 24.2856 10.2524 24.6753L9.18736 27.9652C9.15305 28.1321 9.16192 28.3049 9.21314 28.4674C9.26436 28.6298 9.35622 28.7765 9.48003 28.8935C9.60383 29.0105 9.75547 29.0939 9.92056 29.1359C10.0857 29.1778 10.2587 29.1769 10.4234 29.1332L13.8364 28.1352C14.2041 28.0623 14.5849 28.0942 14.9354 28.2272C17.0707 29.2245 19.4897 29.4354 21.7655 28.823C24.0413 28.2105 26.0276 26.8139 27.374 24.8796C28.7205 22.9454 29.3405 20.5977 29.1246 18.2509C28.9088 15.904 27.871 13.7088 26.1944 12.0526C24.5178 10.3963 22.31 9.38542 19.9607 9.19828C17.6114 9.01114 15.2715 9.65976 13.3538 11.0297C11.4361 12.3997 10.0639 14.4029 9.47926 16.686C8.89462 18.969 9.13513 21.3852 10.1584 23.5083Z" fill="white"/><path d="M12.6276 10.0124C14.7849 8.47138 17.4174 7.74132 20.0602 7.95184C22.7031 8.16242 25.1868 9.30051 27.0729 11.1638C28.959 13.027 30.127 15.4963 30.3698 18.1364C30.6126 20.7765 29.9147 23.4175 28.4001 25.5934C26.8854 27.7695 24.6507 29.3409 22.0905 30.03C19.5565 30.712 16.8653 30.4847 14.4811 29.3923C14.3619 29.349 14.2341 29.3374 14.1091 29.3571L10.7741 30.3327C10.7641 30.3356 10.7539 30.3388 10.7438 30.3415C10.3735 30.4397 9.98429 30.4417 9.61296 30.3474C9.24165 30.253 8.90025 30.0655 8.62175 29.8024C8.34324 29.5392 8.13642 29.2089 8.02116 28.8434C7.90594 28.478 7.88541 28.0889 7.96257 27.7136L7.99773 27.5807L9.03679 24.3718C9.05911 24.2416 9.04775 24.1081 9.00163 23.9841C7.87731 21.6118 7.61661 18.9204 8.26823 16.3757C8.92598 13.8073 10.4703 11.5535 12.6276 10.0124Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M10.1584 23.5083C10.3054 23.8792 10.3381 24.2856 10.2524 24.6753L9.18736 27.9652C9.15305 28.1321 9.16192 28.3049 9.21314 28.4674C9.26436 28.6298 9.35622 28.7765 9.48003 28.8935C9.60383 29.0105 9.75547 29.0939 9.92056 29.1359C10.0857 29.1778 10.2587 29.1769 10.4234 29.1332L13.8364 28.1352C14.2041 28.0623 14.5849 28.0942 14.9354 28.2272C17.0707 29.2245 19.4897 29.4354 21.7655 28.823C24.0413 28.2105 26.0276 26.8139 27.374 24.8796C28.7205 22.9454 29.3405 20.5977 29.1246 18.2509C28.9088 15.904 27.871 13.7088 26.1944 12.0526C24.5178 10.3963 22.31 9.38542 19.9607 9.19828C17.6114 9.01114 15.2715 9.65976 13.3538 11.0297C11.4361 12.3997 10.0639 14.4029 9.47926 16.686C8.89462 18.969 9.13513 21.3852 10.1584 23.5083Z" fill="white" stroke="%2331353A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.7858 19.1179H22.4525" stroke="%2331353A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.1178 15.7847V22.4514" stroke="%2331353A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><filter id="filter0_dd_340_18345" x="4.76837e-06" y="2.00272e-05" width="38.3333" height="38.3333" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset/><feGaussianBlur stdDeviation="3.33333"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0.52549 0 0 0 0 0.541176 0 0 0 0 0.596078 0 0 0 0.08 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_340_18345"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dy="3.33333"/><feGaussianBlur stdDeviation="1.66667"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0.525311 0 0 0 0 0.541465 0 0 0 0 0.595309 0 0 0 0.16 0"/><feBlend mode="normal" in2="effect1_dropShadow_340_18345" result="effect2_dropShadow_340_18345"/><feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_340_18345" result="shape"/></filter></defs></svg>')
+      9 30,
+    pointer;
+}
+/* 批注模式下：已带标记的 option 不再显示评论光标（仅标记可交互） */
+body.mc-anno-active .mc-anno-has-marker {
+  cursor: default;
+}
+/* 批注模式下的 hover 反馈：只高亮"当前会锚定的那个载体"（由 JS 打 .mc-anno-hover）。
+   嵌套时内层载体优先，故仅内层亮、外层不亮，避免"内外层同时描边"的歧义。
+   已带标记的载体不再提示。 */
+body.mc-anno-active .mc-anno-hover:not(.mc-anno-has-marker) {
+  outline: 2px dashed var(--f-border-border-brand);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+/* 批注模式下未选项完全退出命中测试，仅保留当前选中项的批注交互 */
+body.mc-anno-active .option:not(.selected),
+body.mc-anno-active .card:not(.selected) {
+  pointer-events: none;
+  cursor: default;
+}
+/* 批注模式下抑制选项原有的 hover 位移 / 阴影反馈 */
+body.mc-anno-active .option:hover,
+body.mc-anno-active .card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── option 上的批注气泡标记 ── */
+/* 承载标记的元素需建立定位上下文（.option 默认已 relative，.card 兜底）；
+   .card 默认 overflow:hidden 会裁掉溢出的标记气泡，带标记时放开 */
+.mc-anno-has-marker {
+  position: relative;
+}
+.card.mc-anno-has-marker {
+  overflow: visible;
+}
+.mc-anno-marker {
+  position: absolute;
+  top: -16px;
+  right: 16px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--f-bg-bg-brand-sub);
+  cursor: pointer;
+  padding: 0;
+  overflow: visible;
+}
+.mc-anno-marker.mc-anno-marker-positioned {
+  right: auto;
+  transform: translateY(-100%);
+}
+#claude-content .mc-anno-marker > svg {
+  /* fragment 样式位于 mc-footer 之后；提高选择器优先级，并覆盖可能撑大图标的 min-width。 */
+  flex: none;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  overflow: visible;
+}
+
+/* hover 标记时的内容浮层（只读预览）。
+   浮层挂在 body 上、按视口坐标定位（body 不滚动，滚动发生在 .main） */
+.mc-anno-preview {
+  position: fixed;
+  z-index: 1002;
+  max-width: 280px;
+  padding: 8px 12px;
+  border-radius: var(--f-radius-8);
+  background-color: var(--f-bg-bg-menu);
+  color: var(--f-text-text-default);
+  font-size: 13px;
+  line-height: 20px;
+  box-shadow: var(--f-shadow-elevation-200);
+  border: 1px solid var(--f-border-border-neutral-l2);
+  white-space: pre-wrap;
+  word-break: break-word;
+  pointer-events: none;
+}
+.mc-anno-preview[hidden] {
+  display: none;
+}
+
+/* ── 添加 / 编辑评论弹窗 ── */
+.mc-anno-popover {
+  position: fixed;
+  z-index: 1003;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--f-spacer-16);
+  width: 360px;
+  max-width: calc(100vw - 16px);
+  padding: 12px;
+  border-radius: var(--f-radius-8);
+  background-color: var(--f-bg-bg-base-secondary);
+  border: 1px solid var(--f-border-border-neutral-l1);
+  box-shadow: var(--f-shadow-elevation-300);
+}
+.mc-anno-popover[hidden] {
+  display: none;
+}
+.mc-anno-popover-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 24px;
+}
+.mc-anno-popover-title {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: var(--f-font-weight-semibold);
+  color: var(--f-text-text-default);
+}
+.mc-anno-popover-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: var(--f-radius-6);
+  background: transparent;
+  color: var(--f-icon-icon-secondary);
+  cursor: pointer;
+}
+.mc-anno-popover-close svg {
+  width: 16px;
+  height: 16px;
+}
+.mc-anno-popover-close:hover {
+  background-color: var(--f-bg-bg-overlay-l2);
+  color: var(--f-icon-icon-default);
+}
+/* 多行输入：最多展示 7 行(20px 行高 * 7 = 140px)，超出内部滚动，
+   内容区最大高度 340px（含 padding），需求约定 */
+.mc-anno-popover-input {
+  display: block;
+  width: 100%;
+  min-height: 68px;
+  max-height: 340px;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border: 1px solid var(--f-border-border-neutral-l1);
+  border-radius: var(--f-radius-8);
+  background-color: var(--f-bg-bg-overlay-l1);
+  color: var(--f-text-text-default);
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 20px;
+  resize: none;
+  overflow-y: auto;
+}
+.mc-anno-popover-input::placeholder {
+  color: var(--f-text-text-tertiary);
+}
+.mc-anno-popover-input:focus {
+  outline: none;
+  border-color: var(--f-border-border-neutral-l1);
+}
+.mc-anno-popover-input::selection {
+  color: var(--f-text-text-default);
+  background-color: var(--f-tag-tag-blue-bg);
+}
+.mc-anno-popover-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--f-spacer-8);
+  width: 100%;
+  height: 28px;
+}
+/* 编辑态删除按钮独占左侧，取消 / 确定按钮靠右（设计稿 node 340-19369） */
+.mc-anno-popover-delete {
+  display: none;
+  align-items: center;
+  height: 28px;
+  margin-right: auto;
+  padding: 0 8px;
+  border: none;
+  border-radius: var(--f-radius-6);
+  background: transparent;
+  color: var(--f-status-error-default);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: var(--f-font-weight-medium);
+  cursor: pointer;
+}
+.mc-anno-popover-delete:hover {
+  background-color: var(--f-tag-tag-red-bg);
+}
+.mc-anno-popover.mc-anno-editing .mc-anno-popover-delete {
+  display: inline-flex;
+}
+.mc-anno-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: var(--f-radius-6);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: var(--f-font-weight-medium);
+  cursor: pointer;
+  border: none;
+  transition:
+    opacity var(--f-dur-fast) var(--f-ease-out),
+    background-color var(--f-dur-fast) var(--f-ease-out);
+}
+.mc-anno-btn-cancel {
+  background-color: var(--f-bg-bg-overlay-l2);
+  color: var(--f-text-text-default);
+}
+.mc-anno-btn-cancel:hover {
+  background-color: var(--f-bg-bg-overlay-l2);
+}
+.mc-anno-btn-primary {
+  background-color: var(--f-bg-bg-invert);
+  color: var(--f-bg-bg-base-secondary);
+}
+.mc-anno-btn-primary:hover:not(:disabled) {
+  opacity: 0.85;
+}
+.mc-anno-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.mc-anno-btn-danger {
+  background-color: var(--f-status-error-default);
+  color: var(--f-bg-bg-base-secondary);
+}
+.mc-anno-btn-danger:hover {
+  opacity: 0.88;
+}
+
+/* ── 删除二次确认气泡 ── */
+.mc-anno-confirm {
+  position: fixed;
+  z-index: 1004;
+  display: flex;
+  flex-direction: column;
+  gap: var(--f-spacer-8);
+  width: 204px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background-color: var(--f-bg-bg-menu);
+  border: 1px solid var(--f-border-border-neutral-l1);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--f-shadow-elevation-100);
+}
+.mc-anno-confirm[hidden] {
+  display: none;
+}
+.mc-anno-confirm-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 24px;
+}
+.mc-anno-confirm-icon {
+  flex-shrink: 0;
+  color: var(--f-status-error-default);
+  display: inline-flex;
+}
+.mc-anno-confirm-title {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: var(--f-font-weight-medium);
+  color: var(--f-text-text-default);
+}
+.mc-anno-confirm-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--f-text-text-secondary);
+  white-space: nowrap;
+}
+html[lang='en'] .mc-anno-confirm-text,
+html[lang^='en-'] .mc-anno-confirm-text {
+  white-space: normal;
+}
+.mc-anno-confirm-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--f-spacer-8);
+}
+.mc-anno-confirm .mc-anno-btn {
+  padding: 0 6px;
+}
+
+/* ── 操作成功轻提示（删除成功等） ── */
+.mc-anno-toast {
+  position: fixed;
+  left: 50%;
+  top: 24px;
+  transform: translateX(-50%);
+  z-index: 1005;
+  padding: 8px 16px;
+  border-radius: var(--f-radius-8);
+  background-color: var(--f-bg-bg-invert);
+  color: var(--f-bg-bg-base-secondary);
+  font-size: 13px;
+  line-height: 20px;
+  box-shadow: var(--f-shadow-elevation-200);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--f-dur-base) var(--f-ease-out);
+}
+.mc-anno-toast.mc-anno-toast-show {
+  opacity: 1;
+}
+
+  </style>
+</head>
+<body>
+  <!-- mc-footer 协议文档：skills/flux-brainstorm/visual-companion.md -->
+
+  <div class="main">
+    <div id="claude-content">
+<style>
+  :root {
+    --accent: var(--f-accent-accent-violet);
+    --accent-soft: var(--f-tag-tag-purple-bg);
+  }
+  h2 {
+    font-size: 2.05rem; font-weight: 700; letter-spacing: -0.03em;
+    background: linear-gradient(100deg, var(--text-primary) 25%, var(--accent) 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  h3 { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+
+  .stat-row { display: flex; gap: var(--space-2); flex-wrap: wrap; margin: var(--space-4) 0 var(--space-5); }
+  .stat {
+    flex: 1; min-width: 100px; text-align: center;
+    background: var(--bg-surface); border: 1px solid var(--border);
+    border-radius: var(--radius-md); padding: var(--space-3); box-shadow: var(--shadow-1);
+  }
+  .stat .n { font-size: 1.5rem; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; color: var(--accent); }
+  .stat .l { font-size: 0.7rem; color: var(--text-secondary); margin-top: 3px; }
+
+  .sec-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-tertiary);
+    margin: var(--space-6) 0 var(--space-3); display: flex; align-items: center; gap: 10px;
+  }
+  .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .grid16 {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: var(--space-2);
+  }
+  .pcell {
+    background: var(--bg-surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 10px 12px; box-shadow: var(--shadow-1);
+  }
+  .pcell.ready { border-left: 3px solid var(--success); }
+  .pcell.todo  { border-left: 3px solid var(--warning); }
+  .pcell .code {
+    font-family: var(--font-mono); font-size: 0.64rem; font-weight: 700;
+    color: var(--accent); letter-spacing: 0.06em;
+  }
+  .pcell .pname { font-size: 0.83rem; font-weight: 600; margin: 2px 0 3px; }
+  .pcell .line { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; }
+  .pcell .dims { font-size: 0.64rem; color: var(--text-tertiary); margin-top: 4px; font-family: var(--font-mono); }
+
+  .card {
+    background: var(--bg-surface); border: 1px solid var(--border);
+    border-radius: var(--radius-md); padding: var(--space-4);
+    margin-bottom: var(--space-3); box-shadow: var(--shadow-1);
+  }
+  .card.hl { border-left: 3px solid var(--accent); }
+  .card p { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.68; margin: 6px 0 0; }
+  .card ul { margin: 6px 0 0; padding-left: 1.1rem; }
+  .card li { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+
+  .flow {
+    font-family: var(--font-mono); font-size: 0.74rem; line-height: 1.9;
+    background: var(--bg-subtle); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4);
+    color: var(--text-secondary); overflow-x: auto; white-space: pre;
+  }
+
+  .kill { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--space-2); }
+  .kill span {
+    font-size: 0.73rem; padding: 3px 9px; border-radius: var(--radius-pill);
+    background: var(--f-tag-tag-red-bg); color: var(--f-tag-tag-red-text);
+    text-decoration: line-through;
+  }
+  .keep { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--space-2); }
+  .keep span {
+    font-size: 0.73rem; padding: 3px 9px; border-radius: var(--radius-pill);
+    background: var(--f-tag-tag-green-bg); color: var(--f-tag-tag-green-text);
+  }
+</style>
+
+<h2>需求 Spec 定稿 · 巴黎城市时空文化地图</h2>
+<p class="subtitle">主题故事线为主体，16 种旅行人格为匹配标签。桌面端「行前 + 云逛 + 行后」体验，中英双语，不商业化。</p>
+
+<div class="stat-row">
+  <div class="stat"><div class="n">300</div><div class="l">POI</div></div>
+  <div class="stat"><div class="n">16</div><div class="l">主题线</div></div>
+  <div class="stat"><div class="n">9</div><div class="l">素材已齐</div></div>
+  <div class="stat"><div class="n">7</div><div class="l">待补素材</div></div>
+  <div class="stat"><div class="n">12</div><div class="l">测试题</div></div>
+  <div class="stat"><div class="n">中英</div><div class="l">双语</div></div>
+</div>
+
+<div class="card hl" data-annotatable data-anno-label="核心结构">
+  <h3>🧭 核心结构：主题是主体，人格是标签</h3>
+  <p><b>不是</b>「为 16 种人格各造一条线」——那会让同一批 POI 换个说法讲 16 遍。<b>而是</b>先有好主题（海明威的穷日子、铜牌都写错了、蒙马特的画家们），再判断它天然吸引哪类人，打上人格标签做匹配推荐。</p>
+  <p>用户有两个入口：<b>做测试</b>→ 拿到人格 → 推荐那条线；或<b>直接逛地图</b>→ 点 POI → 跳进它所属的线。测试不是强制前置。</p>
+</div>
+
+<div class="sec-label">16 条主题线 × 人格映射</div>
+
+<div class="grid16" data-annotatable data-anno-label="16条线">
+  <div class="pcell ready"><div class="code">NERD</div><div class="pname">学者</div><div class="line">一杯咖啡坐一天，顺便发明了存在主义</div><div class="dims">文化↑ 规划↑ 社交↓ 消费↓</div></div>
+  <div class="pcell ready"><div class="code">CTRL</div><div class="pname">宝藏团长</div><div class="line">巴黎最有名的几块铜牌，都写错了</div><div class="dims">文化↑ 规划↑ 社交↑ 消费↓</div></div>
+  <div class="pcell ready"><div class="code">BLUE</div><div class="pname">深藏Blue之人</div><div class="line">《午夜巴黎》的十二点魔法</div><div class="dims">文化↑ 规划↑ 社交↓ 消费↑</div></div>
+  <div class="pcell ready"><div class="code">GOAT</div><div class="pname">全能管家</div><div class="line">《爱在日落黄昏时》的那个下午</div><div class="dims">文化↑ 规划↑ 社交↑ 消费↑</div></div>
+  <div class="pcell ready"><div class="code">MYTH</div><div class="pname">拾光者</div><div class="line">海明威的穷日子</div><div class="dims">文化↑ 规划↓ 社交↑ 消费↓</div></div>
+  <div class="pcell ready"><div class="code">DODO</div><div class="pname">干就完了</div><div class="line">蒙马特的画家们</div><div class="dims">文化↑ 规划↓ 社交↑ 消费↑</div></div>
+  <div class="pcell ready"><div class="code">BUDD</div><div class="pname">清冷佛子</div><div class="line">拉雪兹神父公墓的名人局</div><div class="dims">文化↑ 规划↓ 社交↓ 消费↓</div></div>
+  <div class="pcell ready"><div class="code">TIME</div><div class="pname">时间管理大师</div><div class="line">Emily in Paris 打卡路线</div><div class="dims">文化↓ 规划↑ 社交↑ 消费↓</div></div>
+  <div class="pcell ready"><div class="code">BEE</div><div class="pname">小蜜蜂</div><div class="line">艾米莉的十五分钟人生</div><div class="dims">文化↓ 规划↓ 社交↑ 消费↓</div></div>
+  <div class="pcell todo"><div class="code">LORD ⚠</div><div class="pname">大小姐</div><div class="line">左岸的沙龙与旧书摊</div><div class="dims">需补：高端书店 · 私人美术馆</div></div>
+  <div class="pcell todo"><div class="code">BOSS ⚠</div><div class="pname">煤老板</div><div class="line">巴黎的餐桌江湖</div><div class="dims">需补：米其林 · 游船晚宴</div></div>
+  <div class="pcell todo"><div class="code">FREE ⚠</div><div class="pname">多比</div><div class="line">一个人的塞纳河</div><div class="dims">需补：单人友好体验</div></div>
+  <div class="pcell todo"><div class="code">WIND ⚠</div><div class="pname">追风筝的人</div><div class="line">城市边缘的风</div><div class="dims">需补：运河步道 · 免费观景</div></div>
+  <div class="pcell todo"><div class="code">SHAN ⚠</div><div class="pname">慈善家</div><div class="line">请客吃饭的巴黎</div><div class="dims">需补：热闹餐酒馆 · 节庆</div></div>
+  <div class="pcell todo"><div class="code">REST ⚠</div><div class="pname">休息者</div><div class="line">躺平巴黎</div><div class="dims">需补：公园草坪 · 温泉浴场</div></div>
+  <div class="pcell todo"><div class="code">CUTE ⚠</div><div class="pname">史莱姆</div><div class="line">盲盒式漫游</div><div class="dims">需补：跳蚤市场 · 街头装置</div></div>
+</div>
+
+<div class="card" data-annotatable data-anno-label="补素材约束">
+  <h3>⚠️ 7 条待补线：不得硬凑</h3>
+  <p>现有 POI 池偏文化考据向，<b>低文化 / 高消费 / 躺平类内容确实不足</b>。这 7 条必须通过定向搜索补充<b>真实</b> POI 与事件，走完整交叉验证流程后入库——不允许把现有文化向 POI 改个说法塞进去充数。这是需要额外投入的部分。</p>
+</div>
+
+<div class="sec-label">内容可靠性：自动化交叉验证</div>
+
+<div class="card hl" data-annotatable data-anno-label="判真法则">
+  <h3>🔑 内容判真法则（入库判据）</h3>
+  <p>「能说清<b>为什么是这家、哪一年、什么具体细节</b>的掌故大概率是真的；只有一串名字的，那是菜单的一部分。」</p>
+  <p><b>工程化</b>：每条人物-POI 关联必须填 <code>why_here</code> + <code>when</code> + <code>detail</code>，<b>缺一即自动降为 L4「坊间传说」</b>。</p>
+  <ul>
+    <li>✅ 花神咖啡馆：萨特波伏娃常驻<b>因为 1939 年老板装了煤炉</b>，占领期公寓没暖气 —— 四源一致</li>
+    <li>❌ 某老店官网列的一串名人清单 —— "常客"与"来过一两次"在营销文案里被抹平了</li>
+  </ul>
+</div>
+
+<div class="card" data-annotatable data-anno-label="流水线">
+  <h3>⚙️ 端到端流水线（人工仅 4 处介入）</h3>
+  <div class="flow">[0] 候选池 → [1] 地址归一 → [2] 实体对齐（同名歧义阻断）
+→ [3] 交叉验证打分（坐标须 ≥L2 否则淘汰）→ [4] 分层
+→ [5] 标签挂接 → [6] Fact Sheet → [7] LLM 文案 → [8] 自动质检
+→ [9] 入库（Hero 需终审）→ [10] 每月持续校验</div>
+  <p><b>LLM 红线</b>：坐标 / 年份 / 人物关联 / 取景地 / 引文原文<b>一律禁止生成</b>；输入只有 fact sheet，输出跑回指校验——出现表外实体即整条重生成。<b>把幻觉从概率问题变成可拦截的确定性问题。</b></p>
+  <p><b>Story + Pin 层约 260 个 POI 全自动，无人工核实环节。</b></p>
+</div>
+
+<div class="card" data-annotatable data-anno-label="差异化">
+  <h3>🔍 差异化内容层：「铭牌怎么说 vs 实际发生了什么」</h3>
+  <p>调研推翻 40 条流传说法，最有价值的是<b>巴黎官方铭牌本身就有错</b>：皮雅芙其实生在 Tenon 医院不是贝尔维尔街台阶上；普罗可布给自己早写了三十年；雨果故居和同一面墙的铭牌差一年。</p>
+  <p><b>竞品讲传说，我们讲这个传说是怎么假的。</b>目前没有任何竞品地图有这个角度。</p>
+</div>
+
+<div class="sec-label">本轮确认的关键决策</div>
+
+<div class="card" data-annotatable data-anno-label="决策">
+  <h3>✅ 保留 / ❌ 砍掉</h3>
+  <div class="keep">
+    <span>时间轴↔地图三方联动</span><span>自动播放逐站推进</span><span>#loc=N 深链分享</span><span>轨迹曲线渐变</span><span>关系图谱穿越</span><span>三级信息密度</span><span>多维搜索+匹配原因</span><span>置信度徽章</span>
+  </div>
+  <div class="kill">
+    <span>教材知识点/考点</span><span>现场打卡指引</span><span>行中打卡场景</span><span>移动端专项</span><span>AI 人格化对话</span><span>星图可视化</span><span>Cesium 3D</span><span>GCJ-02 纠偏</span><span>高德/GeoVis</span><span>UGC 共创</span><span>AR 合影</span><span>账号体系</span><span>版权合规设计</span>
+  </div>
+  <p style="margin-top:12px"><b>定位收敛</b>：「行中按图索骥」移出 MVP，产品定为「行前找灵感 + 云逛巴黎 + 行后回味」的桌面端体验。详情页对应模块改为「📷 这地方为什么好看」——讲视觉特征与画面感，不讲拍摄指引。</p>
+  <p><b>不商业化</b>：数据源选型以「能用好用」为准，不做 ODbL 传染性隔离，Gallica 图像可用。</p>
+</div>
+    </div>
+  </div>
+
+  <!-- FROZEN — 协议见 visual-companion.md -->
+<footer id="mc-footer" class="mc-footer" hidden>
+  <div class="mc-footer-info">
+    <!-- 默认态：已选 N 项 / N 条批注 -->
+    <span class="mc-footer-default">
+      <span class="mc-footer-stat">
+        <span data-lang="zh">已选：</span>
+        <span data-lang="en">Selected:</span>
+        <span id="mc-footer-count" class="mc-footer-count">0</span>
+        <span data-lang="zh">个选项</span>
+        <span data-lang="en">options</span>
+      </span>
+      <span id="mc-footer-annos" class="mc-footer-annos" hidden>
+        <span class="mc-footer-anno-count">0</span>
+        <span data-lang="zh">条批注</span>
+        <span data-lang="en">annotations</span>
+      </span>
+    </span>
+    <!-- 批注激活态：正在批注中 -->
+    <span class="mc-footer-annotating" data-lang="zh">正在批注中</span>
+    <span class="mc-footer-annotating" data-lang="en">Annotating</span>
+  </div>
+  <div class="mc-footer-actions">
+    <div id="mc-footer-submit-tip" class="mc-footer-submit-tip" role="tooltip">
+      <span data-lang="zh">需要退出评论模式才能继续操作</span>
+      <span data-lang="en">Exit annotation mode to continue</span>
+    </div>
+    <button id="mc-footer-submit" type="button" class="mc-footer-submit">
+      <span class="mc-footer-submit-arrow">→</span>
+      <span class="mc-footer-submit-text" data-lang="zh">应用</span>
+      <span class="mc-footer-submit-text" data-lang="en">Apply</span>
+    </button>
+  </div>
+</footer>
+
+<!-- 批注入口按钮（右下角，浮于画布之上），仅在存在可批注内容时出现 -->
+<button
+  id="mc-anno-toggle"
+  type="button"
+  class="mc-anno-toggle"
+  hidden
+  aria-pressed="false"
+>
+  <span class="mc-anno-toggle-tip" data-lang="zh"
+    >打开批注模式</span
+  >
+  <span class="mc-anno-toggle-tip" data-lang="en"
+    >Open annotation mode</span
+  >
+  <span class="mc-anno-toggle-icon" aria-hidden="true">
+    <!-- Figma base/Chatbox-add（node 340-18286） -->
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path
+        d="M2.59514 10.605C2.68336 10.8275 2.703 11.0713 2.65154 11.3051L2.01254 13.2791C1.99195 13.3792 1.99727 13.4829 2.028 13.5804C2.05873 13.6779 2.11385 13.7659 2.18814 13.8361C2.26242 13.9063 2.3534 13.9563 2.45246 13.9815C2.55151 14.0067 2.65535 14.0061 2.75414 13.9799L4.80193 13.3811C5.02256 13.3374 5.25105 13.3565 5.46133 13.4363C6.74256 14.0347 8.19395 14.1612 9.55942 13.7938C10.9249 13.4263 12.1167 12.5883 12.9245 11.4278C13.7324 10.2672 14.1044 8.85861 13.9749 7.4505C13.8454 6.0424 13.2227 4.72528 12.2168 3.73152C11.2108 2.73776 9.88615 2.13124 8.47656 2.01895C7.06697 1.90667 5.66301 2.29584 4.5124 3.11781C3.36178 3.93978 2.53845 5.14172 2.18767 6.51156C1.83689 7.88141 1.9812 9.33113 2.59514 10.605Z"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M5.97058 7.97052H9.97058"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M7.9707 5.97052V9.97052"
+        stroke="currentColor"
+        stroke-width="1.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </span>
+</button>
+
+  <script>
+    (function () {
+      'use strict';
+      var HOST_SOURCE = 'flux-host';
+      var WHEEL_NAVIGATION_ENABLE = 'MIND_CANVAS_WHEEL_NAVIGATION_ENABLE';
+      var WHEEL_EVENT = 'MIND_CANVAS_WHEEL';
+      var wheelNavigationEnabled = false;
+
+      function handleEnvUpdate(payload) {
+        if (payload.theme) {
+          document.documentElement.setAttribute('data-theme', payload.theme);
+        }
+        if (payload.lang) {
+          document.documentElement.lang = payload.lang;
+        }
+      }
+
+      window.sendToHost = function (type, payload, source) {
+        window.parent.postMessage(
+          {
+            source: source || 'flux-iframe',
+            type: type,
+            payload: payload,
+          },
+          '*',
+        );
+      };
+
+      window.addEventListener('message', function (e) {
+        var msg = e.data;
+        if (e.source !== window.parent || !msg || msg.source !== HOST_SOURCE) return;
+        if (msg.type === 'ENV_UPDATE') {
+          handleEnvUpdate(msg.payload);
+          return;
+        }
+        if (msg.type === WHEEL_NAVIGATION_ENABLE) {
+          wheelNavigationEnabled = Boolean(msg.payload && msg.payload.enabled);
+        }
+      });
+
+      function canScrollInDirection(element, deltaY) {
+        if (!element || element.scrollHeight <= element.clientHeight + 1) return false;
+        if (deltaY < 0) return element.scrollTop > 1;
+        return element.scrollTop + element.clientHeight < element.scrollHeight - 1;
+      }
+
+      function canNestedScrollerConsume(target, boundary, deltaY) {
+        var current = target && target.nodeType === 1 ? target : null;
+        while (current && current !== boundary) {
+          var overflowY = window.getComputedStyle(current).overflowY;
+          if (/^(auto|scroll|overlay)$/.test(overflowY) && canScrollInDirection(current, deltaY)) {
+            return true;
+          }
+          current = current.parentElement;
+        }
+        return false;
+      }
+
+      window.addEventListener(
+        'wheel',
+        function (event) {
+          if (
+            !wheelNavigationEnabled ||
+            event.defaultPrevented ||
+            event.ctrlKey ||
+            Math.abs(event.deltaX) > Math.abs(event.deltaY) ||
+            event.deltaY === 0
+          ) {
+            return;
+          }
+
+          var main = document.querySelector('.main');
+          if (
+            canNestedScrollerConsume(event.target, main, event.deltaY) ||
+            canScrollInDirection(main, event.deltaY)
+          ) {
+            return;
+          }
+
+          event.preventDefault();
+          window.sendToHost(WHEEL_EVENT, {
+            ctrlKey: event.ctrlKey,
+            deltaMode: event.deltaMode,
+            deltaX: event.deltaX,
+            deltaY: event.deltaY,
+          });
+        },
+        { passive: false },
+      );
+
+      window.sendToHost('REQUEST_ENV', null);
+    })();
+  </script>
+  <script>
+/* FROZEN — 协议见 visual-companion.md */
+(function initMindCanvasFooter() {
+  'use strict';
+
+  var footer = document.getElementById('mc-footer');
+  /* 纯静态页：AI 已删除 footer，跳过初始化 */
+  if (!footer) return;
+
+  var countEl = document.getElementById('mc-footer-count');
+  var submitBtn = document.getElementById('mc-footer-submit');
+  if (!countEl || !submitBtn) return;
+
+  /* 批注相关 DOM（footer.html 中与 footer 同级注入，可能缺省则降级为纯选择） */
+  var annoToggle = document.getElementById('mc-anno-toggle');
+  var annosWrap = document.getElementById('mc-footer-annos');
+  var annoCountEl = annosWrap
+    ? annosWrap.querySelector('.mc-footer-anno-count')
+    : null;
+
+  /* 标记用户是否做出过任何操作（用于 footer 显隐门槛，避免 AI 预设值
+     导致页面一加载就出现 footer） */
+  var hasUserInteracted = false;
+
+  /* 外部（宿主）下发的「继续/应用」按钮禁用态。
+     宿主协议：
+       host → iframe:
+         { source: 'flux-host', type: 'MIND_CANVAS_FOOTER_STATE',
+           payload: { disabled: boolean } } */
+  var HOST_SOURCE = 'flux-host';
+  var externallyDisabled = false;
+
+  /* ── 批注状态（内存态，随 iframe 重载/翻页自然清空，不做持久化） ── */
+  var annoMode = false; /* 是否处于批注激活态 */
+  var annoSeq = 0; /* 自增 id */
+  /* annotations: { id, target(Element), content, createdAt, updatedAt, edited } */
+  var annotations = [];
+  /* 当前 hover 高亮的载体（.mc-anno-hover），随鼠标移动切换 */
+  var hoveredHost = null;
+
+  /* ── 可批注载体选择器 ──
+     两类载体：
+       1) 选择题里"选中的"选项/卡片（footer 兜底，fragment 无需显式标记）
+       2) 被显式标记 [data-annotatable] 的展示内容块（协议见 visual-companion.md）
+     选项载体沿用「必须 selected」的既有语义；标记块无选中概念，不要求 selected。 */
+  var OPTION_TARGET_SELECTOR =
+    '.options[data-question] .option.selected, .cards[data-question] .card.selected';
+  var OPTION_ANY_SELECTOR =
+    '.options[data-question] .option, .cards[data-question] .card';
+  var BLOCK_SELECTOR = '[data-annotatable]';
+
+  /** 元素是否为「显式标记的可批注展示块」 */
+  function isBlockTarget(el) {
+    return Boolean(el && el.matches && el.matches(BLOCK_SELECTOR));
+  }
+
+  /** 元素自身是否是「合法的可批注载体」：
+      - [data-annotatable] 展示块：直接合法（无选中概念）
+      - 选择题（.options/.cards[data-question]）里的选项/卡片：仅"选中的"合法 */
+  function isValidAnnotatableHost(el) {
+    if (!el || !el.matches) return false;
+    if (isBlockTarget(el)) return true;
+    if (el.matches('.option, .card')) {
+      var inQuestion = el.closest('.options[data-question], .cards[data-question]');
+      return Boolean(inQuestion) && el.classList.contains('selected');
+    }
+    return false;
+  }
+
+  /** 从点击点向外逐层查找第一个"本身合法"的可批注载体。
+      嵌套时内层合法载体优先命中；内层不合法（如未选中选项）则跳过、继续向外，
+      最终回退到外层合法块，消除"点了没反应"的死区。找不到返回 null。 */
+  function resolveAnnotatableHost(node) {
+    var cur = node;
+    while (cur && cur.nodeType === 1 && cur !== document.body) {
+      if (isValidAnnotatableHost(cur)) return cur;
+      cur = cur.parentElement;
+    }
+    return null;
+  }
+
+  /* ── 工具：i18n 文案 ── */
+  function isEn() {
+    var lang = document.documentElement.getAttribute('lang') || '';
+    return lang === 'en' || lang.indexOf('en-') === 0;
+  }
+  function t(zh, en) {
+    return isEn() ? en : zh;
+  }
+
+  /** 根据外部禁用态刷新 submit 按钮，独立于 400ms 点击防抖 */
+  function applySubmitDisabled() {
+    submitBtn.disabled = computeSubmitDisabled();
+  }
+
+  /** 「应用」禁用规则：外部禁用 / 批注模式中 / 无选中项且无批注 → 禁用 */
+  function computeSubmitDisabled() {
+    if (externallyDisabled) return true;
+    if (annoMode) return true; /* 只有退出批注态才能应用 */
+    var answered = countAnsweredQuestions();
+    return answered === 0 && annotations.length === 0;
+  }
+
+  /** 标记用户已交互，并刷新 footer */
+  function markInteracted() {
+    hasUserInteracted = true;
+    refresh();
+  }
+
+  /** 当前已被有效作答的「问题数」（不是控件数；多选选 N 个仍算 1 题） */
+  function countAnsweredQuestions() {
+    return gatherAnswers().length;
+  }
+
+  function refresh() {
+    pruneAnnotationsForDeselectedTargets();
+    var answered = countAnsweredQuestions();
+    countEl.textContent = String(answered);
+
+    /* 批注计数展示 */
+    if (annosWrap && annoCountEl) {
+      annoCountEl.textContent = String(annotations.length);
+      annosWrap.hidden = annotations.length === 0;
+    }
+
+    /* footer 显隐门槛：有交互且（有作答 或 有批注 或 处于批注态） */
+    var shouldShow =
+      hasUserInteracted && (answered > 0 || annotations.length > 0 || annoMode);
+    if (shouldShow) {
+      footer.hidden = false;
+      document.body.classList.add('has-mc-footer');
+    } else {
+      footer.hidden = true;
+      document.body.classList.remove('has-mc-footer');
+    }
+
+    /* 批注入口按钮：仅当页面存在真实选择题（可批注载体）时出现 */
+    if (annoToggle) {
+      annoToggle.hidden = !hasAnnotatableOptions();
+    }
+
+    applySubmitDisabled();
+  }
+
+  /* click 事件：用户点击 .option / .card 才触发 footer 显示
+     （helper.js 的 toggleSelect 已经负责切换 .selected 状态，这里只需感知交互）
+     批注模式下选择被拦截（见下方 capture 监听），不会走到这里的选中逻辑 */
+  document.addEventListener(
+    'click',
+    function (e) {
+      if (annoMode) return;
+      var target = e.target;
+      if (!target || !target.closest) return;
+      if (target.closest('.option, .card')) {
+        /* 等到下一帧再 refresh，确保 toggleSelect 的 classList 改动已落到 DOM */
+        setTimeout(markInteracted, 0);
+      }
+    },
+    true,
+  );
+
+  /** 收集所有 .options[data-question] / .cards[data-question] 的有效作答 */
+  function gatherAnswers() {
+    var lines = [];
+    var questions = document.querySelectorAll(
+      '.options[data-question], .cards[data-question]',
+    );
+    for (var i = 0; i < questions.length; i++) {
+      var q = questions[i];
+      var qText = (q.getAttribute('data-question') || '').trim();
+      if (!qText) continue;
+      var values = [];
+      var selected = q.querySelectorAll('.option.selected, .card.selected');
+      for (var j = 0; j < selected.length; j++) {
+        var el = selected[j];
+        var label = optionLabel(el);
+        var comments = annotationContentsForTarget(el);
+        if (label && comments.length) {
+          label += isEn()
+            ? ' (Annotation: ' + comments.join('; ') + ')'
+            : '（批注：' + comments.join('；') + '）';
+        }
+        if (label) values.push(label);
+      }
+      if (values.length) {
+        lines.push(qText + ': ' + values.join('、'));
+      }
+    }
+    return lines;
+  }
+
+  /** 取某个 .option / .card 的展示文案（优先 data-label，其次 h3，兜底 data-choice） */
+  function optionLabel(el) {
+    var label = (el.getAttribute('data-label') || '').trim();
+    if (!label) {
+      var h3 = el.querySelector('h3');
+      if (h3 && h3.textContent) label = h3.textContent.trim();
+    }
+    if (!label) label = (el.getAttribute('data-choice') || '').trim();
+    return label;
+  }
+
+  /** 取某个 [data-annotatable] 块的引用摘要：
+      优先 data-anno-label，其次块内 h1-h4 标题，兜底块内文本截断。 */
+  function blockLabel(el) {
+    var label = (el.getAttribute('data-anno-label') || '').trim();
+    if (!label) {
+      var heading = el.querySelector('h1, h2, h3, h4');
+      if (heading && heading.textContent) label = heading.textContent.trim();
+    }
+    if (!label) label = (el.textContent || '').trim();
+    label = label.replace(/\s+/g, ' ');
+    if (label.length > 40) label = label.slice(0, 40) + '…';
+    return label;
+  }
+
+  /** 收集所有 [data-annotatable] 展示块上的批注（选项/卡片批注不在此收集，
+      它们已跟随对应作答在 gatherAnswers 内输出）。
+      返回形如「针对『<摘要>』：<评论>；<评论>」的文本行数组。 */
+  function gatherBlockAnnotations() {
+    var lines = [];
+    var seen = [];
+    for (var i = 0; i < annotations.length; i++) {
+      var target = annotations[i].target;
+      if (!isBlockTarget(target)) continue;
+      if (seen.indexOf(target) !== -1) continue;
+      seen.push(target);
+      var comments = annotationContentsForTarget(target);
+      if (!comments.length) continue;
+      var summary = blockLabel(target);
+      lines.push(
+        isEn()
+          ? 'On "' + summary + '": ' + comments.join('; ')
+          : '针对『' + summary + '』：' + comments.join('；'),
+      );
+    }
+    return lines;
+  }
+
+  /** 取指定选项的批注内容 */
+  function annotationContentsForTarget(target) {
+    var contents = [];
+    for (var i = 0; i < annotations.length; i++) {
+      if (annotations[i].target === target) {
+        contents.push(annotations[i].content);
+      }
+    }
+    return contents;
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     批注：仅在存在批注 DOM 时启用（annoToggle 存在即启用）
+     ══════════════════════════════════════════════════════════════ */
+  if (annoToggle) {
+    initAnnotation();
+  }
+
+  function initAnnotation() {
+    annoToggle.addEventListener('click', function () {
+      setAnnoMode(!annoMode);
+    });
+
+    /* 批注模式下：capture 阶段拦截 option/card 的选择点击（模式互斥），
+       并在点击非标记的可批注区域时创建批注 */
+    document.addEventListener(
+      'click',
+      function (e) {
+        if (!annoMode) return;
+        var target = e.target;
+        if (!target || !target.closest) return;
+
+        /* 点击已有标记：交给标记自身的 handler（不在此拦截创建） */
+        if (target.closest('.mc-anno-marker')) return;
+        /* 点击批注浮层内部（弹窗/确认/预览/入口按钮）：放行，不创建 */
+        if (
+          target.closest(
+            '.mc-anno-popover, .mc-anno-confirm, .mc-anno-preview, .mc-anno-toggle',
+          )
+        ) {
+          return;
+        }
+
+        /* 从点击点向外逐层查找"第一个本身合法的可批注载体"：
+           - [data-annotatable] 展示块：直接合法（无选中概念）
+           - 选择题里的 .option/.card：仅"当前选中的"合法
+           嵌套场景下，内层合法载体（如选中的选项、内层标记块）优先于外层块被命中；
+           内层不合法（如未选中的选项）则跳过、继续向外，最终回退到外层合法块，
+           避免"点了没反应"的死区。 */
+        var host = resolveAnnotatableHost(target);
+        if (!host) return;
+
+        /* 模式互斥：阻止选择态被切换 */
+        e.preventDefault();
+        e.stopPropagation();
+
+        /* 已有标记的载体不再重复落点（hover 标记查看/编辑） */
+        if (host.classList.contains('mc-anno-has-marker')) return;
+
+        openCreatePopover(host, getAnnotationAnchor(host, e));
+      },
+      true,
+    );
+
+    /* hover 标记显示内容预览 */
+    document.addEventListener('mouseover', function (e) {
+      var marker =
+        e.target && e.target.closest && e.target.closest('.mc-anno-marker');
+      if (marker) {
+        showPreview(marker);
+      }
+    });
+    document.addEventListener('mouseout', function (e) {
+      var marker =
+        e.target && e.target.closest && e.target.closest('.mc-anno-marker');
+      if (marker) hidePreview();
+    });
+
+    /* hover 高亮：只给"当前鼠标位置会锚定到的那个载体"打 .mc-anno-hover。
+       复用 resolveAnnotatableHost（内层优先），因此嵌套时仅内层描边、外层不描边，
+       消除"内外层同时高亮"的歧义。已带标记的载体不高亮（走 marker 交互）。 */
+    document.addEventListener('mousemove', function (e) {
+      if (!annoMode) return;
+      var host = resolveAnnotatableHost(e.target);
+      if (host && host.classList.contains('mc-anno-has-marker')) host = null;
+      if (host === hoveredHost) return;
+      if (hoveredHost) hoveredHost.classList.remove('mc-anno-hover');
+      hoveredHost = host;
+      if (hoveredHost) hoveredHost.classList.add('mc-anno-hover');
+    });
+
+    /* 滚动时关闭预览 / 确认层，评论弹窗保持初始方向跟随锚点 */
+    var main = document.querySelector('.main');
+    if (main) {
+      main.addEventListener('scroll', handleCanvasScroll, true);
+    }
+    window.addEventListener('resize', hideTransientLayers);
+  }
+
+  /** 页面中是否存在可批注载体：标记块 或 选择题里的选项/卡片 */
+  function hasAnnotatableOptions() {
+    return Boolean(
+      document.querySelector(BLOCK_SELECTOR + ', ' + OPTION_ANY_SELECTOR),
+    );
+  }
+
+  function getAnnotatableTargets() {
+    var candidates = document.querySelectorAll(
+      BLOCK_SELECTOR + ', ' + OPTION_TARGET_SELECTOR,
+    );
+    var visibleTargets = [];
+    for (var i = 0; i < candidates.length; i++) {
+      if (candidates[i].getClientRects().length > 0) {
+        visibleTargets.push(candidates[i]);
+      }
+    }
+    return visibleTargets;
+  }
+
+  /** 进入批注模式时，仅在当前视口没有可批注项时定位到首项 */
+  function scrollFirstAnnotatableTargetIntoView(targets) {
+    if (!targets.length) return;
+    var firstTarget = targets[0];
+    window.requestAnimationFrame(function () {
+      if (!annoMode || !firstTarget.isConnected) return;
+
+      var main = document.querySelector('.main');
+      var viewportRect = main
+        ? main.getBoundingClientRect()
+        : {
+            top: 0,
+            bottom: document.documentElement.clientHeight,
+          };
+
+      for (var i = 0; i < targets.length; i++) {
+        var rect = targets[i].getBoundingClientRect();
+        var isInViewport =
+          rect.bottom > viewportRect.top &&
+          rect.top < viewportRect.bottom;
+        if (isInViewport) return;
+      }
+
+      firstTarget.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest',
+      });
+    });
+  }
+
+  /** 记录批注点击点相对 option/card 的比例，响应式缩放后仍保持同一位置 */
+  function getAnnotationAnchor(target, event) {
+    var rect = target.getBoundingClientRect();
+    var clientX = event.clientX;
+    var clientY = event.clientY;
+    if (!rect.width || !rect.height || (clientX === 0 && clientY === 0)) {
+      return { x: 0.5, y: 0.5 };
+    }
+    return {
+      x: Math.max(0, Math.min(1, (clientX - rect.left) / rect.width)),
+      y: Math.max(0, Math.min(1, (clientY - rect.top) / rect.height)),
+    };
+  }
+
+  /** 进入 / 退出批注模式 */
+  function setAnnoMode(next) {
+    annoMode = next;
+    annoToggle.setAttribute('aria-pressed', next ? 'true' : 'false');
+    document.body.classList.toggle('mc-anno-active', next);
+
+    /* 入口按钮 tooltip 文案：打开 ↔ 关闭 */
+    var tips = annoToggle.querySelectorAll('.mc-anno-toggle-tip');
+    for (var i = 0; i < tips.length; i++) {
+      var tip = tips[i];
+      var lang = tip.getAttribute('data-lang');
+      if (lang === 'en') {
+        tip.textContent = next
+          ? 'Close annotation mode'
+          : 'Open annotation mode';
+      } else {
+        tip.textContent = next
+          ? '关闭批注模式'
+          : '打开批注模式';
+      }
+    }
+
+    /* 先清除旧 target，避免退出模式或选项变化后残留自定义光标 */
+    var staleTargets = document.querySelectorAll('.mc-anno-target');
+    for (var j = 0; j < staleTargets.length; j++) {
+      staleTargets[j].classList.remove('mc-anno-target');
+    }
+
+    /* 重置 hover 高亮，避免切换模式后残留描边 */
+    if (hoveredHost) {
+      hoveredHost.classList.remove('mc-anno-hover');
+      hoveredHost = null;
+    }
+
+    /* 批注态下仅给当前选中的 option 打 target 标记（驱动自定义光标） */
+    var targets = getAnnotatableTargets();
+    for (var k = 0; k < targets.length; k++) {
+      if (next) targets[k].classList.add('mc-anno-target');
+    }
+
+    if (!next) {
+      hideTransientLayers();
+    }
+    if (!hasUserInteracted && next) hasUserInteracted = true;
+    refresh();
+    if (next) scrollFirstAnnotatableTargetIntoView(targets);
+  }
+
+  /* ── 浮层：预览 / 弹窗 / 确认 / toast 单例 ── */
+  var previewEl = null;
+  var popoverEl = null;
+  var confirmEl = null;
+  var toastTimer = null;
+  var popoverPositionFrame = null;
+
+  function hideTransientLayers() {
+    hidePreview();
+    closePopover();
+    closeConfirm();
+  }
+
+  function handleCanvasScroll() {
+    hidePreview();
+    closeConfirm();
+    if (
+      popoverPositionFrame !== null ||
+      !popoverEl ||
+      popoverEl.hidden ||
+      !popoverState
+    ) {
+      return;
+    }
+    popoverPositionFrame = window.requestAnimationFrame(function () {
+      popoverPositionFrame = null;
+      if (popoverEl && !popoverEl.hidden && popoverState) {
+        var rect = popoverState.positionAnchor.getBoundingClientRect();
+        var x = rect.left - popoverState.anchorLeft;
+        var y = rect.top - popoverState.anchorTop;
+        popoverEl.style.transform =
+          'translate3d(' + x + 'px, ' + y + 'px, 0)';
+      }
+    });
+  }
+
+  function bindPopoverToAnchor(anchor) {
+    var rect = anchor.getBoundingClientRect();
+    popoverState.positionAnchor = anchor;
+    popoverState.anchorLeft = rect.left;
+    popoverState.anchorTop = rect.top;
+  }
+
+  function showPreview(marker) {
+    var id = marker.getAttribute('data-anno-id');
+    var anno = findAnno(id);
+    if (!anno) return;
+    if (!previewEl) {
+      previewEl = document.createElement('div');
+      previewEl.className = 'mc-anno-preview';
+      document.body.appendChild(previewEl);
+    }
+    /* 纯文本渲染，避免 XSS（内容为用户输入） */
+    previewEl.textContent = anno.content;
+    previewEl.hidden = false;
+    positionNear(previewEl, marker);
+  }
+  function hidePreview() {
+    if (previewEl) previewEl.hidden = true;
+  }
+
+  /** 将浮层定位在锚点元素附近（下方优先，超界则上方/左移，视口坐标） */
+  function positionNear(layer, anchor) {
+    var rect = anchor.getBoundingClientRect();
+    /* 先显示以取得尺寸 */
+    var lw = layer.offsetWidth;
+    var lh = layer.offsetHeight;
+    var gap = 8;
+    var vw = document.documentElement.clientWidth;
+    var vh = document.documentElement.clientHeight;
+
+    var left = rect.left;
+    var top = rect.bottom + gap;
+    if (left + lw > vw - 8) left = vw - lw - 8;
+    if (left < 8) left = 8;
+    if (top + lh > vh - 8) {
+      top = rect.top - lh - gap; /* 翻到上方 */
+      if (top < 8) top = 8;
+    }
+    layer.style.left = left + 'px';
+    layer.style.top = top + 'px';
+  }
+
+  /* ── 创建 / 编辑评论弹窗 ── */
+  var popoverState = null; /* { mode:'create'|'edit', target, anno } */
+
+  function buildPopover() {
+    var el = document.createElement('div');
+    el.className = 'mc-anno-popover';
+    el.innerHTML =
+      '<div class="mc-anno-popover-head">' +
+      '<span class="mc-anno-popover-title"></span>' +
+      '<button type="button" class="mc-anno-popover-close" aria-label="close">' +
+      '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">' +
+      '<path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>' +
+      '</svg></button>' +
+      '</div>' +
+      '<textarea class="mc-anno-popover-input" rows="2"></textarea>' +
+      '<div class="mc-anno-popover-actions">' +
+      '<button type="button" class="mc-anno-popover-delete"></button>' +
+      '<button type="button" class="mc-anno-btn mc-anno-btn-cancel"></button>' +
+      '<button type="button" class="mc-anno-btn mc-anno-btn-primary"></button>' +
+      '</div>';
+    document.body.appendChild(el);
+
+    el.querySelector('.mc-anno-popover-close').addEventListener(
+      'click',
+      closePopover,
+    );
+    el.querySelector('.mc-anno-btn-cancel').addEventListener(
+      'click',
+      closePopover,
+    );
+    el.querySelector('.mc-anno-btn-primary').addEventListener(
+      'click',
+      commitPopover,
+    );
+    el.querySelector('.mc-anno-popover-delete').addEventListener(
+      'click',
+      function () {
+        if (popoverState && popoverState.anno) {
+          openConfirm(popoverState.anno, el);
+        }
+      },
+    );
+    var input = el.querySelector('.mc-anno-popover-input');
+    input.addEventListener('input', function () {
+      autoGrow(input);
+      syncPrimaryDisabled();
+    });
+    /* 输入框内点击不冒泡到 document 的关闭逻辑 */
+    el.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+    return el;
+  }
+
+  /** 多行自动增高：最多 7 行(140px)，超出内部滚动 */
+  function autoGrow(input) {
+    input.style.height = 'auto';
+    var max = 140;
+    input.style.height = Math.min(input.scrollHeight, max) + 'px';
+  }
+
+  function syncPrimaryDisabled() {
+    if (!popoverEl) return;
+    var input = popoverEl.querySelector('.mc-anno-popover-input');
+    var primary = popoverEl.querySelector('.mc-anno-btn-primary');
+    primary.disabled = input.value.trim().length === 0;
+  }
+
+  function openCreatePopover(target, anchor) {
+    closeConfirm();
+    if (!popoverEl) popoverEl = buildPopover();
+    popoverState = {
+      mode: 'create',
+      target: target,
+      anchor: anchor,
+      anno: null,
+    };
+    popoverEl.classList.remove('mc-anno-editing');
+    popoverEl.querySelector('.mc-anno-popover-title').textContent = t(
+      '添加评论',
+      'Add comment',
+    );
+    popoverEl.querySelector('.mc-anno-btn-cancel').textContent = t(
+      '取消',
+      'Cancel',
+    );
+    popoverEl.querySelector('.mc-anno-btn-primary').textContent = t(
+      '确定',
+      'OK',
+    );
+    var input = popoverEl.querySelector('.mc-anno-popover-input');
+    input.value = '';
+    input.setAttribute('placeholder', t('请输入', 'Type here'));
+    popoverEl.hidden = false;
+    autoGrow(input);
+    syncPrimaryDisabled();
+    popoverEl.style.transform = 'none';
+    positionNear(popoverEl, target);
+    bindPopoverToAnchor(target);
+    input.focus();
+  }
+
+  function openEditPopover(marker) {
+    closeConfirm();
+    var anno = findAnno(marker.getAttribute('data-anno-id'));
+    if (!anno) return;
+    if (!popoverEl) popoverEl = buildPopover();
+    popoverState = { mode: 'edit', target: anno.target, anno: anno };
+    popoverEl.classList.add('mc-anno-editing');
+    popoverEl.querySelector('.mc-anno-popover-title').textContent = t(
+      '评论',
+      'Comment',
+    );
+    popoverEl.querySelector('.mc-anno-popover-delete').textContent = t(
+      '删除',
+      'Delete',
+    );
+    popoverEl.querySelector('.mc-anno-btn-cancel').textContent = t(
+      '取消',
+      'Cancel',
+    );
+    popoverEl.querySelector('.mc-anno-btn-primary').textContent = t(
+      '确定',
+      'OK',
+    );
+    var input = popoverEl.querySelector('.mc-anno-popover-input');
+    input.value = anno.content;
+    input.setAttribute('placeholder', t('请输入', 'Type here'));
+    popoverEl.hidden = false;
+    autoGrow(input);
+    syncPrimaryDisabled();
+    popoverEl.style.transform = 'none';
+    positionNear(popoverEl, marker);
+    bindPopoverToAnchor(marker);
+    input.focus();
+  }
+
+  function commitPopover() {
+    if (!popoverEl || !popoverState) return;
+    var input = popoverEl.querySelector('.mc-anno-popover-input');
+    var text = input.value.trim();
+    if (!text) return; /* 空内容不允许提交 */
+
+    if (popoverState.mode === 'create') {
+      createAnnotation(popoverState.target, text, popoverState.anchor);
+    } else if (popoverState.anno) {
+      popoverState.anno.content = text;
+      popoverState.anno.updatedAt = injectedNow();
+      popoverState.anno.edited = true;
+    }
+    closePopover();
+    refresh();
+  }
+
+  function closePopover() {
+    if (popoverEl) popoverEl.hidden = true;
+    popoverState = null;
+  }
+
+  /* ── 删除二次确认 ── */
+  var confirmState = null; /* { anno, returnTo } */
+
+  function buildConfirm() {
+    var el = document.createElement('div');
+    el.className = 'mc-anno-confirm';
+    el.innerHTML =
+      '<div class="mc-anno-confirm-heading">' +
+      '<span class="mc-anno-confirm-icon">' +
+      '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">' +
+      '<circle cx="9" cy="9" r="8" fill="currentColor"/>' +
+      '<path d="M9 4.75V10" stroke="var(--f-bg-bg-base-secondary)" stroke-width="1.5" stroke-linecap="round"/>' +
+      '<circle cx="9" cy="12.75" r="0.9" fill="var(--f-bg-bg-base-secondary)"/></svg>' +
+      '</span>' +
+      '<span class="mc-anno-confirm-title"></span>' +
+      '</div>' +
+      '<div class="mc-anno-confirm-text"></div>' +
+      '<div class="mc-anno-confirm-actions">' +
+      '<button type="button" class="mc-anno-btn mc-anno-btn-cancel"></button>' +
+      '<button type="button" class="mc-anno-btn mc-anno-btn-danger"></button>' +
+      '</div>';
+    document.body.appendChild(el);
+    el.querySelector('.mc-anno-btn-cancel').addEventListener(
+      'click',
+      closeConfirm,
+    );
+    el.querySelector('.mc-anno-btn-danger').addEventListener(
+      'click',
+      function () {
+        if (confirmState && confirmState.anno) {
+          removeAnnotation(confirmState.anno);
+          closeConfirm();
+          closePopover();
+          showToast(t('删除成功', 'Deleted'));
+          refresh();
+        }
+      },
+    );
+    el.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+    return el;
+  }
+
+  function openConfirm(anno, anchor) {
+    if (!confirmEl) confirmEl = buildConfirm();
+    confirmState = { anno: anno };
+    confirmEl.querySelector('.mc-anno-confirm-title').textContent = t(
+      '删除评论',
+      'Delete comment',
+    );
+    confirmEl.querySelector('.mc-anno-confirm-text').textContent = t(
+      '删除后不可恢复，请确认是否删除',
+      'This cannot be undone. Delete this annotation?',
+    );
+    confirmEl.querySelector('.mc-anno-btn-cancel').textContent = t(
+      '取消',
+      'Cancel',
+    );
+    confirmEl.querySelector('.mc-anno-btn-danger').textContent = t(
+      '删除',
+      'Delete',
+    );
+    confirmEl.hidden = false;
+    positionNear(confirmEl, anchor || document.body);
+  }
+
+  function closeConfirm() {
+    if (confirmEl) confirmEl.hidden = true;
+    confirmState = null;
+  }
+
+  /* ── 成功轻提示 ── */
+  var toastEl = null;
+  function showToast(text) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.className = 'mc-anno-toast';
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = text;
+    /* 强制 reflow 后加类，保证过渡生效 */
+    toastEl.classList.remove('mc-anno-toast-show');
+    void toastEl.offsetWidth;
+    toastEl.classList.add('mc-anno-toast-show');
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      if (toastEl) toastEl.classList.remove('mc-anno-toast-show');
+    }, 1600);
+  }
+
+  /* ── 批注数据 CRUD + 标记渲染 ── */
+  function createAnnotation(target, content, anchor) {
+    /* 载体合法性：标记块只需仍在 DOM；选项/卡片需仍处于 selected 态 */
+    if (!target) return;
+    if (!isBlockTarget(target) && !target.classList.contains('selected')) return;
+    var id = 'anno-' + ++annoSeq;
+    var anno = {
+      id: id,
+      target: target,
+      anchor: anchor,
+      content: content,
+      createdAt: injectedNow(),
+      updatedAt: injectedNow(),
+      edited: false,
+    };
+    annotations.push(anno);
+    renderMarker(anno);
+  }
+
+  /** 载体失效时清理其批注：
+      - 标记块（[data-annotatable]）：仅在脱离 DOM 时清理（无选中概念）
+      - 选项/卡片：脱离 DOM 或失去 selected 态时清理 */
+  function pruneAnnotationsForDeselectedTargets() {
+    for (var i = annotations.length - 1; i >= 0; i--) {
+      var target = annotations[i].target;
+      if (!target || !target.isConnected) {
+        removeAnnotation(annotations[i]);
+        continue;
+      }
+      if (!isBlockTarget(target) && !target.classList.contains('selected')) {
+        removeAnnotation(annotations[i]);
+      }
+    }
+  }
+
+  function removeAnnotation(anno) {
+    var idx = annotations.indexOf(anno);
+    if (idx >= 0) annotations.splice(idx, 1);
+    if (anno.target) {
+      anno.target.classList.remove('mc-anno-has-marker');
+      var marker = anno.target.querySelector(
+        '.mc-anno-marker[data-anno-id="' + anno.id + '"]',
+      );
+      if (marker) marker.parentNode.removeChild(marker);
+    }
+  }
+
+  function renderMarker(anno) {
+    var target = anno.target;
+    target.classList.add('mc-anno-has-marker');
+    var marker = document.createElement('button');
+    var shadowId = 'mc-anno-marker-shadow-' + anno.id;
+    marker.type = 'button';
+    marker.className = 'mc-anno-marker';
+    marker.setAttribute('data-anno-id', anno.id);
+    marker.setAttribute('aria-label', t('查看批注', 'View annotation'));
+    if (anno.anchor) {
+      marker.classList.add('mc-anno-marker-positioned');
+      marker.style.left = anno.anchor.x * 100 + '%';
+      marker.style.top = anno.anchor.y * 100 + '%';
+    }
+    marker.innerHTML =
+      '<svg viewBox="0 0 34 34" fill="none" aria-hidden="true">' +
+      '<g filter="url(#' +
+      shadowId +
+      ')">' +
+      '<path d="M5.99002 22.01C6.16646 22.455 6.20575 22.9427 6.10282 23.4103L4.82482 27.3583C4.78364 27.5585 4.79429 27.7659 4.85575 27.9609C4.91721 28.1558 5.02745 28.3318 5.17602 28.4722C5.32458 28.6126 5.50655 28.7127 5.70466 28.7631C5.90276 28.8134 6.11045 28.8123 6.30802 28.7599L10.4036 27.5623C10.8449 27.4748 11.3018 27.513 11.7224 27.6727C14.2849 28.8694 17.1876 29.1225 19.9186 28.3876C22.6495 27.6526 25.0331 25.9767 26.6488 23.6556C28.2645 21.3345 29.0085 18.5173 28.7495 15.7011C28.4906 12.8848 27.2452 10.2506 25.2333 8.26309C23.2213 6.27558 20.572 5.06253 17.7529 4.83796C14.9337 4.61339 12.1258 5.39174 9.82454 7.03567C7.52331 8.67961 5.87665 11.0835 5.17509 13.8232C4.47352 16.5629 4.76214 19.4623 5.99002 22.01Z" fill="currentColor"/>' +
+      '<path d="M10.2609 7.64575C12.4183 6.10474 15.0507 5.37468 17.6935 5.58521C20.3364 5.79578 22.8201 6.93388 24.7062 8.79712C26.5923 10.6604 27.7603 13.1297 28.0031 15.7698C28.2459 18.4098 27.548 21.0508 26.0334 23.2268C24.5187 25.4028 22.284 26.9743 19.7238 27.6633C17.1637 28.3523 14.4424 28.1151 12.0402 26.9934L11.9885 26.9719L11.7795 26.9006C11.2871 26.7522 10.7647 26.726 10.258 26.8264L10.1935 26.842L6.11346 28.0354C6.04017 28.0545 5.96327 28.055 5.88983 28.0364C5.81562 28.0175 5.74726 27.9796 5.69159 27.927C5.63596 27.8744 5.59454 27.8086 5.57147 27.7356C5.54994 27.6673 5.54675 27.5951 5.55878 27.5247L6.81659 23.6409C6.82395 23.6181 6.83 23.5949 6.83514 23.5715C6.97022 22.9579 6.91919 22.3178 6.68768 21.7336C6.68108 21.717 6.67301 21.7 6.66522 21.6838C5.51432 19.2956 5.24389 16.5773 5.90155 14.009C6.55929 11.4406 8.10357 9.18691 10.2609 7.64575Z" stroke="var(--f-bg-bg-base-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '</g>' +
+      '<defs><filter id="' +
+      shadowId +
+      '" x="0" y="0" width="33.6" height="33.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">' +
+      '<feFlood flood-opacity="0" result="BackgroundImageFix"/>' +
+      '<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>' +
+      '<feOffset/><feGaussianBlur stdDeviation="2.4"/><feComposite in2="hardAlpha" operator="out"/>' +
+      '<feColorMatrix type="matrix" values="0 0 0 0 0.52549 0 0 0 0 0.541176 0 0 0 0 0.596078 0 0 0 0.08 0"/>' +
+      '<feBlend mode="normal" in2="BackgroundImageFix" result="effect1"/>' +
+      '<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>' +
+      '<feOffset dy="2.4"/><feGaussianBlur stdDeviation="1.2"/><feComposite in2="hardAlpha" operator="out"/>' +
+      '<feColorMatrix type="matrix" values="0 0 0 0 0.525311 0 0 0 0 0.541465 0 0 0 0 0.595309 0 0 0 0.16 0"/>' +
+      '<feBlend mode="normal" in2="effect1" result="effect2"/><feBlend mode="normal" in="SourceGraphic" in2="effect2" result="shape"/>' +
+      '</filter></defs>' +
+      '</svg>';
+    marker.addEventListener('click', function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      hidePreview();
+      openEditPopover(marker);
+    });
+    target.appendChild(marker);
+  }
+
+  function findAnno(id) {
+    for (var i = 0; i < annotations.length; i++) {
+      if (annotations[i].id === id) return annotations[i];
+    }
+    return null;
+  }
+
+  /** 时间戳（注入点，便于未来测试替换；此处用真实时间） */
+  function injectedNow() {
+    return Date.now();
+  }
+
+  /* ── 应用：打包选中项 + 批注，经 MIND_CANVAS_SELECTION_SUBMIT 上抛 ── */
+  submitBtn.addEventListener('click', function () {
+    if (computeSubmitDisabled()) return;
+
+    var answers = gatherAnswers();
+    var blockAnnos = gatherBlockAnnotations();
+    var payload = buildApplyPayload(answers, blockAnnos);
+    if (!payload) return; /* 无任何内容不上抛 */
+
+    if (!externallyDisabled && typeof window.sendToHost === 'function') {
+      /* 兜底：fragment 脱离 frame-template 直接预览时 sendToHost 可能未注入；
+         不抛异常，保留按钮防抖以免用户连点 */
+      try {
+        window.sendToHost('MIND_CANVAS_SELECTION_SUBMIT', { data: payload });
+      } catch (_) {
+        /* 静默失败，宿主通信问题不应阻断 UI */
+      }
+    }
+    submitBtn.disabled = true;
+    setTimeout(function () {
+      /* 防抖恢复时尊重当前禁用规则 */
+      applySubmitDisabled();
+    }, 400);
+  });
+
+  /** 当前画布页来源标识：取 iframe URL 的文件名（如 module-overview.html），
+      供宿主 / AI 定位用户在评论哪一页。取不到时返回空串。 */
+  function currentPageRef() {
+    try {
+      var path = window.location.pathname || '';
+      var file = path.split('/').pop() || '';
+      return decodeURIComponent(file);
+    } catch (_) {
+      return '';
+    }
+  }
+
+  /** 拼装「应用」上抛文本：
+      - 选项作答（批注跟随对应已选选项，沿用既有格式）
+      - [data-annotatable] 展示块批注（独立分组）
+      - 存在任一批注时附来源页，便于多页画布下 AI 定位 */
+  function buildApplyPayload(answers, blockAnnos) {
+    answers = answers || [];
+    blockAnnos = blockAnnos || [];
+    if (!answers.length && !blockAnnos.length) return '';
+
+    var segments = [];
+    if (answers.length) {
+      segments.push(t('【已选选项】', '[Selected]') + '\n' + answers.join('\n'));
+    }
+    if (blockAnnos.length) {
+      segments.push(t('【画布批注】', '[Annotations]') + '\n' + blockAnnos.join('\n'));
+    }
+
+    var body = segments.join('\n\n');
+    var page = currentPageRef();
+    if (page && blockAnnos.length) {
+      body += '\n\n' + t('（来源画布页：', '(From canvas page: ') + page + '）';
+    }
+    return body;
+  }
+
+  /* 监听宿主下发的 footer 状态消息，实时切换「应用」按钮禁用态 */
+  window.addEventListener('message', function (e) {
+    var msg = e.data;
+    if (!msg || msg.source !== HOST_SOURCE) return;
+    if (msg.type === 'MIND_CANVAS_FOOTER_STATE') {
+      var payload = msg.payload;
+      externallyDisabled = Boolean(payload && payload.disabled);
+      applySubmitDisabled();
+    }
+  });
+
+  /* 点击浮层外部关闭临时浮层（弹窗/确认），但不误伤批注创建流程 */
+  document.addEventListener('mousedown', function (e) {
+    var target = e.target;
+    if (!target || !target.closest) return;
+    var inLayer = target.closest(
+      '.mc-anno-popover, .mc-anno-confirm, .mc-anno-marker, .mc-anno-toggle, .option, .card, ' +
+        BLOCK_SELECTOR,
+    );
+    if (!inLayer) {
+      closePopover();
+      closeConfirm();
+    }
+  });
+
+  /* 初始化扫描：快速确认等场景会预先把推荐项渲染为 .selected，没有 click
+     事件触发；若已存在「真实选择题（.options[data-question] / .cards[data-question]）
+     内的预选」，视为已完成首次交互，直接展示 footer 让用户可一键继续。
+     纯装饰用途的 .selected（容器无 data-question）不会触发。 */
+  if (gatherAnswers().length > 0) {
+    markInteracted();
+  } else {
+    /* 即使无预选，也要初始化一次批注入口按钮的显隐 */
+    refresh();
+  }
+})();
+</script>
+<script>
+(function() {
+  var WS_URL = 'ws://' + window.location.host + '/ws';
+  var ws = null;
+  var eventQueue = [];
+  var _current = 0;
+
+  /* ── Page navigation (individual pages, not continuous scroll) ── */
+
+  function getSections() {
+    return Array.from(document.querySelectorAll('.content-section'));
+  }
+
+  function show(index) {
+    var sections = getSections();
+    if (sections.length === 0) return;
+    index = Math.max(0, Math.min(index, sections.length - 1));
+
+    sections.forEach(function(s, i) {
+      s.classList.toggle('active', i === index);
+    });
+    _current = index;
+
+    var pageCount = document.getElementById('nav-page-count');
+    var btnUp    = document.getElementById('nav-btn-up');
+    var btnDown  = document.getElementById('nav-btn-down');
+    if (pageCount) pageCount.textContent = (_current + 1) + '/' + sections.length;
+    if (btnUp)    btnUp.disabled    = _current === 0;
+    if (btnDown)  btnDown.disabled  = _current === sections.length - 1;
+
+    try {
+      sessionStorage.setItem('flux-page-index', String(_current));
+      sessionStorage.setItem('flux-page-count', String(sections.length));
+    } catch (_) {}
+  }
+
+  function initPageNav() {
+    var sections = getSections();
+
+    // Wire up the up/down buttons already in the HTML
+    var btnUp   = document.getElementById('nav-btn-up');
+    var btnDown = document.getElementById('nav-btn-down');
+    if (btnUp)   btnUp.addEventListener('click',   function() { show(_current - 1); });
+    if (btnDown) btnDown.addEventListener('click', function() { show(_current + 1); });
+
+    // Decide which page to show: restore position, or jump to newest section
+    var startIndex = 0;
+    if (sections.length > 0) {
+      try {
+        var savedCount = parseInt(sessionStorage.getItem('flux-page-count') || '0', 10);
+        var savedIndex = parseInt(sessionStorage.getItem('flux-page-index') || '0', 10);
+        if (sections.length > savedCount) {
+          // New section(s) added, or no prior state (e.g. app restart) — jump to the latest one
+          startIndex = sections.length - 1;
+        } else if (savedIndex < sections.length) {
+          startIndex = savedIndex;
+        }
+      } catch (_) {}
+      show(startIndex);
+    }
+  }
+
+  /* ── WebSocket ────────────────────────────────────────────────── */
+
+  function connect() {
+    ws = new WebSocket(WS_URL);
+
+    ws.onopen = function() {
+      eventQueue.forEach(function(e) { ws.send(JSON.stringify(e)); });
+      eventQueue = [];
+    };
+
+    ws.onmessage = function(msg) {
+      try {
+        var data = JSON.parse(msg.data);
+        if (data.type === 'reload') {
+          var path = window.location.pathname;
+          var isLatest = path === '/latest' || path === '/';
+          var isViewingFile = path === '/content/' + data.file;
+          if (isLatest || isViewingFile) {
+            window.location.reload();
+          }
+        }
+      } catch (_) {}
+    };
+
+    ws.onclose = function() {
+      setTimeout(connect, 1000);
+    };
+  }
+
+  /* ── Click / select events ────────────────────────────────────── */
+
+  function sendEvent(event) {
+    event.timestamp = Date.now();
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify(event));
+    } else {
+      eventQueue.push(event);
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    var target = e.target.closest('[data-choice]');
+    if (!target) return;
+
+    sendEvent({
+      type: 'click',
+      text: target.textContent.trim(),
+      choice: target.dataset.choice,
+      id: target.id || null
+    });
+
+    setTimeout(function() {
+      var indicator = document.getElementById('indicator-text');
+      if (!indicator) return;
+      var container = target.closest('.options') || target.closest('.cards');
+      var selected = container ? container.querySelectorAll('.selected') : [];
+      if (selected.length === 0) {
+        indicator.textContent = 'Click an option above, then return to the terminal';
+      } else if (selected.length === 1) {
+        var labelEl = selected[0].querySelector('h3, .content h3, .card-body h3');
+        var label = (labelEl ? labelEl.textContent.trim() : null) || selected[0].dataset.choice;
+        indicator.innerHTML = '<span class="selected-text">' + label + ' selected</span> — return to terminal to continue';
+      } else {
+        indicator.innerHTML = '<span class="selected-text">' + selected.length + ' selected</span> — return to terminal to continue';
+      }
+    }, 0);
+  });
+
+  window.selectedChoice = null;
+
+  window.toggleSelect = function(el) {
+    var container = el.closest('.options') || el.closest('.cards');
+    var multi = container && container.dataset.multiselect !== undefined;
+    if (container && !multi) {
+      container.querySelectorAll('.option, .card').forEach(function(o) {
+        o.classList.remove('selected');
+        if (o !== el) o.classList.remove('recommended');
+      });
+    }
+    if (multi) {
+      el.classList.toggle('selected');
+    } else {
+      el.classList.add('selected');
+    }
+    window.selectedChoice = el.dataset.choice;
+  };
+
+  window.brainstorm = {
+    send: sendEvent,
+    choice: function(value, metadata) {
+      sendEvent(Object.assign({ type: 'choice', value: value }, metadata || {}));
+    }
+  };
+
+  /* ── Boot ─────────────────────────────────────────────────────── */
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPageNav);
+  } else {
+    initPageNav();
+  }
+
+  connect();
+})();
+</script>
+</body>
+</html>
