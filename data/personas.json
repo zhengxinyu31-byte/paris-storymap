@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "model": "4 个维度各自二分，组合出 16 种人格：culture（文化）· planning（规划）· social（社交）· spending（消费）。人格名称、代号、维度判定以 specs/requirements.md §3.2.1 与 docs/storylines.md 为准，不得改写。",
+    "test": "12 题，4 个维度各 3 题，每题 0/1/2 分，维度总分 ≥4 判为「高」。",
+    "dimension_criteria": {
+      "culture": { "high": "依赖历史纵深、典故、人物关系、文本互文", "low": "以体验、视觉、氛围、好玩为主" },
+      "planning": { "high": "有明确站序、时长、最佳时段，路线紧凑", "low": "点位松散，走到哪算哪，无强制顺序" },
+      "social": { "high": "途经咖啡馆、市集、酒吧、现场演出等适合结伴搭话的场所", "low": "以书店、公墓、小美术馆、清晨时段等独处场景为主" },
+      "spending": { "high": "需进店消费、有体验项目、推荐坐下点单", "low": "以街景、公墓、外观、公共空间、免费时段为主" }
+    }
+  },
+  "personas": [
+    { "code": "NERD", "name_zh": "学者", "culture": "high", "planning": "high", "social": "low", "spending": "low", "storyline_id": "line-1" },
+    { "code": "CTRL", "name_zh": "宝藏团长", "culture": "high", "planning": "high", "social": "high", "spending": "low", "storyline_id": "line-2" },
+    { "code": "BLUE", "name_zh": "深藏Blue之人", "culture": "high", "planning": "high", "social": "low", "spending": "high", "storyline_id": "line-3" },
+    { "code": "MYTH", "name_zh": "拾光者", "culture": "high", "planning": "low", "social": "high", "spending": "low", "storyline_id": "line-4" },
+    { "code": "DODO", "name_zh": "干就完了", "culture": "high", "planning": "low", "social": "high", "spending": "high", "storyline_id": "line-5" },
+    { "code": "BUDD", "name_zh": "清冷佛子", "culture": "high", "planning": "low", "social": "low", "spending": "low", "storyline_id": "line-6" },
+    { "code": "GOAT", "name_zh": "全能管家", "culture": "high", "planning": "high", "social": "high", "spending": "high", "storyline_id": "line-7" },
+    { "code": "TIME", "name_zh": "时间管理大师", "culture": "low", "planning": "high", "social": "high", "spending": "low", "storyline_id": "line-8" },
+    { "code": "BEE", "name_zh": "小蜜蜂", "culture": "low", "planning": "low", "social": "high", "spending": "low", "storyline_id": "line-9" },
+    { "code": "LORD", "name_zh": "大小姐", "culture": "high", "planning": "low", "social": "low", "spending": "high", "storyline_id": "line-10" },
+    { "code": "BOSS", "name_zh": "煤老板", "culture": "low", "planning": "high", "social": "high", "spending": "high", "storyline_id": "line-11" },
+    { "code": "FREE", "name_zh": "多比", "culture": "low", "planning": "high", "social": "low", "spending": "high", "storyline_id": "line-12" },
+    { "code": "WIND", "name_zh": "追风筝的人", "culture": "low", "planning": "high", "social": "low", "spending": "low", "storyline_id": "line-13" },
+    { "code": "SHAN", "name_zh": "慈善家", "culture": "low", "planning": "low", "social": "high", "spending": "high", "storyline_id": "line-14" },
+    { "code": "REST", "name_zh": "休息者", "culture": "low", "planning": "low", "social": "low", "spending": "high", "storyline_id": "line-15" },
+    { "code": "CUTE", "name_zh": "史莱姆", "culture": "low", "planning": "low", "social": "low", "spending": "low", "storyline_id": "line-16" }
+  ]
+}

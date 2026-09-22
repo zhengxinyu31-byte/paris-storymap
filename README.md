@@ -93,6 +93,8 @@
 
 落到字段上：每条人物-POI 关联必须填 `why_here` + `when` + `detail`，**缺一即自动降为 L4**，不进主推内容。配合 L1–L5 字段级置信度分级、独立源判定表、C1–C8 冲突规则，以及 LLM 只能读 fact sheet 的红线 + 输出后的回指校验。
 
+这套规则**不是写在文档里好看的**——[scripts/validate_corpus.py](./scripts/validate_corpus.py) 把它变成了可跑的门禁，首次运行就抓出一条标为 L1 但两个信源同属 `paris.fr` 的关联（同域名不同页不算两个独立源，且 paris.fr 是该项目业主），已按规则降为 L4。详见 [data/README.md](./data/README.md)。
+
 这套规则在实战中立刻见效——详见下面「已经踩到的坑」。
 
 ---
@@ -164,6 +166,14 @@ paris-storymap/
 │   ├── content-guidelines.md             内容判真法则与置信度分级
 │   ├── storylines.md                     16 条故事线总览
 │   └── station-list.md                   57 站正式清单（站序/距离/状态）
+├── data/                                 ⭐ 结构化语料（55 POI / 121 关联 / 8 辟谣）
+│   ├── pois.json
+│   ├── storylines.json
+│   ├── personas.json
+│   ├── debunks.json
+│   └── README.md                         字段说明与校验规则清单
+├── scripts/
+│   └── validate_corpus.py                语料校验门禁（把判真法则变成可跑的检查）
 ├── specs/
 │   └── requirements.md                   需求 Spec（事实源）
 ├── research/
@@ -194,11 +204,12 @@ paris-storymap/
 | 16 条故事线素材搜集与交叉验证 | ✅ | [research/storyline-*.md](./research/) |
 | 57 站正式清单 | ✅ | [station-list.md](./docs/station-list.md) |
 | 交互原型（4 个核心页面） | ✅ | [在线预览](https://zhengxinyu31-byte.github.io/paris-storymap/demo/) · [demo/](./demo/) |
-| 语料入库与构建管道 | ⬜ | — |
-| 正式开发 | ⬜ | — |
+| 语料结构化入库 + 校验门禁 | ✅ | [data/](./data/) · [validate_corpus.py](./scripts/validate_corpus.py) |
+| 坐标地理编码 | ⬜ | — |
+| 构建管道与正式开发 | ⬜ | — |
 
 ### 下一步要做的三件事
 
-1. **语料结构化入库** — 把 `research/` 下的 4 份 Markdown 语料转成结构化字段，跑通置信度分级与冲突规则的自动判定。
+1. **坐标地理编码** — 55 个 POI 的 `coordinates` 目前全为空，走 Nominatim / BAN（法国官方地址库）。校验脚本已内置巴黎大区边界检查，填入后经纬度写反会立刻报错。
 2. **待核实项收口** — station-list 里标 ⚠️ 的状态项（爱墙封闭、Chuuuttt 存续、巴加泰勒票价、清真寺浴室日程）需要在上线前逐个确认。
-3. **第一批 9 条线补齐同等深度的语料** — 目前只有第二批 7 条线做到了字段级信源标注。
+3. **第一批 9 条线补齐同等深度的语料** — 目前只有第二批 7 条线做到了字段级信源标注，这 9 条线的 `corpus_status` 为 `pending`、`stations` 为空数组——**不编造站点**。

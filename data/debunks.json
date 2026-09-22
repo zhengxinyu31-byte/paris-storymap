@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "purpose": "辟谣内容层索引。L5 不是垃圾桶，是金矿——竞品讲传说，本项目讲这个传说是怎么假的。",
+    "relation_to_pois": "status=linked 的条目，完整字段（why_here/when/detail/sources）存放在 pois.json 对应 POI 的 associations 中 confidence=L5 的那一项，本文件只做索引与分类，不重复存储事实，避免两处不一致。status=pending_poi 的条目尚无对应 POI 记录（属第一批 9 条线的素材），事实摘要暂存于本文件 summary 字段。",
+    "conflict_rule_note": "C5（官方口径与官方数据库打架）会把素材升为 L5 辟谣素材，而非降级。本文件的 chat-qui-peche 与 enfants-rouges 两条即由 C5 产生。",
+    "total": 8,
+    "linked": 5,
+    "pending_poi": 3
+  },
+  "debunks": [
+    {
+      "id": "debunk-lumiere-venue",
+      "title_zh": "卢米埃尔首映的地点被搞错了",
+      "title_fr": "La première séance n'a pas eu lieu au Café de la Paix",
+      "category": "地点张冠李戴",
+      "status": "linked",
+      "poi_id": "cafe-de-la-paix",
+      "official_claim": "1895 年 12 月 28 日的电影首映发生在和平咖啡馆地下室的印度沙龙",
+      "reality": "是隔壁 Grand Café 的 Salon indien（14 bd des Capucines，今 Scribe 酒店）；和平咖啡馆在 12 号，属 Grand Hôtel（今洲际）。两家咖啡馆、两个门牌、两家酒店。",
+      "hook": "首日只卖出 33 张票，每张 1 法郎，受邀媒体一个都没来。",
+      "storylines": ["line-2", "line-11"]
+    },
+    {
+      "id": "debunk-rose-line",
+      "title_zh": "《达芬奇密码》的「玫瑰线」是丹·布朗编的",
+      "title_fr": "La « Rose Line » est une invention de Dan Brown",
+      "category": "虚构被当成史实",
+      "status": "linked",
+      "poi_id": "medaillons-arago",
+      "official_claim": "巴黎有一条古老神秘的子午线叫「玫瑰线」，贯穿圣叙尔比斯教堂",
+      "reality": "巴黎人只叫 médaillons Arago 或 méridien de Paris。小说把两条线混为一谈：圣叙尔比斯那条黄铜线属于一具日晷仪（推算复活节用），与阿拉戈铜牌相距 115 米。",
+      "hook": "电影版为这条「古老神秘子午线」付了版权费——铜牌是在世艺术家 Jan Dibbets 1994 年的作品。",
+      "storylines": ["line-2"]
+    },
+    {
+      "id": "debunk-chat-qui-peche",
+      "title_zh": "钓鱼猫街不是巴黎最窄的街，而且这个谣是官方在传",
+      "title_fr": "La rue du Chat-qui-Pêche n'est pas la plus étroite",
+      "category": "官方口径与官方数据库打架（C5）",
+      "status": "linked",
+      "poi_id": "rue-du-chat-qui-peche",
+      "official_claim": "巴黎市政方将钓鱼猫街列为全市最窄，宽 1.80 米",
+      "reality": "它最窄 1.57 米；12 区的樱桃木小径最窄 87 厘米。维基明确指出：官方仍如此列出，尽管官方道路名录里记录了大量更窄的路。",
+      "hook": "顺手纠正一个常被混淆的邻居谣言：最短的街是 rue des Degrés（5.75 米，14 级台阶），但它宽 3.30 米，一点也不窄。",
+      "storylines": ["line-2"]
+    },
+    {
+      "id": "debunk-flamel-alchemist",
+      "title_zh": "尼古拉·弗拉梅尔不是炼金术士",
+      "title_fr": "Nicolas Flamel n'était pas alchimiste",
+      "category": "死后附会 + 流行文化放大",
+      "status": "linked",
+      "poi_id": "maison-de-nicolas-flamel",
+      "official_claim": "弗拉梅尔炼出了贤者之石、得以长生不老",
+      "reality": "他是宣誓抄写员和手稿商人，1407 年盖房收容穷人，条件刻在石头上：每天早晚各祷告一次。炼金传说是死后几个世纪附会的。",
+      "hook": "《哈利·波特与魔法石》里那个 665 岁的弗拉梅尔就是从这个传说来的。这一站的真实故事比炼金传说更硬。",
+      "storylines": ["line-2"]
+    },
+    {
+      "id": "debunk-enfants-rouges",
+      "title_zh": "「红衣孤儿」的说法被染料价格否掉了",
+      "title_fr": "Les enfants en rouge, une explication contestée",
+      "category": "官方口径与官方数据库打架（C5）",
+      "status": "linked",
+      "poi_id": "marche-des-enfants-rouges",
+      "official_claim": "隔壁孤儿院的孩子穿红斗篷，红色象征基督教慈善，故称「红孩儿」",
+      "reality": "Paris ZigZag 用染料经济学反驳：当时胭脂红要用胭脂虫制作，极其昂贵，给整所孤儿院做红衣不现实。更可能（也更阴森）的解释是这些孩子的母亲大多死于难产。",
+      "hook": "官方旅游局 visitparisregion 至今仍在照搬已被质疑的说法。",
+      "storylines": ["line-2"]
+    },
+    {
+      "id": "debunk-le-procope-oldest",
+      "title_zh": "Le Procope「法国最老咖啡馆」整个连续性都是营销",
+      "title_fr": "Le Procope, « le plus vieux café de France » — la continuité est un mythe",
+      "category": "存续连续性造假",
+      "status": "pending_poi",
+      "poi_id": null,
+      "official_claim": "1686 年开业，法国最古老的咖啡馆，至今未间断",
+      "reality": "1686 年那家 1890 年就倒闭了，中间空了 67 年，期间这地址还开过 Bouillon Chartier。1957 年才有人用同一个名字在同一堵墙里开了家新餐厅。",
+      "hook": "店里那张「伏尔泰的大理石桌」是 1957 年以后布置进空壳里的陈设。加料：这家店现属 Groupe Bertrand——法国汉堡王的东家。",
+      "storylines": ["line-2"],
+      "summary_note": "待第一批 9 条线补齐字段级语料时建立 POI 记录并迁入 associations。"
+    },
+    {
+      "id": "debunk-franklin-constitution",
+      "title_zh": "富兰克林没在巴黎起草美国宪法",
+      "title_fr": "Franklin n'a pas rédigé la Constitution américaine à Paris",
+      "category": "时间线不成立",
+      "status": "pending_poi",
+      "poi_id": null,
+      "official_claim": "富兰克林在此（巴黎某咖啡馆）起草了美国宪法",
+      "reality": "时间线就不成立：他 1776–1785 年在法国，而美国宪法是 1787 年费城制宪会议的产物，那时他已回国。",
+      "hook": "法语信源一律用条件式（「据说」）回避担责，parissecret 甚至直接写 « Mythe ou réalité ? Qu'importe »——连传谣的人自己都不在乎真假。",
+      "storylines": ["line-2"],
+      "summary_note": "待第一批 9 条线补齐字段级语料时建立 POI 记录并迁入 associations。"
+    },
+    {
+      "id": "debunk-voltaire-40-coffees",
+      "title_zh": "伏尔泰「每天 40 杯咖啡」查不到一级史料",
+      "title_fr": "Les « 40 tasses par jour » de Voltaire, aucune source primaire",
+      "category": "数字在传播中漂移",
+      "status": "pending_poi",
+      "poi_id": null,
+      "official_claim": "伏尔泰每天喝 40 杯咖啡",
+      "reality": "找不到任何一级史料，数字在 30 / 40 / 50 之间乱跳，出处全是咖啡博客互相引用。更可能是他本人的夸张修辞。",
+      "hook": "他确实是常客、确实嗜咖啡——被证伪的只是那个数字。这类「真人真事 + 假数字」是最难识别的一档。",
+      "storylines": ["line-2"],
+      "summary_note": "待第一批 9 条线补齐字段级语料时建立 POI 记录并迁入 associations。"
+    }
+  ]
+}

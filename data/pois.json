@@ -1,0 +1,2608 @@
+[
+  {
+    "id": "galerie-vivienne",
+    "name_zh": "薇薇安拱廊与茹索姆书店",
+    "name_fr": "Galerie Vivienne / Librairie Jousseaume",
+    "name_en": "Galerie Vivienne / Jousseaume Bookshop",
+    "address": "4 rue des Petits-Champs / 6 rue Vivienne / 5–7 rue de la Banque, 75002 Paris；书店在拱廊内 45-47 号",
+    "arrondissement": 2,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "拱廊免费通行。书店周一至周六 11:00–19:00。拱廊 1974 年列入历史建筑保护名录，产权归法兰西学会美术院。",
+    "best_time": "工作日上午 10–11 点（玻璃顶侧光最好、游客最少），停留 40 分钟",
+    "era": 3,
+    "associations": [
+      {
+        "type": "person",
+        "name": "欧仁-弗朗索瓦·维多克 / Eugène-François Vidocq",
+        "why_here": "苦役犯出身、后创立法国刑侦局与史上第一家私家侦探社，巴尔扎克笔下伏脱冷的原型，他住在拱廊内而非临街铺面",
+        "when": "约 1840 年（现场铭牌原文为 vers 1840，是近似值）",
+        "detail": "他住的是拱廊 13 号那道纪念碑式大楼梯上方的公寓——建筑师 Delannoy 建拱廊时特意保留的一栋旧楼。那道楼梯今天还在，巴黎市政府官网点名「值得为它专门走一趟」。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.paris.fr/en/pages/discover-the-magic-of-parisian-galleries-and-arcades-29672",
+          "https://www.hmdb.org/m.asp?m=203845"
+        ],
+        "caveat": "居住年份精度存疑：现场铭牌写 vers 1840（约），巴黎市政府官网与 wolffetdescourtis 写成确切的 1840 年。文案应写「1840 年前后」。"
+      },
+      {
+        "type": "event",
+        "name": "拱廊的建成与列级",
+        "why_here": "19 世纪拱廊是给不想踩泥的人造的，这条是巴黎保存最完整的一条",
+        "when": "1823 年动工、1826 年开幕；1974 年列入历史建筑保护名录",
+        "detail": "同一条拱廊里，高田贤三 1970 年在 43 号开了他第一家店 Jungle Jap；让-保罗·高缇耶 1997 年把高定沙龙开在 70 号。",
+        "confidence": "L3",
+        "sources": [
+          "https://www.paris.fr/en/pages/discover-the-magic-of-parisian-galleries-and-arcades-29672",
+          "https://www.pariszigzag.fr/insolite/lieux-insolites/librairie-jousseaume-paris/"
+        ],
+        "caveat": "1823（动工）与 1826（开幕）在不同信源里被混用为「建成年份」，按 C1 取范围写法「1823 年动工、1826 年开幕」。"
+      }
+    ],
+    "storylines": [
+      "line-10"
+    ],
+    "badges": []
+  },
+  {
+    "id": "galerie-vero-dodat",
+    "name_zh": "韦罗-多达拱廊",
+    "name_fr": "Galerie Véro-Dodat",
+    "name_en": "Galerie Véro-Dodat",
+    "address": "19 rue Jean-Jacques Rousseau / 2 rue du Bouloi, 75001 Paris",
+    "arrondissement": 1,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费通行。周一至周六 7:00–22:00，周日闭。1965 年 6 月 9 日列入历史建筑补充名录，1997 年整体修复。",
+    "best_time": "接第 1 站，中午前；停留 20 分钟。黑白大理石棋盘地面在阴天反而更好看",
+    "era": 3,
+    "associations": [
+      {
+        "type": "person",
+        "name": "拉谢尔 / Rachel（1821–1858）",
+        "why_here": "法兰西剧院的传奇悲剧女伶，住在拱廊二楼",
+        "when": "1838–1842 年",
+        "detail": "拱廊由猪肉商 Véro 与金融家 Dodat 合资于 1826 年建成；它是巴黎最早用煤气灯照明的通道之一。",
+        "confidence": "L2",
+        "sources": [
+          "http://passagesetgaleries.fr/galerie-vero-dodat/",
+          "https://paris-promeneurs.com/la-galerie-verot-dodat/"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "Laffitte et Gaillard 驿马车行",
+        "why_here": "这条拱廊真正的命脉不是商店，是正对入口的驿马车行——等车去诺曼底、里昂、波尔多的旅客被困在这里无所事事，于是逛街",
+        "when": "1826 年建成至第二帝政时期驿车行消失",
+        "detail": "驿车行一消失，拱廊立刻衰败：Aubert 印刷店（杜米埃、格朗维尔、加瓦尔尼讽刺画的首发地）关张，接手的是个卖旅行箱的。这是一条「因交通枢纽而繁荣、因交通枢纽消失而死掉」的商业街标本。",
+        "confidence": "L2",
+        "sources": [
+          "http://passagesetgaleries.fr/galerie-vero-dodat/",
+          "https://marais-louvre.fr/la-tres-discrete-galerie-vero-dodat"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-10"
+    ],
+    "badges": []
+  },
+  {
+    "id": "librairie-galignani",
+    "name_zh": "加利尼亚尼书店",
+    "name_fr": "Librairie Galignani",
+    "name_en": "Galignani Bookshop",
+    "address": "224 rue de Rivoli, 75001 Paris，里沃利街拱廊下",
+    "arrondissement": 1,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费入内。周一至周六 10:00–19:00，家族经营第六代。",
+    "best_time": "下午 2 点前（紧接下午茶）；停留 30 分钟。艺术书区是全店最强的",
+    "era": 3,
+    "associations": [
+      {
+        "type": "work",
+        "name": "《加利尼亚尼信使报》/ Galignani's Messenger",
+        "why_here": "别记「欧陆第一家英文书店」这个空名头——这家书店本质上是家报社，是拿破仑战争后滞留欧陆的英语世界唯一的日常信息来源",
+        "when": "1814 年 7 月 4 日创刊（先三日刊，1815 年起日刊，办到 1895 年，共 81 年）；书店 1856 年迁入现址",
+        "detail": "报纸靠转载英国报纸内容（副标题就叫 The Spirit of the English Journals）加美国、欧洲新闻立足。今天店里那排深色木书架是 1930 年代打的，约 5 万种书，橱窗每 15 天换一次。",
+        "confidence": "L2",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Giovanni_Antonio_Galignani",
+          "https://www.modernistarchives.com/business/librairie-galignani"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "加利尼亚尼家族 / famille Galignani",
+        "why_here": "书商世系，19 世纪全欧英语侨民的信息中枢由这一家人经营",
+        "when": "家族书业可溯至 1520 年威尼斯；1800 年乔瓦尼·安东尼奥·加利尼亚尼在巴黎开英文图书馆；1808 年办月刊《Repertory of English Literature》",
+        "detail": "现由家族第六代经营，是巴黎少见的连续六代同业的商号。",
+        "confidence": "L2",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Giovanni_Antonio_Galignani",
+          "http://www.bookstoreguide.org/2007/12/galignani-paris.html"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-10"
+    ],
+    "badges": []
+  },
+  {
+    "id": "hotel-le-meurice-dali",
+    "name_zh": "莫里斯酒店 · 达利餐厅",
+    "name_fr": "Hôtel Le Meurice / Restaurant Le Dalí",
+    "name_en": "Hôtel Le Meurice / Le Dalí Restaurant",
+    "address": "228 rue de Rivoli, 75001 Paris",
+    "arrondissement": 1,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "Dorchester Collection 旗下。Cédric Grolet 下午茶在 Le Dalí 厅，现行 tea time 15:30–17:30（周日 16:30–17:30），68 € 起，须预约。",
+    "best_time": "下午 15:30–17:30，预留 1.5–2 小时。务必提前订位。天花板壁画由 Philippe Starck 的女儿 Ara Starck 绘制",
+    "era": 5,
+    "associations": [
+      {
+        "type": "person",
+        "name": "萨尔瓦多·达利 / Salvador Dalí（羊群与手枪）",
+        "why_here": "据酒店流传，达利长期入住期间要求送一群羊进房间，羊一到他就掏出手枪朝羊开火（空包弹）",
+        "when": "达利长期居住期约 1930s–1970s",
+        "detail": "该掌故在 cntraveler.com、Historic Hotels of the World、thewordrobe.com、outandaboutinparis.com 等多个域名可查，但措辞几乎逐字相同，其中数个明确标注「转自 Le Meurice 酒店官网」。形式上满足两个域名门槛，实质是单一来源的酒店公关文案：无年份、无目击者、无同时代第三方记载。",
+        "confidence": "L4",
+        "sources": [
+          "https://www.cntraveler.com/galleries/2015-01-30/the-most-outrageous-requests-hotel-guests-have-made",
+          "https://www.slate.fr/story/97433/meurice"
+        ],
+        "caveat": "利益相关方单一来源（C8）。文案必须按「酒店流传的传说」写，不得写成史实，且不得作为主推或主题名。语料明确判定这是全部 16 站中可信度最弱的主推候选素材。"
+      },
+      {
+        "type": "person",
+        "name": "萨尔瓦多·达利 / Salvador Dalí（苍蝇与版画）",
+        "why_here": "达利让酒店员工去对面的杜伊勒里花园替他抓苍蝇，一只付 5 法郎（约合今 1 欧）；并把亲笔签名的石版画当圣诞节小费给相熟的员工",
+        "when": null,
+        "detail": "两条怪癖的可信度高于羊群一条，但同样缺具体年份与第三方同时代记载。",
+        "confidence": "L4",
+        "sources": [
+          "https://www.cntraveler.com/galleries/2015-01-30/the-most-outrageous-requests-hotel-guests-have-made",
+          "https://www.slate.fr/story/97433/meurice"
+        ],
+        "caveat": "when 字段缺失（语料未给年份），按三字段判真法则自动降 L4。"
+      },
+      {
+        "type": "event",
+        "name": "酒店迁入里沃利街现址",
+        "why_here": "Le Meurice 是巴黎第一批为英国旅客服务的「帕拉斯饭店」之一",
+        "when": "1817 年创于圣奥诺雷街；1835 年迁入现址",
+        "detail": "达利住的房号与年数两说并存：Slate.fr 称他在阿方索十三世皇家套房 102-103 室住了三十年；酒店系统的英文文案统一称「每年至少住一个月」。",
+        "confidence": "L3",
+        "sources": [
+          "https://www.slate.fr/story/97433/meurice",
+          "https://cedric-grolet.com/meurice/en/edito/book-a-table"
+        ],
+        "caveat": "房号与居住年数无信源明确调和，文案只写「长年入住」，回避具体房号与年数。"
+      }
+    ],
+    "storylines": [
+      "line-10"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "ritz-paris-bar-hemingway",
+    "name_zh": "巴黎丽兹酒店（海明威酒吧）",
+    "name_fr": "Hôtel Ritz Paris / Bar Hemingway",
+    "name_en": "Ritz Paris / Bar Hemingway",
+    "address": "15 place Vendôme, 75001 Paris",
+    "arrondissement": 1,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "2012–2016 大修后重开，海明威酒吧运营中。酒吧不接受预约、按到场顺序入场，人少时段是刚开门。",
+    "best_time": "傍晚 18:00 后进海明威酒吧；停留 1 小时",
+    "era": 5,
+    "associations": [
+      {
+        "type": "person",
+        "name": "马塞尔·普鲁斯特与侍应领班奥利维耶·达贝斯卡 / Marcel Proust & Olivier Dabescat",
+        "why_here": "达贝斯卡是普鲁斯特在丽兹的「眼睛」——他把上流客人的怪癖、执念、举止讲给普鲁斯特听，这些成了《追忆似水年华》的活素材；他本人是小说中侍应生 Aimé 的原型之一",
+        "when": "普鲁斯特自 1909 年前后起在此写作，1917–1922 年几乎夜夜光顾",
+        "detail": "普鲁斯特点菜从来「把菜单全权交给达贝斯卡先生」。1922 年 11 月他弥留之际，让女管家塞莱斯特·阿尔巴雷派丈夫奥迪隆去丽兹——已经打烊的厨房——取一杯冰镇啤酒。",
+        "confidence": "L1",
+        "sources": [
+          "https://proustonomics.com/olivier-dabescat-du-ritz-a-lautre-cote-de-chez-swann/",
+          "https://gallica.bnf.fr/ark:/12148/bpt6k4689452b/f5.item",
+          "https://www.slate.fr/story/208175/marcel-proust-table-ritz-recherche-temps-perdu-salon-hotel-personnage-haute-societe"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "海明威「解放丽兹」/ Hemingway libère le Ritz",
+        "why_here": "时任《Collier's》战地记者的海明威在巴黎解放当天闯进丽兹大堂",
+        "when": "1944 年 8 月 25 日下午两点",
+        "detail": "目击者、时任经理遗孀 Lucienne Elmiger 1994 年接受路透社采访时的原话：「他像国王一样走进来，把一小时前到的英国人全轰了出去。他穿卡其军装，衬衫敞着露出胸膛，大肚子下系着皮带，枪拍打着大腿。」他用德语朝英国人吼「Raus, raus!」。同日下午萨特与波伏娃来访。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.deseret.com/1994/8/25/19127145/hemingway-staged-own-liberation-by-invading-ritz-bar/",
+          "https://www.rfi.fr/en/contenu/20190812-day-hemingway-liberated-ritz-bar-paris"
+        ],
+        "caveat": "存在三个版本：①「51 杯干马提尼」（所有信源均以 legend has it 措辞呈现，无一手账单支撑，属传说）；②酒店官方版（经理门口迎接、请他把枪留在门外，他点了一杯干马提尼）；③目击者 Elmiger 版。正文采用 Elmiger 版（具名目击者 + 通讯社采访），建议并列呈现，不挑一个。"
+      }
+    ],
+    "storylines": [
+      "line-10"
+    ],
+    "badges": []
+  },
+  {
+    "id": "musee-cognacq-jay",
+    "name_zh": "科尼亚克-热博物馆（多农公馆）",
+    "name_fr": "Musée Cognacq-Jay / Hôtel de Donon",
+    "name_en": "Musée Cognacq-Jay",
+    "address": "8 rue Elzévir, 75003 Paris",
+    "arrondissement": 3,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "周二至周日 10:00–18:00，周一闭。常设展免费，特展 7–9 €。无无障碍通道。",
+    "best_time": "上午 10:00 开门即进（小馆，人一多就转不开）；停留 1 小时",
+    "era": 4,
+    "associations": [
+      {
+        "type": "person",
+        "name": "埃内斯特·科尼亚克与玛丽-路易丝·热 / Ernest Cognacq & Marie-Louise Jaÿ",
+        "why_here": "莎玛丽丹百货（La Samaritaine, 1870 创）创始人夫妇；关键点是科尼亚克没有把藏品放在自己家里，而是刻意选了一栋与自己住所分开的独立楼",
+        "when": "藏品于 1900–1927 年间购入；1928 年 2 月 21 日科尼亚克去世并遗赠巴黎市",
+        "detail": "他按卡纳瓦雷博物馆的模式，用古董木护壁板复原出一间间 18 世纪的房间来装藏品。也就是说，这批东西从一开始就是「展示品」而不是「私人生活」——一个百货公司老板对「何为法式品味」的精心陈列。",
+        "confidence": "L2",
+        "sources": [
+          "https://pop.culture.gouv.fr/notice/museo/M1107",
+          "https://www.parismarais.com/fr/arts-et-culture/hotels-particuliers-du-marais/hotel-de-donon.html"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "2024 年持械抢劫 / vol à main armée 2024",
+        "why_here": "博物馆在 Luxe de poche 特展期间遭暴力持械抢劫",
+        "when": "2024 年 11 月 20 日；12 月 10 日重开",
+        "detail": "7 件极高价值的鼻烟盒被劫，包括来自卢浮宫、英国王室收藏和 V&A 的 Gilbert 收藏的借展品。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.museecognacqjay.paris.fr/le-musee/ne-pas-manquer/reouverture",
+          "https://pop.culture.gouv.fr/notice/museo/M1107"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "迁馆：卡皮西纳大道 → 玛黑区多农公馆",
+        "why_here": "旧馆关闭与新址重开是两个不同年份，取决于口径",
+        "when": "1929 年 6 月 4 日由总统 Gaston Doumergue 揭幕于 25 bd des Capucines；1988 年旧馆关闭；1990 年迁入多农公馆",
+        "detail": "信源分歧：Babelio 写 1988 年 6 月 27 日旧馆关闭并迁馆；法国文化部 Muséofile 官方档案写 1990 年迁入；parismarais.com 写藏品 1932–1988 年间在 25 bd des Capucines。",
+        "confidence": "L3",
+        "sources": [
+          "https://pop.culture.gouv.fr/notice/museo/M1107",
+          "https://www.parismarais.com/fr/arts-et-culture/hotels-particuliers-du-marais/hotel-de-donon.html"
+        ],
+        "caveat": "另有 1929 年揭幕 vs 1932 年藏品入驻的三年差，无任何信源解释，语料明确建议这段细节不进文案。"
+      }
+    ],
+    "storylines": [
+      "line-10"
+    ],
+    "badges": []
+  },
+  {
+    "id": "maison-deyrolle",
+    "name_zh": "德罗勒之家（标本与博物学商店）",
+    "name_fr": "Maison Deyrolle",
+    "name_en": "Maison Deyrolle",
+    "address": "46 rue du Bac, 75007 Paris，一栋 18 世纪私邸内",
+    "arrondissement": 7,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费入内。周二至周六 10:00–19:00，周一 10:00–13:00 / 14:00–19:00。持「活态遗产企业」（Entreprise du Patrimoine Vivant）标签。",
+    "best_time": "下午 15:00–17:00（二楼采光最好）；停留 40 分钟。可与奥赛/罗丹连走",
+    "era": 7,
+    "associations": [
+      {
+        "type": "event",
+        "name": "2008 年德罗勒大火 / incendie de Deyrolle",
+        "why_here": "火从最里间的昆虫室烧起，是这家 1831 年创立的博物学商号最大的一次损失，而它的重建方式成了本站真正的故事",
+        "when": "2008 年 2 月 1 日凌晨 5 点",
+        "detail": "55 名消防员花两小时才控制住，超过 90% 的昆虫收藏与昆虫柜被毁（店主 Louis-Albert de Broglie 称昆虫柜 100%、珍奇柜 80%）。《费加罗报》记者次日到现场写下：「一头麋鹿和一只羊驼标本从窗口向外张望，像被眼前的废墟惊呆了。」重建方式很法国：把烧焦的动物标本交给 Yann Arthus-Bertrand、Bettina Rheims、Nicolas Darrot 等当代艺术家创作，拍卖筹得 20 万欧元，用这笔钱重做了昆虫柜。",
+        "confidence": "L1",
+        "sources": [
+          "https://www.lefigaro.fr/culture/2008/02/04/03004-20080204ARTFIG00388-comment-sauver-la-maison-musee-deyrolle.php",
+          "https://www.airzen.fr/paris-deyrolle-le-dernier-cabinet-de-curiosite-ouvert-au-public/",
+          "https://www.timeout.fr/paris/musees/maison-deyrolle"
+        ]
+      },
+      {
+        "type": "screen",
+        "name": "《午夜巴黎》/ Midnight in Paris (2011)",
+        "why_here": "伍迪·艾伦片中那场超现实主义婚礼派对就在这里拍的",
+        "when": "2011 年上映；场景约在影片第 68 分钟起、时长不到两分钟",
+        "detail": "就是 Gil 向布努埃尔提议《泯灭天使》点子那一段。可与第 3 条线（《午夜巴黎》线）互跳。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.timeout.fr/paris/musees/maison-deyrolle",
+          "https://www.airzen.fr/paris-deyrolle-le-dernier-cabinet-de-curiosite-ouvert-au-public/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-10"
+    ],
+    "badges": []
+  },
+  {
+    "id": "musee-jacquemart-andre",
+    "name_zh": "雅克马尔-安德烈博物馆",
+    "name_fr": "Musée Jacquemart-André",
+    "name_en": "Musée Jacquemart-André",
+    "address": "158 boulevard Haussmann, 75008 Paris",
+    "arrondissement": 8,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "2024 年 9 月 6 日结束一年多大修后重开（自 1913 年开馆以来最大规模翻修），由 Culturespaces 运营，产权属法兰西学会。咖啡厅（原餐厅）不排队进不去，15:00 起是下午茶时段。",
+    "best_time": "开门即到或闭馆前 1.5 小时；参观 1.5 小时 + 咖啡厅 45 分钟",
+    "era": 3,
+    "associations": [
+      {
+        "type": "person",
+        "name": "内莉·雅克马尔 / Nélie Jacquemart（1841–1912）",
+        "why_here": "画家出身、嫁给新教银行世家的爱德华·安德烈，她在遗嘱里把整座公馆与藏品遗赠法兰西学会，并把控制欲写进了条款",
+        "when": "公馆 1869–1876 年由建筑师 Henri Parent 建造；1894 年爱德华去世；1912 年内莉去世遗赠；1913 年开馆",
+        "detail": "内莉在遗嘱里不但规定了博物馆开幕的条件，还逐件指定了每一件作品必须挂在哪个确切位置，并要求法兰西学会一字不差地执行。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.musee-jacquemart-andre.com/en/discover/place-of-history",
+          "https://www.pointdevue.fr/lifestyle/visites-privees/reouverture-du-musee-jacquemart-andre-au-bon-souvenir-dedouard-et-de-nelie"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "2024 年修复中翻出的乌龙 / la restauration 2024",
+        "why_here": "吸烟室（fumoir）的天花板有一天整片掉了下来，这才启动大修",
+        "when": "2023–2024 年修复，2024 年 9 月 6 日重开",
+        "detail": "修复团队发现建筑档案已在一次水灾中全部灭失；他们靠一张 1913 年《L'Illustration》杂志上的老照片，才发现吸烟室原本是酒糟红（rouge lie-de-vin）而不是一直以为的绿色，现已改回原色。数字对照：他们手上保存着夫妇俩购买艺术品的 98% 的发票，却几乎没有建房子的图纸。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.pointdevue.fr/lifestyle/visites-privees/reouverture-du-musee-jacquemart-andre-au-bon-souvenir-dedouard-et-de-nelie",
+          "https://www.musee-jacquemart-andre.com/en/discover/discovering-site/state-apartments"
+        ]
+      },
+      {
+        "type": "work",
+        "name": "提埃波罗《亨利三世驾临的通报》/ Giambattista Tiepolo",
+        "why_here": "现在的咖啡厅就是当年的餐厅，天花板那幅湿壁画是从意大利米拉的孔塔里尼别墅整体移来的",
+        "when": "壁画为 18 世纪作品；公馆 1869–1876 年建成时装入",
+        "detail": "画家似乎把自己也画了进去，趴在栏杆上朝观众打招呼；还有一只猴子的尾巴垂在拱门外。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.musee-jacquemart-andre.com/en/discover/discovering-site/state-apartments",
+          "https://gallica.bnf.fr/ark:/12148/bpt6k6226643x/texteBrut"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-10"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "piscine-pontoise",
+    "name_zh": "蓬图瓦兹泳池",
+    "name_fr": "Piscine Pontoise / Espace Sportif Pontoise",
+    "name_en": "Pontoise Swimming Pool",
+    "address": "19 rue de Pontoise, 75005 Paris｜地铁 Maubert-Mutualité / Cardinal Lemoine",
+    "arrondissement": 5,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "2019 年因玻璃顶损毁闭馆，大修后 2023 年 12 月 4 日重开；2023 年起由遗产建筑师 Pierre Marchand 主持修复，马赛克饰带已复原。日间单次 5.20 €（优惠 3.10 €）；20:00/20:15 后夜场一口价约 11.10–11.50 €，含泳池 + 健身房 + 桑拿，开到 22:45–23:00 不限时。学期内开放时段较碎（有学校/协会包场），去前务必查当期表。",
+    "best_time": "早场 07:00–08:15（空池）或夜场 20:15 后（暗光 + 古典乐）。单次 1 小时",
+    "era": 5,
+    "associations": [
+      {
+        "type": "event",
+        "name": "1934 年装饰艺术泳池形制 / la piscine de Lucien Pollet",
+        "why_here": "建筑师吕西安·波莱在巴黎一共盖了四座泳池（另三座是 Molitor、La Jonquière、Pailleron），这一座保住了 1930 年代巴黎泳池的原始形制",
+        "when": "1934 年落成；1998 年列入历史建筑补充名录",
+        "detail": "33 × 15 米池（6 条泳道），两层回廊环绕，回廊上是一间间私人更衣小间——今天在巴黎只剩几处。夜场会调暗灯光、放古典乐，只留池底几盏投射灯，玻璃穹顶上能看见月亮；水温 28–29 °C。池边墙上藏着一枚穿泳衣戴泳帽的 Invader 马赛克小人。",
+        "confidence": "L3",
+        "sources": [
+          "https://www.paris.fr/en/pages/five-good-reasons-to-take-a-dip-in-the-pontoise-swimming-pool-29645",
+          "https://www.pariszigzag.fr/insolite/lieux-insolites/piscine-pontoise-paris/",
+          "https://www.lesmaconsparisiens.fr/batiment/pontoise-une-piscine-retro-au-coeur-du-quartier-latin/"
+        ],
+        "caveat": "建成年份 1934（多数源）vs 1933（Les Maçons Parisiens）；列入名录年份 1998「inscrit」（paris.fr、pariszigzag）vs 1981「classée」（vvanat，同文自相矛盾）。采信 1934 / 1998 但标注异说。另门牌号 17（Time Out）vs 19（巴黎市、Sortiraparis、Paris ZigZag、售票方）并存，采用 19。"
+      },
+      {
+        "type": "screen",
+        "name": "《蓝白红三部曲之蓝》/ Trois couleurs : Bleu (1993)",
+        "why_here": "基耶斯洛夫斯基片中朱丽叶·比诺什反复潜进水里的那个泳池就是这里",
+        "when": "1993 年；同池另拍过 Sautet《内莉与阿尔诺先生》(1995)、《天使爱美丽》(2001)、Chatiliez《坦吉》(2001)",
+        "detail": "这几条取景有 paris.fr、Time Out 与 Paris ZigZag 独立佐证，可放心使用。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.paris.fr/lieux/espace-sportif-pontoise-2918",
+          "https://www.timeout.fr/paris/sport/piscine-pontoise",
+          "https://www.pariszigzag.fr/insolite/lieux-insolites/piscine-pontoise-paris/"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "约翰尼·韦斯默勒的泰山吼声与雅克·库斯托的潜水试验 / Johnny Weissmuller & Jacques Cousteau",
+        "why_here": "paris.fr 官方页称泰山叫声是在蓬图瓦兹泳池录的，库斯托在此做了最早的水肺潜水试验",
+        "when": "库斯托试验称 1936 年；泰山吼声无年份",
+        "detail": "这两条仅见 paris.fr 单一权威源，其余均为其转述。可作彩蛋提一句，不作主推。",
+        "confidence": "L4",
+        "sources": [
+          "https://www.paris.fr/en/pages/five-good-reasons-to-take-a-dip-in-the-pontoise-swimming-pool-29645"
+        ],
+        "caveat": "单一权威源，且泰山吼声一条无年份。按判真法则降 L4。"
+      }
+    ],
+    "storylines": [
+      "line-12",
+      "line-15"
+    ],
+    "badges": []
+  },
+  {
+    "id": "institut-du-monde-arabe",
+    "name_zh": "阿拉伯世界研究所 · 9 层全景天台",
+    "name_fr": "Institut du Monde Arabe — terrasse panoramique du 9e étage",
+    "name_en": "Institut du Monde Arabe — 9th-floor panoramic terrace",
+    "address": "1 rue des Fossés-Saint-Bernard, 75005 Paris｜地铁 Jussieu（7、10 号线）",
+    "arrondissement": 5,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "天台免费、无需购票（图书馆与书店同样免费）。周二至周五 10:00–18:00，周六日及节假日 10:00–19:00，周一闭馆。天台按闭馆时间清场。",
+    "best_time": "17:00–18:30 落日前（免费且西向光最好）。停留 30 分钟",
+    "era": 7,
+    "associations": [
+      {
+        "type": "work",
+        "name": "让·努维尔的机械窗棂立面 / les moucharabiehs de Jean Nouvel",
+        "why_here": "密特朗「大工程」之一，由 Jean Nouvel + Architecture-Studio + Gilbert Lèzenes + Pierre Soria 设计，是 1980 年代高技派建筑最著名的一次「技术为情绪服务」",
+        "when": "1980 年立项，1981 年设计，1987 年 12 月落成启用；1988 年获银角尺奖；2017 年由 DVVD 事务所修复",
+        "detail": "南立面那 2000 m²、240 块金属摩尔式窗棂（moucharabieh），每一块由一组像相机光圈一样的机械膜片构成，其中半数可动，由光电池根据日照量自动开合调节进光量——相当于把阿拉伯传统民居的木格窗做成了一台巨型钟表。",
+        "confidence": "L2",
+        "sources": [
+          "http://www.imarabe.org/fr/batiment-et-son-histoire",
+          "https://www.lemoniteur.fr/article/1987-institut-du-monde-arabe-paris-5e-jean-nouvel-architecture-studio-fondation-ima.1203144"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "天台视角：圣母院后殿 / le chevet de Notre-Dame",
+        "why_here": "天台的价值在视角——正前方第一排就是巴黎圣母院的后殿，被塞纳河两条支流环抱",
+        "when": "1987 年起对公众开放",
+        "detail": "这是从地面上永远看不到的角度，而且完全免费、无需购票。",
+        "confidence": "L2",
+        "sources": [
+          "http://www.imarabe.org/fr/batiment-et-son-histoire",
+          "https://www.routard.com/fr/guide/france/ile-de-france/paris/5eme-arrondissement/institut-du-monde-arabe"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-12"
+    ],
+    "badges": []
+  },
+  {
+    "id": "bouquinistes-quais-de-seine",
+    "name_zh": "塞纳河畔旧书摊",
+    "name_fr": "Les bouquinistes des quais de Seine",
+    "name_en": "The Seine Riverside Booksellers",
+    "address": "右岸：Pont Marie → quai du Louvre（约 1.5 km）；左岸：quai de la Tournelle → quai Voltaire（约 2 km）——第 12 条线走左岸",
+    "arrondissement": 5,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费。约 200–240 名摊主，摊位由巴黎市发放 5 年期占用许可、免租金，但须每周至少开摊 4 天（恶劣天气除外）。不少摊主晚开早收，雨天不出摊。",
+    "best_time": "上午 11:00–13:00 或 14:00–16:00，走走看看 45 分钟",
+    "era": 3,
+    "associations": [
+      {
+        "type": "event",
+        "name": "1859 年固定摊位特许 / la concession de 1859",
+        "why_here": "这是全世界唯一一条被联合国教科文组织顺带保护起来的二手书街，它的规矩细到荒谬——而这正是它好玩的地方",
+        "when": "可溯至 16 世纪流动书贩；1577 年王室敕令把他们等同于「盗贼与销赃者」；1859 年 10 月 10 日第二帝政颁布专门条例、发出第一批固定摊位特许；1930 年定死摊位长度 8 米；1991 年随塞纳河岸整体列入世界遗产",
+        "detail": "每个摊位 8 米长、最多 4 只箱子，其中 3 只必须卖旧书，第 4 只才准卖版画、钱币、明信片、纪念品。箱子尺寸由行政部门规定：长约 2 米、宽 0.75 米，临河一侧高 0.60 米、临岸一侧 0.35 米。1859 年第一批摊主的成本：每人 10 米护墙，年「容忍费」26.35 法郎 + 25 法郎营业税，营业时间「日出到日落」。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.pariszigzag.fr/insolite/histoire-insolite-paris/bouquinistes-quais-de-seine/",
+          "https://www.parisladouce.com/2023/08/histoire-des-bouquinistes.html",
+          "https://www.ccfi.asso.fr/histoire-des-bouquinistes-des-quais-de-seine/"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "「车厢绿」/ le vert wagon",
+        "why_here": "书摊那个绿色不是随便选的",
+        "when": "自 20 世纪初巴黎市政街具标准化起沿用",
+        "detail": "它叫「车厢绿」（vert wagon）——和巴黎第一条地铁的标识色、华莱士饮水台、莫里斯广告柱是同一个绿。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.parisladouce.com/2023/08/histoire-des-bouquinistes.html",
+          "https://www.pariszigzag.fr/insolite/histoire-insolite-paris/bouquinistes-quais-de-seine/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-12"
+    ],
+    "badges": []
+  },
+  {
+    "id": "shakespeare-and-company",
+    "name_zh": "莎士比亚书店与隔壁咖啡馆",
+    "name_fr": "Shakespeare and Company / Shakespeare and Company Café",
+    "name_en": "Shakespeare and Company",
+    "address": "书店 37 rue de la Bûcherie, 75005 Paris；咖啡馆在隔壁转角（35 rue de la Bûcherie / 1 rue Saint-Julien-le-Pauvre）",
+    "arrondissement": 5,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "进店免费。书店由乔治·惠特曼之女 Sylvia Whitman 经营（2006 年正式交棒），10:00 前后开门。咖啡馆有带暖气的步行街露台正对圣母院，饮品约 5 € 起；营业时间信源不一（每日 9:00–19:00 / 10:00–23:00，部分周末称至 20:00），以现场为准。",
+    "best_time": "上午 9:00–10:30（咖啡馆一开门，正对圣母院，人最少）；书店本身傍晚人最多。停留 1 小时",
+    "era": 6,
+    "associations": [
+      {
+        "type": "person",
+        "name": "乔治·惠特曼与「风滚草」制度 / George Whitman & the Tumbleweeds",
+        "why_here": "这家店的经营哲学来自一次真实的濒死经历：惠特曼二十出头、大萧条年间徒步与扒火车穿越美国和中美洲，在尤卡坦半岛一处偏僻地带重病倒下，被一支玛雅部落救起并照料康复",
+        "when": "1951 年以 Le Mistral 之名开业；1964 年 4 月（莎士比亚诞辰 400 周年）改现名；惠特曼 1913–2011",
+        "detail": "他此后奉行的信条是「Be not inhospitable to strangers lest they be angels in disguise」，刷在二楼门拱上。于是从开业第一天起，作家与艺术家就被允许睡在书架之间的小床上（白天折成长凳）。三条规矩：每天读完一本书、每天在店里帮几小时忙、留下一页自传。住过的人包括伊桑·霍克、达伦·阿罗诺夫斯基、杰弗里·拉什。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.shakespeareandcompany.com/history",
+          "https://www.atlasobscura.com/places/shakespeare-and-company",
+          "https://www.theguardian.com/books/gallery/2016/oct/14/shakespeare-and-company-paris-in-pictures"
+        ],
+        "caveat": "「睡过多少人」两个数字打架：官网约 30,000，多处二手来源（含 Substack 长文）称 50,000。采信官方 30,000，内部备注存在 50,000 的说法。"
+      },
+      {
+        "type": "event",
+        "name": "建筑原身与「点灯人」/ La Maison du Mustier",
+        "why_here": "书店所在的建筑是 17 世纪初的修道院 La Maison du Mustier",
+        "when": "17 世纪初建；惠特曼自 1951 年起在此经营",
+        "detail": "惠特曼喜欢自称是最后一个幸存的修士——「中世纪每座修道院都有一个 frère lampier，负责在天黑时点灯。我现在是这里的点灯人。」门口地面是法国公路的零公里点（Point Zéro，与巴黎子午线无关）。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.shakespeareandcompany.com/history",
+          "https://www.atlasobscura.com/places/shakespeare-and-company"
+        ]
+      },
+      {
+        "type": "screen",
+        "name": "《爱在日落黄昏时》/ Before Sunset (2004)",
+        "why_here": "Jesse 就是在这家书店的朗读会上重遇 Céline，这是全片的开场地点",
+        "when": "2004 年",
+        "detail": "第 13 条线第 1 站（绿荫步道）与本站其实是同一部电影的一头一尾——开场在书店，散步在 Coulée verte。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.shakespeareandcompany.com/history",
+          "https://www.cntraveler.com/restaurants/paris/shakespeare-and-company-cafe"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "西尔维娅·比奇 / Sylvia Beach",
+        "why_here": "现名致敬 1919 年在 12 rue de l'Odéon 创办初代 Shakespeare and Company 的比奇——1922 年在别人都不敢出的时候出版了乔伊斯《尤利西斯》",
+        "when": "初代书店 1919 年创办；1922 年出版《尤利西斯》；惠特曼 1964 年 4 月改名致敬",
+        "detail": "惠特曼版书店的常客名单包括 Allen Ginsberg、William Burroughs、Anaïs Nin、Richard Wright、James Baldwin、Henry Miller、Julio Cortázar。注意：现址与比奇的原店不是同一个地址。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.shakespeareandcompany.com/history",
+          "https://theshopkeepers.com/shops/shakespeare-and-company/paris-cafe/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-12",
+      "line-15"
+    ],
+    "badges": []
+  },
+  {
+    "id": "canal-saint-martin-cruise",
+    "name_zh": "圣马丁运河「老巴黎」游船",
+    "name_fr": "Croisière du Vieux Paris sur le Canal Saint-Martin",
+    "name_en": "Canal Saint-Martin Cruise",
+    "address": "登船点 Port de l'Arsenal（巴士底港），75012 Paris｜地铁 Bastille（1、5、8 号线）。终点 Bassin de la Villette / Parc de la Villette（19e），反向亦可",
+    "arrondissement": 12,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "两家运营商在跑：Canauxrama（巴士底 ⇄ 拉维莱特）与 Paris Canal（奥赛博物馆 ⇄ 拉维莱特，含塞纳河段）。全程 2 小时 30 分，船上有吧台和厕所。必须提前订票，且须提前 15 分钟到港。另有 75 分钟「快线」只走巴士底港—地下拱顶—Square Follereau 段。",
+    "best_time": "14:30 发船那班（下午光线最好，17:00 在拉维莱特上岸正好接晚饭）",
+    "era": 3,
+    "associations": [
+      {
+        "type": "event",
+        "name": "运河通航与巴士底地下拱廊 / la voûte souterraine de la Bastille",
+        "why_here": "单人友好的核心在于：这 2.5 小时你什么都不用决定，船会替你决定；而航程内容是可以数出来的",
+        "when": "运河 1825 年通航（2025 年刚过 200 周年，有专门的纪念航次与徒步）",
+        "detail": "航程包含 8–9 道船闸、2 座旋开桥（ponts tournants）、1 座克里米亚路升降桥（pont levant de Crimée），以及一段 2 公里长的巴士底地下拱顶。那段地下航道靠顶上的天窗自然采光，是全程情绪最强的部分；过旋开桥时桥会专门为你这条船转开。",
+        "confidence": "L3",
+        "sources": [
+          "https://www.canauxrama.com/en/cruise/cruise-canal-saint-martin-old-paris.html",
+          "https://www.pariscanal.com/en/cruises-canals-paris/cruise-paris-seine-waterways-2/",
+          "https://exploreparis.com/fr/3050-croisiere-du-vieux-paris-sur-le-canal-saint-martin.html"
+        ],
+        "caveat": "船闸数量两家官方打架：Paris Canal 写 9 道，Canauxrama 写 8 道，差异可能来自航线起点不同（是否计入阿瑟纳尔港那道闸）。按 C6 取区间，文案写「8–9 道船闸」或「一连串船闸」，不要写死。"
+      }
+    ],
+    "storylines": [
+      "line-12"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "musee-chasse-nature",
+    "name_zh": "狩猎与自然博物馆",
+    "name_fr": "Musée de la Chasse et de la Nature",
+    "name_en": "Museum of Hunting and Nature",
+    "address": "62 rue des Archives, 75003 Paris｜地铁 Rambuteau（11）、Hôtel de Ville（1）",
+    "arrondissement": 3,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "周二至周日 11:00–18:00（末次入场 17:30），周三夜场至 21:30（末次入场 21:00），周一及节假日闭。票价 9–13 €，18 岁以下免费，每月第一个周日全免。",
+    "best_time": "周三 18:00–21:00 夜场——馆本就小众，夜场几乎无人。参观 1.5–2 小时",
+    "era": 7,
+    "associations": [
+      {
+        "type": "person",
+        "name": "弗朗索瓦与雅克琳·索默夫妇 / François & Jacqueline Sommer",
+        "why_here": "建馆人；建筑为 17 世纪的 Guénégaud 公馆 + 18 世纪的 Mongelas 公馆，被设计成「收藏家的家」而不是展厅",
+        "when": "1967 年建馆，由时任文化部长安德烈·马尔罗揭幕；2007 年大改造",
+        "detail": "一个可复述的数字：2007 年改造前年参观量 7,000 人，改造后涨到 70,000 人，靠的几乎全是口碑。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.chassenature.org/reservations-groupes",
+          "https://culturezvous.com/le-surprenant-musee-de-la-chasse-et-de-la-nature/"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "「允许打开柜门」的反常识规矩 / on peut ouvrir les tiroirs",
+        "why_here": "这里允许你打开柜门和抽屉——这在博物馆里几乎是禁忌",
+        "when": "2007 年改造后的现行陈列方式",
+        "detail": "武器厅的抽屉里藏着稀有型号、版画和一整套疯狂的纽扣收藏。沙发是可以坐的，地板故意让它吱呀作响。馆里能找到的怪东西包括：独角兽的「角」和独角兽的粪便、一只泡在福尔马林罐子里的毛绒玩具、长角的公鸡、Jean-Michel Othoniel 处理过的鸵鸟蛋、Janine Janet 用鹿的脱落角做的巨型烛台、Markus Hansen 用公鸡羽毛盖的「书架小屋」（里面的书全是从 Emmaüs 旧货店捡的）、整面天花板的猫头鹰、一条会说话的野猪。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.paris.fr/pages/avez-vous-deja-visite-le-musee-de-la-chasse-et-de-la-nature-29418",
+          "https://culturezvous.com/le-surprenant-musee-de-la-chasse-et-de-la-nature/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-12"
+    ],
+    "badges": []
+  },
+  {
+    "id": "galeries-lafayette-rooftop",
+    "name_zh": "老佛爷百货奥斯曼店 · 屋顶平台",
+    "name_fr": "La Terrasse, Galeries Lafayette Haussmann",
+    "name_en": "Galeries Lafayette Haussmann Rooftop Terrace",
+    "address": "40 boulevard Haussmann, 75009 Paris，8 层｜地铁 Chaussée d'Antin-La Fayette",
+    "arrondissement": 9,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "完全免费，随百货营业时间开放（周一至周六约 10:00–20:30，周日 11:00–20:00）。雨天出于安全会关闭。⚠️ 导航必须写清：电梯/扶梯到 7 层（Lafayette Gourmet 食品层）→ 找 Terrasse 指示牌 → 楼梯上 8 层。多数攻略写「7 层」是错的，这是实地最容易走错的一步；别和室内那个新艺术玻璃穹顶搞混，那不是露台。",
+    "best_time": "日落前 1 小时到「蓝调时刻」。停留 30–40 分钟。冬季风很大，无遮蔽",
+    "era": 5,
+    "associations": [
+      {
+        "type": "person",
+        "name": "飞行员朱尔·韦德里纳 / Jules Védrines",
+        "why_here": "一战前老佛爷管理层悬赏 25,000 法郎，给第一个能把飞机降落在他们屋顶上的人——屋顶跑道只比当时飞机的翼展宽一点点",
+        "when": "1919 年 1 月 19 日中午 12:30 从伊西莱穆利诺机场起飞",
+        "detail": "他无视巴黎警察局的禁令，驾一架 Caudron G.3（80 马力，炮兵校射型）在空中绕了几圈瞄准，把发动机收到怠速，轻轻落下、几米内停住。路人先以为是坠机。他拿走了 25,000 法郎，同时因低空飞越巴黎被罚款，顺带成了航空史上第一个「违章者」。他本人当时对记者说：「再简单不过了。飞过来，看一眼，落下去。以后大家都会这么回家。关键是别降错楼。」屋顶有一块纪念这次降落的铭牌。1914 年罗兰·加洛斯和马克·普尔普都动过念头，最后放弃了。",
+        "confidence": "L1",
+        "sources": [
+          "https://www.lefigaro.fr/histoire/archives/2019/01/18/26010-20190118ARTFIG00260-jules-vedrines-releve-le-defi-il-atterrit-sur-le-toit-des-galeries-lafayette-le-19-janvier-1919.php",
+          "https://www.retronews.fr/sports-et-loisirs/echo-de-presse/2018/04/04/1919-vedrines-se-pose-en-avion-sur-les-galeries"
+        ],
+        "caveat": "机型书写「Caudron G.3」与「Caudron G III」两种并存，是同一机型的不同写法，不构成矛盾。"
+      },
+      {
+        "type": "event",
+        "name": "屋顶视野 / le panorama de la terrasse",
+        "why_here": "第 12 条线的观景台缺口（蒙帕纳斯 56 层已于 2026 年 3 月 31 日关闭）由这个免费屋顶顶上",
+        "when": "建筑由 Georges Chédanne（1906–07）与 Ferdinand Chanut（1910–12，新艺术穹顶作者）设计",
+        "detail": "脚下就是加尼叶歌剧院的绿铜屋顶，西面凯旋门与香榭丽舍，南面埃菲尔铁塔，东面蒙马特的圣心堂。这是全巴黎最好的免费日落点之一。",
+        "confidence": "L2",
+        "sources": [
+          "https://paris-promeneurs.com/les-galeries-lafayette/",
+          "https://www.sortiraparis.com/en/free-and-cheap-activities-in-paris/free-activities/articles/328672-bon-plan-paris-rooftop-des-galeries-lafayette-a-high-vantage-point-accessible-free-of-charge"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-12"
+    ],
+    "badges": []
+  },
+  {
+    "id": "bouillon-chartier-grands-boulevards",
+    "name_zh": "夏蒂埃汤馆（大马路店）",
+    "name_fr": "Bouillon Chartier Grands Boulevards",
+    "name_en": "Bouillon Chartier Grands Boulevards",
+    "address": "7 rue du Faubourg Montmartre, 75009 Paris｜地铁 Grands Boulevards",
+    "arrondissement": 9,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "每日 11:30–24:00，不接受预订、先到先得。价格至今是它的一部分：水煮蛋蛋黄酱 2 €、油封鸭 13 €、巧克力泡芙 4.80 €，一顿约 25 €。1989 年列入历史建筑保护名录。",
+    "best_time": "午餐避开 12:00–13:30、晚餐避开 19:30–21:00，否则排队 20 分钟起。最佳窗口 14:30–17:00 或 22:00 后。用餐 1 小时",
+    "era": 4,
+    "associations": [
+      {
+        "type": "person",
+        "name": "卡米耶与爱德华·夏蒂埃兄弟 / Camille & Édouard Chartier",
+        "why_here": "bouillon 这种业态的源头是肉铺老板 Pierre-Louis Duval，1860–70 年代开始给巴黎工人供应廉价热食；夏蒂埃兄弟把它做成了这家 1896 年至今没断的店",
+        "when": "1896 年开业于现址；2007 年由 Gérard & Christophe Joulie 父子收购",
+        "detail": "这家店对独自旅行的人是制度性友好而不是气氛友好：① 不接受预订，先到先得；② 陌生人拼桌是常态——一个人来不但不尴尬，反而是最顺的进法；③ 账单直接用铅笔写在铺桌的白纸上，穿黑马甲白围裙的侍者在桌与桌之间跑单；④ 那些巨大的木头抽屉柜，当年是给街坊熟客存自己的餐巾用的——吃完自己去放回去，抽屉现在还在墙上。",
+        "confidence": "L2",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Bouillon_Chartier",
+          "https://www.luxe-infinity.com/restaurants/renaissance-des-bouillons-parisiens/"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "「19 世纪 bouillon 唯一的幸存者」/ le dernier bouillon du XIXe",
+        "why_here": "这个说法由现东家 Christophe Joulie 受访时提出",
+        "when": "现址 1896 年开业；同集团另有 Bouillon Chartier Montparnasse（59 bd du Montparnasse，1903 年开业）",
+        "detail": "Montparnasse 店 1903 年开业属 20 世纪，1984 年列入历史建筑，中间历经 Bouillon Rougeot（1924）→ Bistrot de la Gare（1977）→ Montparnasse 1900 三次改名，2007 年由 Joulie 家族改回原名。所以「19 世纪唯一幸存」在字面上成立，但这个表述来自经营者。",
+        "confidence": "L4",
+        "sources": [
+          "https://www.lepelerin.com/culture/gastronomie/bouillons-le-grand-retour-des-restaurants-a-petit-prix-11132",
+          "https://en.wikipedia.org/wiki/Bouillon_Chartier"
+        ],
+        "caveat": "利益相关方自我陈述（C8）。文案须加限定语「据现东家称」。"
+      }
+    ],
+    "storylines": [
+      "line-12"
+    ],
+    "badges": []
+  },
+  {
+    "id": "la-tour-dargent",
+    "name_zh": "银塔餐厅",
+    "name_fr": "La Tour d'Argent",
+    "name_en": "La Tour d'Argent",
+    "address": "15-17 Quai de la Tournelle, 75005 Paris",
+    "arrondissement": 5,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营。2022 年起闭店装修 16 个月，2023 年 8 月重新开业。六楼落地窗正对巴黎圣母院，须预约。",
+    "best_time": null,
+    "era": 1,
+    "associations": [
+      {
+        "type": "event",
+        "name": "鸭子编号证书制度 / le canard numéroté",
+        "why_here": "自 1890 年起，每只压鸭（canard au sang）都有编号，客人拿到一张写着编号的证书/明信片——这是「排面」最可指认的一种形态",
+        "when": "编号制度始于 1890 年；可安全引用的编号是 2023 年 10 月 5 日第 1,178,727 号",
+        "detail": "鸭子 60 年来全部来自旺代 Challans 的同一家 Burgaud 家族养殖场；第 100 万只鸭在 2003 年供应。2023 年 10 月 5 日供应的是第 1,178,727 号（米其林指南官方报道，有具体日期有出处）。",
+        "confidence": "L2",
+        "sources": [
+          "https://guide.michelin.com/fr/fr/article/dining-out/reouverture-de-la-tour-d-argent",
+          "https://www.parismatch.com/vivre/gastronomie/la-tour-dargent-les-secrets-de-la-reouverture-du-restaurant-mythique-229125"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "编号 112,151 的那只鸭子给了哪位罗斯福 / le canard n° 112 151",
+        "why_here": "这是本项目 C3 规则的真实案例：两个信源数字一致，人物完全不同",
+        "when": "编号 112,151（具体年份未定，两说相差约一代人）",
+        "detail": "英文维基百科说 112,151 号给了富兰克林·德拉诺·罗斯福（小罗斯福）；Paris Match（2023 年）说给了西奥多·罗斯福（老罗斯福）。数字一致但差了一代人和约 30 年。按 C3 规则，文案回避指名哪个罗斯福。",
+        "confidence": "L4",
+        "sources": [
+          "https://en.wikipedia.org/wiki/La_Tour_d'Argent",
+          "https://www.parismatch.com/vivre/gastronomie/la-tour-dargent-les-secrets-de-la-reouverture-du-restaurant-mythique-229125"
+        ],
+        "caveat": "C3（人物身份冲突）降 L4，文案必须回避指名。其他编号（Marlene Dietrich 203,728 / 卓别林 253,652 / Mick Jagger 1978 年 531,147 / 罗纳尔多 2000 年 908,683 / 戈尔巴乔夫 938,451）目前只在单一信源出现，同样标 L4。"
+      },
+      {
+        "type": "event",
+        "name": "拒绝《Emily in Paris》取景 / le refus d'Emily in Paris",
+        "why_here": "这个拒绝本身就是排面——制作方提出付费 + 曝光，被当场回绝",
+        "when": "Paris Match 独家报道（2023 年重开报道中）",
+        "detail": "1582 年创立、号称法国最老餐厅的这家店，罗斯福、卓别林、丽塔·海华丝、伊丽莎白二世、戈尔巴乔夫都来过，却把一部流量剧挡在门外。",
+        "confidence": "L4",
+        "sources": [
+          "https://www.parismatch.com/vivre/gastronomie/la-tour-dargent-les-secrets-de-la-reouverture-du-restaurant-mythique-229125"
+        ],
+        "caveat": "单一信源（Paris Match 独家），按判真法则降 L4。"
+      }
+    ],
+    "storylines": [
+      "line-11"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "le-grand-vefour",
+    "name_zh": "大维富餐厅",
+    "name_fr": "Le Grand Véfour",
+    "name_en": "Le Grand Véfour",
+    "address": "17 rue de Beaujolais, 75001 Paris（皇家宫殿拱廊下）。注：Paris Society 官网列为 14 rue de Beaujolais，两个门牌号并存",
+    "arrondissement": 1,
+    "coordinates": null,
+    "still_exists": "restricted",
+    "access_note": "⚠️ 刚经历重大变动：主厨 Guy Martin 于 2025 年 12 月 31 日离任，餐厅由 Paris Society（雅高集团旗下）接手，2026 年 5 月 12 日重新开业，新主厨 Bruno Doucet，已放弃米其林二星定位转向更平价路线。重开后铜铭牌是否全部保留、位置是否变动，无信源可确认——文案上线前需实地核实。列入法国历史古迹。",
+    "best_time": null,
+    "era": 1,
+    "associations": [
+      {
+        "type": "event",
+        "name": "桌上的铜铭牌 / les plaques de cuivre",
+        "why_here": "座椅上方钉着铜铭牌，刻着历任名人常客的名字，你可以直接坐在「雨果的位子」上——但餐厅自己承认水分",
+        "when": "1784 年以 Café de Chartres 之名开业，1820 年改现名；1948 年 Raymond Oliver 接手",
+        "detail": "官网原话是「每张桌子都有故事，但——嘘，这是个秘密——只有五张能保证还在原来的位置」（Grand Personalities 章节）。也就是说铭牌上的名字和物理位置的对应关系，店家自己都不担保。这句自曝是极好的素材。常客名单包括拿破仑与约瑟芬、雨果、巴尔扎克、科莱特、科克托、萨特与波伏娃、克列孟梭。",
+        "confidence": "L4",
+        "sources": [
+          "https://legrandvefour.com/",
+          "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/articles/334702-the-short-history-of-paris-s-great-restaurants-le-grand-vefour-jewel-of-neo-classical-art"
+        ],
+        "caveat": "利益相关方自承不担保（C8）；且 2026 年 5 月 Paris Society 重装后铭牌状态无信源可确认。标 L4，实地核实后再定稿。"
+      },
+      {
+        "type": "event",
+        "name": "与 Maxim's 的人事交叉 / le lien avec Maxim's",
+        "why_here": "两家名店在 1948 年有一个具体的人事连接点",
+        "when": "1948 年",
+        "detail": "1948 年 Raymond Oliver 接手大维富，他的合伙人 Louis Vaudable 当时正是 Maxim's 的老板。如果产品做「线与线之间的暗线」，这条可用。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/articles/334702-the-short-history-of-paris-s-great-restaurants-le-grand-vefour-jewel-of-neo-classical-art",
+          "https://www.lesrestos.com/restaurant/fiche/paris/le-grand-vefour/256828895"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-11"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "maxims",
+    "name_zh": "马克西姆餐厅",
+    "name_fr": "Maxim's",
+    "name_en": "Maxim's",
+    "address": "3 rue Royale, 75008 Paris（协和广场与玛德莱娜教堂之间）",
+    "arrondissement": 8,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营。2023 年 3 月起由 Paris Society 接管，当年 11 月重新开业。餐厅周一至周日 12:00–15:00，晚餐周四至周六；楼上酒吧周三至周日营业至凌晨 2–3 点。",
+    "best_time": null,
+    "era": 4,
+    "associations": [
+      {
+        "type": "screen",
+        "name": "《金粉世界》/ Gigi (1958)",
+        "why_here": "1958 年奥斯卡九项大奖影片的 Maxim's 场景就是在这家真店实拍的，不是搭景",
+        "when": "1958 年",
+        "detail": "movie-locations.com 明确记载：开拍前还在店里办了启动派对，导演 Minnelli 只被允许几天时间抢拍，过程极其艰难。这是本站唯一硬的素材，有第三方制片史料。",
+        "confidence": "L2",
+        "sources": [
+          "https://movie-locations.com/movies/g/Gigi.php",
+          "https://www.lechef.com/reouverture-du-restaurant-maxims-sous-limpulsion-de-paris-society/"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "官网名人名单（甘斯布与简·柏金的第一次约会等）/ la liste de célébrités du site officiel",
+        "why_here": "官网自己列出的历史客群里有一条具体的：甘斯布与简·柏金的第一次约会在此",
+        "when": "无年份",
+        "detail": "另有 La Belle Otéro、普鲁斯特、米斯坦盖特、皮雅芙、科克托、奥纳西斯与卡拉斯、阿兰·德龙与贝尔蒙多；以及「在座椅缝里找到过钻石和红宝石」。全部只见于 Maxim's 自家官网的抒情文案，未找到独立第三方佐证。餐饮类名人故事恰恰是最容易营销附会的类型。",
+        "confidence": "L4",
+        "sources": [
+          "https://restaurant-maxims.com/"
+        ],
+        "caveat": "利益相关方单一来源（C8）+ when 字段缺失，双重降 L4。"
+      },
+      {
+        "type": "event",
+        "name": "新艺术风格室内 / l'intérieur Art nouveau",
+        "why_here": "1893 年开业，其新艺术风格室内为该风格的经典之作；曾属皮尔·卡丹集团",
+        "when": "1893 年开业；2023 年 11 月重开",
+        "detail": "2023 年 3 月起由 Paris Society 接管，同年 11 月重新开业。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.lechef.com/reouverture-du-restaurant-maxims-sous-limpulsion-de-paris-society/",
+          "https://movie-locations.com/movies/g/Gigi.php"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-11"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "le-train-bleu",
+    "name_zh": "蓝色列车餐厅",
+    "name_fr": "Le Train Bleu",
+    "name_en": "Le Train Bleu",
+    "address": "Place Louis-Armand, Gare de Lyon 二楼, 75012 Paris",
+    "arrondissement": 12,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营。2014 年整体修复。可作为离开巴黎当天的告别午餐（就在里昂车站内）。",
+    "best_time": null,
+    "era": 4,
+    "associations": [
+      {
+        "type": "event",
+        "name": "41 幅壁画 = 41 座城市 / les 41 fresques",
+        "why_here": "三个大厅共 41 幅壁画，每一幅画的都是 PLM 铁路沿线的一座法国城市/地区——你坐的位置正对着哪幅画，决定了你「名义上在哪座城市吃饭」",
+        "when": "1900 年为万国博览会而建（原名 Buffet de la Gare de Lyon），1963 年改名 Le Train Bleu；1972 年 9 月 23 日列为历史古迹",
+        "detail": "天花板金饰与线脚全部为 1900 年原物。这是全线「坐哪张桌子」这个主题最制度化的一站。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.openmoviemap.com/en/mr-beans-holiday/restaurant-le-train-bleu",
+          "https://www.linternaute.com/sortir/sorties/resto/1032866-20-restaurants-parisiens-vus-au-cinema/1032880-le-train-bleu"
+        ]
+      },
+      {
+        "type": "screen",
+        "name": "《尼基塔》/ Nikita (1990)",
+        "why_here": "吕克·贝松片中安妮·帕里约在此过生日、被告知第一个刺杀任务，随后掏枪把这家高级餐厅打成战场——全片最著名场景之一",
+        "when": "1990 年",
+        "detail": "法国媒体 linternaute（费加罗集团）与多个取景数据库均记载。这站的影视密度最高，而且全部第三方可证。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.linternaute.com/sortir/sorties/resto/1032866-20-restaurants-parisiens-vus-au-cinema/1032880-le-train-bleu",
+          "https://www.openmoviemap.com/en/mr-beans-holiday/restaurant-le-train-bleu"
+        ]
+      },
+      {
+        "type": "screen",
+        "name": "《憨豆先生的假期》/ Mr. Bean's Holiday (2007)",
+        "why_here": "憨豆错过火车，在此第一次尝法国海鲜，被生蚝整崩溃",
+        "when": "2007 年",
+        "detail": "取景事实有第三方取景数据库佐证。",
+        "confidence": "L2",
+        "sources": [
+          "https://thecinemaholic.com/where-was-mr-beans-holiday-2007-filmed/",
+          "https://www.openmoviemap.com/en/mr-beans-holiday/restaurant-le-train-bleu"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "常客名单：香奈儿、达利、密特朗 / la liste des habitués",
+        "why_here": "语料收录但仅见一处",
+        "when": null,
+        "detail": "「香奈儿、达利、密特朗都是常客」只见于 linternaute 一处，无二次独立佐证。取景事实是硬的，常客名单不是。",
+        "confidence": "L4",
+        "sources": [
+          "https://www.linternaute.com/sortir/sorties/resto/1032866-20-restaurants-parisiens-vus-au-cinema/1032880-le-train-bleu"
+        ],
+        "caveat": "单一信源 + when 缺失，降 L4。"
+      }
+    ],
+    "storylines": [
+      "line-11"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "brasserie-lipp",
+    "name_zh": "利普啤酒馆",
+    "name_fr": "Brasserie Lipp",
+    "name_en": "Brasserie Lipp",
+    "address": "151 boulevard Saint-Germain, 75006 Paris",
+    "arrondissement": 6,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营，每日 8:30–23:45。侍者平均工龄 19 年。",
+    "best_time": null,
+    "era": 4,
+    "associations": [
+      {
+        "type": "event",
+        "name": "楼上楼下鄙视链 / la hiérarchie des tables",
+        "why_here": "整条线最纯粹的「排面」案例——这里的座位等级制是有第三方权威报道的，不是店家吹的",
+        "when": "1982 年《纽约时报》专文；店 1880 年由 Léonard Lipp 创立（原名 Brasserie des bords du Rhin），1920 年 7 月 Marcellin Cazes 接手",
+        "detail": "NYT 1982 年写道：任何人都能在吧台喝酒、几乎任何人都能上二楼小餐厅吃饭，游客不知道区别、乐呵呵地爬那道旋转铁梯；但「一个有头有脸的法国人宁可去死也不会走上那道丢人的铁梯，并且愿意拿荣誉军团勋章来换门口右手边第一排的固定座位」。常客甚至给二楼起了外号叫「西伯利亚」。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.nytimes.com/1982/06/06/travel/for-the-elite-brasserie-lipp.html",
+          "https://www.timeout.com/paris/en/restaurants/brasserie-lipp"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "Prix Cazes 文学奖 / le Prix Cazes",
+        "why_here": "老板设立的文学奖，专门颁给没得过任何其他文学奖的作家，至今仍在颁",
+        "when": "1935 年由老板 Marcellin Cazes 设立",
+        "detail": "这是一个「反奖项的奖项」：得过别的文学奖就不够资格。餐厅自己做宣传，但奖项本身可查。",
+        "confidence": "L2",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Brasserie_Lipp",
+          "https://www.timeout.com/paris/en/restaurants/brasserie-lipp"
+        ]
+      },
+      {
+        "type": "work",
+        "name": "《流动的盛宴》第八章的那一餐 / Le repas d'Hemingway dans Paris est une fête",
+        "why_here": "海明威那一餐可以原样复刻——书里写明了他点的三样东西，而这三样今天菜单上都还有",
+        "when": "《流动的盛宴》写的是 1920 年代的巴黎；书 1964 年出版",
+        "detail": "第八章里他点的是 distingué（一升装大啤酒杯）+ pommes à l'huile（油渍土豆沙拉）+ cervelas（裹芥末酱的粗香肠）。",
+        "confidence": "L2",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Brasserie_Lipp",
+          "https://www.timeout.com/paris/en/restaurants/brasserie-lipp"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-11"
+    ],
+    "badges": []
+  },
+  {
+    "id": "harrys-new-york-bar",
+    "name_zh": "哈利纽约酒吧",
+    "name_fr": "Harry's New York Bar",
+    "name_en": "Harry's New York Bar",
+    "address": "5 rue Daunou, 75002 Paris（歌剧院与旺多姆广场之间）",
+    "arrondissement": 2,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营，全年 12:00 至凌晨；地下钢琴酒吧晚 10 点起。",
+    "best_time": null,
+    "era": 4,
+    "associations": [
+      {
+        "type": "event",
+        "name": "镜子上的 Sank Roo Doe Noo",
+        "why_here": "刻在店里大镜子上的这串怪词，是 5, rue Daunou 给英语母语者的音译拼法，专门方便喝多了的美国人跟出租车司机报地址",
+        "when": "酒吧 1911 年 11 月 26 日感恩节当天开业",
+        "detail": "整间酒吧是从纽约第七大道拆下来、海运到巴黎原样重装的。1911 年从曼哈顿运来的桃花心木护墙板和锡制天花板一寸没动过（Le Fooding 原话：「这不是复古风，这是真的」）。店里还有几代客人留下的大学三角旗和世界各国钞票收藏。海明威、丽塔·海华丝、亨弗莱·鲍嘉、格什温、伊恩·弗莱明都来过。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.visitparisregion.com/fr/harry-s-bar",
+          "https://lefooding.com/en/bars/harry-s-new-york-bar-paris",
+          "https://www.atlasobscura.com/places/harry-s-new-york-bar"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "血腥玛丽的发明权 / l'invention du Bloody Mary",
+        "why_here": "号称欧洲最老的鸡尾酒吧，也是血腥玛丽发明权争议的主战场——这是绝佳的「争议型」素材，不该选边站",
+        "when": "四个版本分别指向 1921 年（巴黎）、1934 年（纽约）、1939 年（巴黎）",
+        "detail": "版本 A：1921 年 Fernand「Pete」Petiot 在巴黎 Harry's Bar 发明（Harry's 官方立场、巴黎大区旅游局采用）；版本 B：1934 年 Petiot 在纽约 St. Regis 酒店 King Cole Bar 为奥博连斯基亲王调制，当时叫 Red Snapper；版本 C：1939 年演员 George Jessel 在 Harry's 发明——关键点是 Petiot 本人 1964 年接受《纽约客》采访时确认了 Jessel 的说法，他自己只说「我把它变成了今天的血腥玛丽，之前它不过是伏特加加番茄汁而已」；版本 D：Difford's Guide 认为 Petiot 只是给一个早已存在的组合加了调料。Petiot 1964 年那段自述（「我盖过四大撮盐、两撮黑胡椒、两撮卡宴辣椒、一层伍斯特酱……」）本身极具画面感，可原样用。",
+        "confidence": "L3",
+        "sources": [
+          "https://www.visitparisregion.com/fr/harry-s-bar",
+          "https://www.atlasobscura.com/places/harry-s-new-york-bar",
+          "https://lefooding.com/en/bars/harry-s-new-york-bar-paris"
+        ],
+        "caveat": "四说并存且年份差 >2 年（C2），降 L3，文案写「多说并存」，不得裁定。其中版本 A 为利益相关方立场（C8）。"
+      }
+    ],
+    "storylines": [
+      "line-11"
+    ],
+    "badges": []
+  },
+  {
+    "id": "cafe-de-la-paix",
+    "name_zh": "和平咖啡馆",
+    "name_fr": "Café de la Paix",
+    "name_en": "Café de la Paix",
+    "address": "5 place de l'Opéra / 12 boulevard des Capucines, 75009 Paris（洲际巴黎大酒店内）",
+    "arrondissement": 9,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营，每日营业至 23:30。2003 年、2020 年两轮修复，2021 年重开。列为历史古迹。",
+    "best_time": null,
+    "era": 3,
+    "associations": [
+      {
+        "type": "event",
+        "name": "欧仁妮皇后剪彩开业 / l'inauguration par l'impératrice Eugénie",
+        "why_here": "1862 年由欧仁妮皇后亲自剪彩开业，奥芬巴赫本人指挥舞会乐队",
+        "when": "1862 年 5 月 5 日",
+        "detail": "正对加尼叶歌剧院，拿破仑三世第二帝国风格内饰。另有 1948 年 6 月莫里斯·舍瓦利耶、亨利·萨尔瓦多、伊夫·蒙当在此录制首个对美直播广播节目 This is Paris；萨尔瓦多在留言簿上写：「把你的咖啡馆扩大，我们就终于能有世界和平了。」",
+        "confidence": "L2",
+        "sources": [
+          "https://www.cafedelapaix.fr/en/history/",
+          "https://www.historyhit.com/locations/cafe-de-la-paix/"
+        ]
+      },
+      {
+        "type": "work",
+        "name": "左拉《娜娜》与柯南·道尔的福尔摩斯 / Nana & Sherlock Holmes",
+        "why_here": "两个具体的文本内指认：左拉《娜娜》里女主角就死在楼上大饭店的某个房间；柯南·道尔笔下福尔摩斯与华生在此碰头",
+        "when": "《娜娜》1880 年出版；福尔摩斯系列 1887–1927",
+        "detail": "王尔德当时就住在旁边 29 boulevard des Capucines。常客名单包括左拉、莫泊桑、雨果、王尔德、柯南·道尔。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.cafedelapaix.fr/en/history/",
+          "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/articles/334655-history-restaurant-cafe-de-la-paix-paris-9"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "卢米埃尔首映不在这里 / la première séance n'a pas eu lieu ici",
+        "why_here": "paris-bistro.com 声称 1895 年 12 月 28 日的电影首映发生在「和平咖啡馆地下室的印度沙龙」——这是错的",
+        "when": "1895 年 12 月 28 日",
+        "detail": "正确地点是 Grand Café 的 Salon indien，14 boulevard des Capucines，也就是今天的 Scribe 酒店；而和平咖啡馆在 12 boulevard des Capucines，是隔壁，属于 Grand Hôtel（今洲际）。两家不同的咖啡馆、两个不同的门牌号、两家不同的酒店。",
+        "confidence": "L5",
+        "sources": [
+          "https://horscine.org/selection/la-premiere-seance-publique-payante/",
+          "https://www.ledevoir.com/opinion/idees/592560/il-y-a-125-ans-le-cinematographe-lumiere-au-salon-indien-du-grand-cafe",
+          "https://fr-academic.com/dic.nsf/frwiki/1504833/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-11"
+    ],
+    "badges": []
+  },
+  {
+    "id": "marche-des-enfants-rouges",
+    "name_zh": "红孩儿市集",
+    "name_fr": "Marché des Enfants Rouges",
+    "name_en": "Marché des Enfants Rouges",
+    "address": "39 rue de Bretagne, 75003 Paris（玛黑区）",
+    "arrondissement": 3,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营。周二至周六及周日营业，周日 17:00 关门。1982 年列入巴黎市历史古迹名录。免费进入，摊上消费另计。",
+    "best_time": "下午（市集时段），可接傍晚屋顶与夜里的 guinguette",
+    "era": 1,
+    "associations": [
+      {
+        "type": "event",
+        "name": "巴黎现存最古老的有顶市集 / le plus ancien marché couvert de Paris",
+        "why_here": "1615 年应路易十三之命开设，最初叫「玛黑小市集」；今天狭窄过道里全是共享长桌，完全符合「一群人乱哄哄一起吃」",
+        "when": "1615 年开设；1772 年得现名；1912 年售予巴黎市；1990 年代整修",
+        "detail": "今天挤满了摩洛哥、日本、黎巴嫩、意大利等各国小餐摊。另一个硬细节：1994 年该市集险些被拆掉改成停车场，是希拉克任巴黎市长期间推动的项目，靠街区居民动员才保住。",
+        "confidence": "L3",
+        "sources": [
+          "https://www.pariszigzag.fr/insolite/histoire-insolite-paris/marche-enfants-rouges-paris/",
+          "https://www.visitparisregion.com/fr/marche-des-enfants-rouges"
+        ],
+        "caveat": "创立年份有小分歧：多数信源说 1615 年，但 Fonds Alcuin 同一篇文章里同时写了 1615 和 1628 两个年份（自相矛盾）。"
+      },
+      {
+        "type": "event",
+        "name": "「红衣孤儿」说法已被质疑 / les enfants en rouge, une explication contestée",
+        "why_here": "通行说法是隔壁 1534/1535 年由纳瓦拉的玛格丽特创办的孤儿院孩子穿红色斗篷（红色象征基督教慈善），故称「红孩儿」——但这个说法有物质证据层面的反驳",
+        "when": "孤儿院 1534/1535 年创办；质疑由 Paris ZigZag 提出",
+        "detail": "Paris ZigZag 的反驳靠的是染料经济学：当时的胭脂红要用胭脂虫（cochenille）制作，价格极其昂贵，给一整所孤儿院的孩子做红衣服在经济上不现实。更可能（也更阴森）的解释是这些孩子的母亲大多死于难产。注意：visitparisregion（官方旅游局）与 Fonds Alcuin 仍在照搬「红斗篷象征基督教慈善」的说法——这是一个「官方渠道仍在传播已被质疑说法」的现成案例。",
+        "confidence": "L5",
+        "sources": [
+          "https://www.pariszigzag.fr/insolite/histoire-insolite-paris/marche-enfants-rouges-paris/",
+          "https://www.visitparisregion.com/fr/marche-des-enfants-rouges"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-14"
+    ],
+    "badges": []
+  },
+  {
+    "id": "rosa-bonheur-buttes-chaumont",
+    "name_zh": "玫瑰丰收露天舞场（肖蒙山丘店）",
+    "name_fr": "Rosa Bonheur Buttes-Chaumont",
+    "name_en": "Rosa Bonheur Buttes-Chaumont",
+    "address": "Parc des Buttes-Chaumont, 2 allée de la Cascade, 75019 Paris",
+    "arrondissement": 19,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营，全年开放（不只夏季），周三至周日 12:00–24:00。不接受预订（官网特别警告有诈骗订位网站）。容量 500 人。进园免费，店内消费另计。",
+    "best_time": "夜里（guinguette 时段）",
+    "era": 7,
+    "associations": [
+      {
+        "type": "event",
+        "name": "把 guinguette 搬回城内的第一家 / la première guinguette rapatriée dans Paris",
+        "why_here": "直接占用了公园里一座荒废多年的 1900 年凉亭；2008 年由 Mimi 带队、联合 Why Not Productions 电影公司等向巴黎市政府投标获准",
+        "when": "2008 年 8 月开业",
+        "detail": "命名致敬画家 Rosa Bonheur——第一位获颁法国荣誉军团勋章的女艺术家。定位明确写着 joyeuse et inclusive（欢乐、包容），客群从带孩子的家庭到夜店咖到晨跑老人全都有。",
+        "confidence": "L2",
+        "sources": [
+          "https://rosabonheur.fr/lieu/rosa-bonheur-buttes-chaumont/",
+          "https://lylo.fr/lieu/concerts-rosa-bonheur-paris-19",
+          "https://parisjetaime.com/eng/restaurant/rosa-bonheur-buttes-chaumont-p429"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "Du toro à la techno 与固定合唱团",
+        "why_here": "「一群人一起开心」在这里有最具体的形态",
+        "when": "自 2008 年开业起",
+        "detail": "自己的宣传口号是 Du toro à la techno（从斗牛到 Techno），音乐从 Annie Cordy 放到 Daft Punk，营地精神是卡马格（Camargue）风格。有固定的合唱团 Viens Chanter Bonheur ! 每周排练。",
+        "confidence": "L2",
+        "sources": [
+          "https://rosabonheur.fr/lieu/rosa-bonheur-buttes-chaumont/",
+          "https://lylo.fr/lieu/concerts-rosa-bonheur-paris-19"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-14"
+    ],
+    "badges": []
+  },
+  {
+    "id": "rosa-bonheur-sur-seine",
+    "name_zh": "塞纳河上的玫瑰丰收",
+    "name_fr": "Rosa Bonheur sur Seine",
+    "name_en": "Rosa Bonheur sur Seine",
+    "address": "2 Port des Invalides, 75007 Paris（协和桥与亚历山大三世桥之间）",
+    "arrondissement": 7,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营，全年开放。驳船周三至周日；岸上露台周一至周日。夏天岸上露台有柴火炉现烤披萨。",
+    "best_time": "每周六（le bal guinguette sur Seine 河畔舞会）",
+    "era": 7,
+    "associations": [
+      {
+        "type": "event",
+        "name": "每周六的河畔舞会 / le bal guinguette sur Seine",
+        "why_here": "把 guinguette 从公园又搬回了水上——这是对 19 世纪河畔舞场传统最直接的当代回应",
+        "when": "2013 年进驻河岸；2014 年首艘驳船；2019 年新船 Rosa 2",
+        "detail": "官网说明是「各代人在这里相遇，家人和朋友、祖父母和……」，这就是 19 世纪传统的活体延续。新船 40 米长，带屋顶露台和多彩霓虹，外形刻意用金属结构配玻璃外壳呼应大皇宫的玻璃穹顶，灰色调则是为了融入河岸的石质环境。",
+        "confidence": "L2",
+        "sources": [
+          "https://rosabonheur.fr/lieu/rosa-sur-seine/",
+          "https://www.sortiraparis.com/actualites/a-paris/articles/181299-bientot-une-nouvelle-barge-rosa-bonheur-sur-seine-a-paris"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "2024 奥运期间的 Pride House",
+        "why_here": "2024 年巴黎奥运会期间，Pride House 选择这艘驳船作为自己的大本营",
+        "when": "2024 年",
+        "detail": "官网原话：「当全世界在数奖牌，我们在数掉在舞池地板上的亮片。」",
+        "confidence": "L4",
+        "sources": [
+          "https://rosabonheur.fr/lieu/rosa-sur-seine/"
+        ],
+        "caveat": "仅官网（利益相关方）单一来源，按 C8 降 L4。"
+      }
+    ],
+    "storylines": [
+      "line-14"
+    ],
+    "badges": []
+  },
+  {
+    "id": "guinguette-ile-du-martin-pecheur",
+    "name_zh": "翠鸟岛露天舞场",
+    "name_fr": "La Guinguette de l'Île du Martin-Pêcheur",
+    "name_en": "Guinguette de l'Île du Martin-Pêcheur",
+    "address": "Île du Martin-Pêcheur, 41 quai Victor-Hugo, 94500 Champigny-sur-Marne（马恩河畔，RER A 线 Champigny 站步行 15 分钟）",
+    "arrondissement": null,
+    "outside_paris": true,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营。周二晚至周日；官方旅游局登记的 2026 年营业期为 7/10–11/1，周一周二休。建议 5–9 月务必预订。要走过一道步行桥、上一座被白杨树遮住的河心岛才能到。现另加了泳池（10 € 入场，与餐厅预订分开）。⚠️ 巴黎市域外站点，需 RER，标为「需单独一日」，不计入步行距离统计。",
+    "best_time": "6–8 月周六晚 21:00–凌晨 1:00，或周日/节假日 14:00–18:00（整支乐队时段）",
+    "era": 7,
+    "associations": [
+      {
+        "type": "event",
+        "name": "按季节排班的乐队编制 / l'orchestre selon la saison",
+        "why_here": "这是真正在马恩河上、真正在跳舞的那一个；而它的乐队编制是按季节和星期精确排班的，这是可复述的硬信息",
+        "when": "1993 年创建（承接 19 世纪马恩河畔 guinguette 传统）",
+        "detail": "6–8 月周六晚 21:00–凌晨 1:00 和周日/节假日 14:00–18:00 是整支乐队；3、4、5 月及 9、10 月周六晚、以及周日下午是一名手风琴手——而且手风琴手不站台上，是在吃炸小鱼的客人和跳舞的人之间边走边拉（官网原文：l'accordéoniste virevolte alors parmi les «guincheurs» et mangeurs de fritures）。3000 平米林地花园，河畔露台。",
+        "confidence": "L2",
+        "sources": [
+          "https://tourisme-vincennes-marnebois.fr/fr/restauration/la-guinguette-de-lile-du-martin-pecheur",
+          "https://www.laguingz.com/",
+          "https://www.tourisme-valdemarne.com/au-bord-de-l-eau/guinguettes/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-14"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "maison-fournaise",
+    "name_zh": "富尔奈斯之家",
+    "name_fr": "Maison Fournaise",
+    "name_en": "Maison Fournaise",
+    "address": "3 rue du Bac, Île des Impressionnistes, 78400 Chatou（RER A 线 Rueil-Malmaison 站步行 12 分钟）",
+    "arrondissement": null,
+    "outside_paris": true,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营，餐厅 + 小型博物馆。2023 年 10 月起由三星主厨 Christian Le Squer 与主厨 Hakima El Berrimi 合作出菜。⚠️ 巴黎市域外站点，需 RER，标为「需单独一日」，不计入步行距离统计。「船上的午宴」39 € 套餐随奥赛「雷诺阿与爱」展期（至 2026 年 7 月 19 日）推出，上线前需复核是否仍供应。",
+    "best_time": "周日最佳（河畔有乐队与舞会氛围）",
+    "era": 3,
+    "associations": [
+      {
+        "type": "work",
+        "name": "雷诺阿《船上的午宴》/ Le Déjeuner des canotiers (1880–1881)",
+        "why_here": "这幅画就是在这栋楼的阳台上画的——不是「附近」，是就在这里",
+        "when": "1880–1881 年绘于此；Fournaise 家族 1830 年代起在岛上有地，1850 年 Alphonse Fournaise 开小酒馆，1857 年正式营业，1866 年重建为客栈式 guinguette",
+        "detail": "画里的人都能点名：雷诺阿画的是自己的朋友圈——Aline Charigot（1890 年成为他妻子）、赞助人卡耶博特、Raoul Barbier 男爵、女演员 Ellen Andrée、诗人 Jules Laforgue，以及老板的儿子 Hyppolyte-Alphonse Fournaise。露台的条纹遮阳篷跟画里是一样的。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.maisonfournaise.com/en/about-us/",
+          "https://www.parisladouce.com/2026/04/dejeuner-des-canotiers-la-maison.html"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "原画 20 年来首次回巴黎 / le retour du tableau à Paris",
+        "why_here": "原画本身 2026 年上半年正好回到巴黎（华盛顿 Phillips Collection 借展）",
+        "when": "奥赛博物馆「雷诺阿与爱」展至 2026 年 7 月 19 日",
+        "detail": "餐厅同期推出 39 € 的「船上的午宴」套餐，菜单照着 19 世纪的吃法来：炸胡瓜鱼（éperlans frits）、梭鲈鱼丸配小龙虾酱、红酒煮梨。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.maisonfournaise.com/en/about-us/",
+          "https://www.en-vols.com/gouts/paris-guinguette-menu-renoir-dejeuner-canotiers/"
+        ],
+        "caveat": "时效性：套餐随展期（2026-07-19）结束，文案上线前需复核。"
+      },
+      {
+        "type": "person",
+        "name": "印象派与划船客圈子 / les canotiers",
+        "why_here": "莫奈、德加、毕沙罗、西斯莱、莫里索、卡耶博特都常来；莫泊桑本人就是个 canotier（划船客），在这一带写过多篇小说",
+        "when": "雷诺阿曾在 Chatou 住了半年，期间画了约三十幅画",
+        "detail": "岛今天叫 Île des Impressionnistes（印象派之岛），名字就是从这段历史来的。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.maisonfournaise.com/en/about-us/",
+          "https://www.parisladouce.com/2026/04/dejeuner-des-canotiers-la-maison.html"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-14"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "la-recyclerie",
+    "name_zh": "回收站（旧奥尔纳诺火车站）",
+    "name_fr": "La REcyclerie",
+    "name_en": "La REcyclerie",
+    "address": "83 boulevard Ornano, 75018 Paris（Porte de Clignancourt 地铁站旁）",
+    "arrondissement": 18,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营，全周 7 天。进入免费，餐饮与工坊另计（l'Atelier de REné 修理工坊 5 €/小时）。街区居民带厨余来堆肥可换一杯免费咖啡。",
+    "best_time": null,
+    "era": 7,
+    "associations": [
+      {
+        "type": "event",
+        "name": "开在小铁路废弃车站上的城市农场 / la ferme urbaine de l'ancienne gare Ornano",
+        "why_here": "开在巴黎小铁路（Petite Ceinture）废弃的奥尔纳诺车站站房和站台上",
+        "when": "车站 1869 年通客运、1934 年停运；2014 年 6 月 La REcyclerie 开业",
+        "detail": "站台旁支撑 rue Belliard 的狭长土坡被改成了 1000 平米的城市农场——400 平米菜园种 210 个品种；鸡舍养 17 只鸡加两只印度跑鸭（专门负责吃菜园里的鼻涕虫）；屋顶有 5 个蜂箱和蜜源草甸；还有一套鱼菜共生系统（鱼的排泄物养菜、菜净化鱼的水）。约一百个堆肥桶在循环，每年消化约 4 吨绿废。车站停运后此处当过啤酒馆、店铺、银行。法国农业部专门撰文介绍过。",
+        "confidence": "L1",
+        "sources": [
+          "https://agriculture.gouv.fr/la-recyclerie-lagriculture-urbaine-au-coeur-dun-etablissement-innovant",
+          "https://fr.wikipedia.org/wiki/Gare_du_boulevard_Ornano",
+          "https://www.larecyclerie.com/podcasts/events/visite-de-la-recyclerie-copy/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-14"
+    ],
+    "badges": []
+  },
+  {
+    "id": "le-perchoir-menilmontant",
+    "name_zh": "栖木屋顶酒吧（梅尼蒙当店）",
+    "name_fr": "Le Perchoir Ménilmontant",
+    "name_en": "Le Perchoir Ménilmontant",
+    "address": "14 rue Crespin du Gast, 75011 Paris",
+    "arrondissement": 11,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "在营，7 天/周 16:00–凌晨 1:00。主打 menu grande tablée（大长桌套餐，人均 39 €）。楼有 7 层，酒吧在顶楼（离地 23 米），楼下 6 层是餐厅和 club。",
+    "best_time": "傍晚（看日落），可一路喝到跳舞",
+    "era": 7,
+    "associations": [
+      {
+        "type": "event",
+        "name": "巴黎第一个真正意义上的屋顶酒吧 / le premier rooftop parisien",
+        "why_here": "2013 年开业时法国还几乎没有 rooftop 这个概念；创始人 Adrien Boissaye 和 Emmanuel Collignon 本来就在这栋楼里上班，天天在咖啡休息时盯着那个荒废的屋顶，最后真把它做成了",
+        "when": "2013 年开业（2013 年 9 月的报道称其为「第一个真正的巴黎屋顶」）",
+        "detail": "创业时所有人都说会失败，理由具体得可笑：从街上完全看不到这地方，而且当年社交媒体还不发达，没人找得到——结果开业即爆满，开业后直接带起了整个巴黎的屋顶风潮。400 平米露台种着葡萄藤和番茄苗，360 度看得到圣心堂，晴天能看到埃菲尔铁塔。",
+        "confidence": "L2",
+        "sources": [
+          "https://aucoeurduchr.fr/article/grand-paris/escapade-urbaine-au-perchoir-de-menilmontant/",
+          "https://www.mylittleparis.com/resto-bars/le-perchoir-rooftop",
+          "https://www.rooftop-prive.com/lieu/le-perchoir-menilmontant"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "menu grande tablée（大长桌套餐）",
+        "why_here": "与 SHAN 人格最契合的一点：店里主打分享式大长桌套餐",
+        "when": "自 2013 年开业起",
+        "detail": "创始人原话是「我们做分享式菜品，因为我们喜欢大长桌这个概念，一群朋友围着它放松」。人均 39 €。",
+        "confidence": "L2",
+        "sources": [
+          "https://aucoeurduchr.fr/article/grand-paris/escapade-urbaine-au-perchoir-de-menilmontant/",
+          "https://www.rooftop-prive.com/lieu/le-perchoir-menilmontant"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-14"
+    ],
+    "badges": []
+  },
+  {
+    "id": "coulee-verte-rene-dumont",
+    "name_zh": "勒内-迪蒙绿荫步道（原名「植栽步道」）",
+    "name_fr": "Coulée verte René-Dumont (anciennement Promenade plantée)",
+    "name_en": "Coulée verte René-Dumont",
+    "address": "1 Coulée verte René-Dumont, 75012 Paris（西端入口在 Avenue Daumesnil × Rue de Lyon 交口的楼梯）",
+    "arrondissement": 12,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费，完全开放、全线可走。每日 8:00 开（周末及节假日 9:00），闭园时间随季节：11 月/2 月 17:45，3 月 19:00，10 月 19:30，4 月/9 月 20:30，5–8 月 21:30。",
+    "best_time": "早 8:00 从 Bastille 出发（第 13 条线起点）",
+    "era": 7,
+    "associations": [
+      {
+        "type": "event",
+        "name": "世界上第一条把废弃高架铁路改成城市花园的项目 / la première promenade sur viaduc ferroviaire",
+        "why_here": "比纽约 High Line（2009 年一期开放）早 16 年，而且 High Line 的两位创始人确实受它影响",
+        "when": "铁路线 1859 年通车（Vincennes 线），1969 年停运；1988 年动工、1993 年落成开放；2013 年前后改名纪念农学家 René Dumont",
+        "detail": "《纽约时报》2010 年的报道直接写「在早期，两位创始人（Joshua David 与 Robert Hammond）从巴黎植栽步道的开发中汲取灵感」。西端高架段离地约 10 米，架在 Viaduc des Arts 的 70 个红砖拱券之上，拱券底下现在是手工艺人工坊。",
+        "confidence": "L3",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Coul%C3%A9e_verte_Ren%C3%A9-Dumont",
+          "https://www.nytimes.com/2010/07/15/arts/design/15highline.html",
+          "https://americanlibraryinparis.org/annik-la-farge-new-york-s-high-line-its-parisian-muse-the-promenade-plantee/"
+        ],
+        "caveat": "启用年份两说：英文维基、L'Officiel des spectacles、多家旅游媒体写 1993 落成；ASPCRF（petiteceinture.org）写 1988 年落成；NYT 写「1988 年开始建」。最可能是 1988 动工、1993 开放，文案两个年份都写。另全长 4.5 km（L'Officiel、parisauthority）vs 4.7 km（维基与多家英文媒体）并存，差值来自是否把 PC12 那段算进去，建议写「约 4.5–4.7 km」。"
+      },
+      {
+        "type": "screen",
+        "name": "《爱在日落黄昏时》/ Before Sunset (2004)",
+        "why_here": "伊桑·霍克与朱莉·德尔佩喝完咖啡后，Céline 说「我们去那条花园小径吧，很不错」，两人边走边聊的那段就在高架段拍的",
+        "when": "2004 年",
+        "detail": "同一部电影的开场是在莎士比亚书店的朗读会上——所以第 13 条线第 1 站与第 15 条线第 5 站其实是同一部电影的一头一尾。",
+        "confidence": "L2",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Coul%C3%A9e_verte_Ren%C3%A9-Dumont",
+          "https://www.offi.fr/a-travers-paris/promenade-plantee-3033.html"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-13"
+    ],
+    "badges": []
+  },
+  {
+    "id": "petite-ceinture-12e",
+    "name_zh": "小环城铁道 12 区步道（PC12）",
+    "name_fr": "Petite Ceinture du 12e (PC12)",
+    "name_en": "Petite Ceinture du 12e (PC12)",
+    "address": "从 rue de Charenton 到 avenue de Saint-Mandé, 75012 Paris",
+    "arrondissement": 12,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费。这是合法开放段——全长 1.67 km，是整条环城线上目前最长的合法可走路段，2019 年开放。开放时间随季节浮动（各段不一，以现场告示为准）。⚠️ 全线禁止带狗，即使牵绳也罚款。⚠️ 小环城铁道绝大部分路段属非法闯入（见 debunks / 安全提示），仅少数改造段合法开放，产品必须逐段标注。",
+    "best_time": null,
+    "era": 3,
+    "associations": [
+      {
+        "type": "event",
+        "name": "巴黎的「幽灵铁路」/ le chemin de fer fantôme",
+        "why_here": "小环城铁道的走向大致就是 1860 年巴黎吞并周边村镇后的新市界",
+        "when": "1852–1869 分段建成，绕城一周 32 km；1934 年停止客运；货运一直跑到 1994 年；PC12 于 2019 年向公众开放",
+        "detail": "这段保留了野生状态——巴黎市政府的统计是这一段观测到约 170 种植物（其中 117 种为本地区原生种）和 70 种动物。段内有一条 200 米长的「自然小径」，分草地、萌生林、林地三个观察站，还有一块社区菜园交给 Graine de partage 协会打理。",
+        "confidence": "L1",
+        "sources": [
+          "https://www.paris.fr/pages/la-petite-ceinture-et-ses-promenades-ecologiques-7855",
+          "https://petiteceinture.org/en/foire-aux-questions/",
+          "https://www.petiteceinture-info.fr/Espaces-ouverts-au-public-sur-la-Petite-Ceinture.html"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-13"
+    ],
+    "badges": []
+  },
+  {
+    "id": "bois-de-charonne-pc20",
+    "name_zh": "小环城 20 区段与夏隆讷林",
+    "name_fr": "Petite Ceinture du 20e (PC20) & Bois de Charonne",
+    "name_en": "Petite Ceinture du 20e & Bois de Charonne",
+    "address": "103 Cours de Vincennes, 75020 Paris（另一入口在 Jardin de la Gare de Charonne）",
+    "arrondissement": 20,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费，合法开放。工作日 8:00–20:30，周末 9:00–20:30（2026 年 9 月数据，随季节调整）。无厕所、无饮水机、禁止宠物。",
+    "best_time": null,
+    "era": 7,
+    "associations": [
+      {
+        "type": "event",
+        "name": "在废铁轨上「造林」的实验 / le bois planté sur les rails",
+        "why_here": "这是环城废线上最新开放的一段，也是巴黎在废铁轨上造林的实验：3.5 公顷密植林，目的是造一个城市降温岛",
+        "when": "1852–1869 建线；1934 停客运；1980 年代才逐步停货运；夏隆讷林 2024 年 7 月 20 日开放，2024 年 9 月 11 日正式揭幕",
+        "detail": "这段最有意思的地方是它「什么都没做」——市政府明确保留了它的 friche（荒地）性格，只做小范围疏伐，让白蜡树、刺槐、悬铃槭自己长；砍下的树桩和枯木原地留着，专门给蛀木昆虫和真菌用。项目资金来自 Métropole du Grand Paris / Nature 2050 / 塞纳-诺曼底水务局。",
+        "confidence": "L4",
+        "sources": [
+          "https://www.paris.fr/lieux/petite-ceinture-du-20e-pc-20-et-bois-de-charonne-19205",
+          "https://www.paris.fr/pages/la-petite-ceinture-et-ses-promenades-ecologiques-7855"
+        ],
+        "caveat": "独立源判定：两个信源同属 paris.fr（同域名不同页不计为两个独立源），且 paris.fr 是该项目业主，属利益相关方自述，单独计为 L4。需第三方报道佐证后方可升级。"
+      }
+    ],
+    "storylines": [
+      "line-13"
+    ],
+    "badges": []
+  },
+  {
+    "id": "pc20-couronnes",
+    "name_zh": "小环城 20 区 Couronnes 段",
+    "name_fr": "Petite Ceinture du 20e — section Couronnes",
+    "name_en": "Petite Ceinture du 20e — Couronnes section",
+    "address": "rue des Couronnes 至 rue de Ménilmontant, 75020 Paris",
+    "arrondissement": 20,
+    "coordinates": null,
+    "still_exists": "restricted",
+    "access_note": "免费，合法开放，但只有 200 米，且⚠️夜间强制关闭（具体时段随季节，以入口告示为准）。禁止宠物。这是全线唯一为了动物繁殖周期而夜间关闭的路段。",
+    "best_time": "白天（夜间闭园）",
+    "era": 7,
+    "associations": [
+      {
+        "type": "event",
+        "name": "为动物繁殖周期夜间闭园 / fermé la nuit pour la faune",
+        "why_here": "它被官方当成生态廊道而非公园管理——这是巴黎城里少数几个行政上承认「人应该让位」的公共空间",
+        "when": "2019 年开放",
+        "detail": "巴黎市政府对这一段的说明是它「夜间关闭，以免干扰野生动物的繁殖周期」，并配套调整了养护方式。走进去会明显感到它不是园林，是一条被围起来的沟。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.paris.fr/pages/la-petite-ceinture-et-ses-promenades-ecologiques-7855",
+          "https://www.offi.fr/a-travers-paris/la-petite-ceinture-7282.html"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-13"
+    ],
+    "badges": []
+  },
+  {
+    "id": "parc-de-belleville",
+    "name_zh": "美丽城公园（Willy Ronis 观景台）",
+    "name_fr": "Parc de Belleville (Belvédère Willy Ronis)",
+    "name_en": "Parc de Belleville (Willy Ronis Belvedere)",
+    "address": "47 rue des Couronnes, 75020 Paris（另有 rue Piat / rue Julien-Lacroix / rue Jouye-Rouve 入口）",
+    "arrondissement": 20,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费。2026 年 9 月时段为周二至周五 7:00–20:30，周末 8:00–20:30（季节性调整）。有厕所、饮水点、乒乓球台，禁止宠物。",
+    "best_time": null,
+    "era": 7,
+    "associations": [
+      {
+        "type": "person",
+        "name": "威利·罗尼斯 / Willy Ronis",
+        "why_here": "观景台 2015 年命名纪念摄影师罗尼斯，他住在 20 区，一生大量作品拍的就是这一带的平民巴黎",
+        "when": "2015 年观景台改名",
+        "detail": "观景台海拔 108 米，是巴黎最高的公园观景点之一，能一眼看到埃菲尔铁塔、先贤祠、蒙帕纳斯塔。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.paris.fr/lieux/parc-de-belleville-1777",
+          "https://mairie20.paris.fr/pages/il-etait-une-fois-le-20e-le-parc-de-belleville-un-lieu-charge-d-histoire-et-de-nature-34458"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "乔治·佩雷克与消失的 rue Vilin / Georges Perec & la rue Vilin",
+        "why_here": "公园所在的位置吞掉了 rue Vilin——佩雷克童年住过、后来在《W 或童年回忆》等作品里反复回访的那条街",
+        "when": "rue Vilin 在 20 世纪后期拆除；公园 1988 年落成",
+        "detail": "园里两条主横道踩的是两条消失街道的原路线，还保留了老铺路石。Robert Doisneau 也拍过 rue Vilin。",
+        "confidence": "L2",
+        "sources": [
+          "https://mairie20.paris.fr/pages/il-etait-une-fois-le-20e-le-parc-de-belleville-un-lieu-charge-d-histoire-et-de-nature-34458",
+          "https://www.cityzeum.com/parc-de-belleville"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "葡萄园阶地与「guinguette」词源 / les terrasses viticoles et l'origine du mot guinguette",
+        "why_here": "这片坡地在中世纪是葡萄园，而当地历史上产的劣质酒直接给了法语「guinguette」这个词",
+        "when": "卡洛林王朝时期起种葡萄；13 世纪 Savies 农庄的修士经营 15 公顷葡萄园；1992 年重植葡萄",
+        "detail": "公园设计者是建筑师 François Debulois 和景观师 Paul Brichet，全园按梯田排布，就是在模仿当年的葡萄园阶地。今天园内有 140 株葡萄（霞多丽 + 莫尼耶皮诺），1992 年种下。当地历史上产的劣质气泡酒叫 Piquette，另一种叫 Guinguet——「guinguette」（露天小酒馆）这个法语词就是从这来的，直接连到第 14 条线的主题。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.paris.fr/lieux/parc-de-belleville-1777",
+          "https://mairie20.paris.fr/pages/il-etait-une-fois-le-20e-le-parc-de-belleville-un-lieu-charge-d-histoire-et-de-nature-34458"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-13"
+    ],
+    "badges": []
+  },
+  {
+    "id": "butte-bergeyre",
+    "name_zh": "贝尔热尔山丘 / 修石灰工匠葡萄园",
+    "name_fr": "Butte Bergeyre / Clos des Chaufourniers",
+    "name_en": "Butte Bergeyre / Clos des Chaufourniers",
+    "address": "70–78 rue Georges-Lardennois, 75019 Paris（葡萄园地址标注为 35 rue des Chaufourniers / 72 rue Georges-Lardennois）",
+    "arrondissement": 19,
+    "coordinates": null,
+    "still_exists": "restricted",
+    "access_note": "山顶街道与观景点（rue Georges-Lardennois 与 rue Rémy-de-Gourmont 一带）是公共道路，免费、全天可达、无门无岗。⚠️ 葡萄园所在的 square des Chaufourniers 基本不开放：paris.fr 官方（2024-04）称共享花园因安全原因（坡度过陡）不对公众开放，民间信源称周日下午开放——信源直接矛盾，按保守口径处理。文案写「从街角看出去」，不要写「走进葡萄园」。",
+    "best_time": null,
+    "era": 5,
+    "associations": [
+      {
+        "type": "event",
+        "name": "一座山丘的失败项目史 / l'histoire des projets ratés",
+        "why_here": "这座山丘的百年折腾史全是失败项目堆出来的",
+        "when": "1908/1909 年建游乐场「疯山丘」（Les Folles Buttes）→ 1918 年 8 月改建成 15,000 座橄榄球场 → 1924 年巴黎奥运会在此办过项目 → 1925/1926 年因地基不稳、维护费失控被拆",
+        "detail": "球场以 1914 年 9 月阵亡、年仅 20 岁的本俱乐部球员 Robert Bergeyre 命名。球场拆了以后，开发商把山丘切成 220 块宅基地，但因为地下是被掏空的石膏矿，规定只能盖低矮轻质的房子——这就是为什么今天山顶是一片「不像巴黎」的独栋小屋村落、只有一条 rue Georges-Lardennois 能上去。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.parisladouce.com/2024/05/vignoble-butte-bergeyre-le-clos-des.html",
+          "https://www.pariszigzag.fr/insolite/lieux-insolites/butte-bergeyre/",
+          "https://fr.wikipedia.org/wiki/Butte_Bergeyre"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "一个园丁出于好奇种下的葡萄园 / le clos planté par curiosité",
+        "why_here": "葡萄园的起源很个人化：1995 年一位巴黎市园丁出于好奇自己种了几株",
+        "when": "1995 年种下；第一次能酿酒的收成要等到 2010 年",
+        "detail": "现在年产约 65 升，不出售，只在九月末「花园节」和十月初「采收节」喝。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.parisladouce.com/2024/05/vignoble-butte-bergeyre-le-clos-des.html",
+          "https://www.pariszigzag.fr/insolite/lieux-insolites/butte-bergeyre/"
+        ],
+        "caveat": "葡萄园可否参观信源直接矛盾（paris.fr 官方称不开放 vs 民间称周日下午开放 vs Histoires de Paris 称每年九月只开一个周末），按 C7 取最保守口径「不开放」。"
+      }
+    ],
+    "storylines": [
+      "line-13"
+    ],
+    "badges": [
+      "outside_only"
+    ]
+  },
+  {
+    "id": "parc-des-buttes-chaumont",
+    "name_zh": "肖蒙山丘公园",
+    "name_fr": "Parc des Buttes-Chaumont",
+    "name_en": "Parc des Buttes-Chaumont",
+    "address": "Place Armand-Carrel, 75019 Paris（其他入口：1-7 rue Botzaris / 2-6b rue Manin / 55 rue de Crimée / 42 avenue Simon-Bolivar）",
+    "arrondissement": 19,
+    "coordinates": null,
+    "still_exists": "restricted",
+    "access_note": "公园免费开放（2026 年 9 月为每日 7:00–21:00，10 月起 7:00–20:00），约 95% 园区仍可进入。⚠️ 中心区——岛（île du Belvédère）、西比拉神庙、大小瀑布、部分环湖步道——因土壤不稳有塌方风险全部封闭：整座公园建在废弃石膏矿上。首批工程 2023 年底启动，2025 年 9 月 22 日–10 月 20 日公众咨询，已启动 18 个月竞争性对话招标；据 19 区区长 François Dagnaud 说明，整体预算约 8,500 万欧元，2026 年为研究期，主体工程预计 2027 年底才开工。👉 文案绝不能写「登上西比拉神庙」，只能写「远眺」。园内 Rosa Bonheur、Pavillon du Lac 等餐饮为付费。",
+    "best_time": null,
+    "era": 3,
+    "associations": [
+      {
+        "type": "event",
+        "name": "从采石场到拿破仑三世的样板公园 / de la carrière au parc impérial",
+        "why_here": "此地原名「秃山」（Mont-Chauve），革命后被挖成石膏与磨石采石场，后来沦为垃圾场——它是拿破仑三世时代城市改造的样板工程",
+        "when": "1860 年巴黎吞并美丽城；1863 年豪斯曼下令停止采石并收购；1864 年动工；1867 年 4 月 1 日落成，赶上巴黎世界博览会；1958 年列为自然纪念物",
+        "detail": "工程师 Jean-Charles Alphand 主持改造，建筑师 Gabriel Davioud、工程师 Eugène Belgrand、园艺师 Jean-Pierre Barillet-Deschamps 参与。脚下那座 30 米高的「悬崖」根本不是天然的，是采石场掏空后留下的岩柱再造景。通往岛上的两座桥一座是 22 米高的「自杀桥」（Pont des Suicidés），一座是 65 米长的吊桥。公园每年约 600 万人次，是巴黎市区内最大的公园。",
+        "confidence": "L1",
+        "sources": [
+          "https://www.paris.fr/lieux/parc-des-buttes-chaumont-1757",
+          "https://www.retronews.fr/environnement/echo-de-presse/2021/04/25/la-creation-du-parc-des-buttes-chaumont-en-1867"
+        ]
+      },
+      {
+        "type": "work",
+        "name": "西比拉神庙 / le temple de la Sibylle",
+        "why_here": "山顶的西比拉神庙是 Davioud 照着意大利蒂沃利的维斯塔神庙做的圆形仿古亭——本线最著名的视觉符号，但目前不可到达",
+        "when": "1866 年（paris.fr 官方）或 1869 年（paris-unplugged、sand-rions），两个信源矛盾",
+        "detail": "公园本身 1867 年 4 月 1 日落成这一点无争议（多源一致，含 RetroNews / BnF）。神庙所在的岛与环湖步道因塌方风险封闭。",
+        "confidence": "L3",
+        "sources": [
+          "https://www.paris.fr/lieux/parc-des-buttes-chaumont-1757",
+          "https://www.paris.fr/pages/les-buttes-chaumont-vont-entamer-le-plus-grand-chantier-de-renovation-depuis-leur-creation-21504"
+        ],
+        "caveat": "建造年份 1866 vs 1869，年份差 >2 年，按 C2 降 L3、文案写两说并存。"
+      }
+    ],
+    "storylines": [
+      "line-13"
+    ],
+    "badges": [
+      "outside_only"
+    ]
+  },
+  {
+    "id": "rotonde-bassin-de-la-villette",
+    "name_zh": "维莱特圆亭 / 维莱特水池 / 乌尔克运河",
+    "name_fr": "Rotonde de la Villette / Bassin de la Villette / Canal de l'Ourcq",
+    "name_en": "Rotonde de la Villette / Bassin de la Villette",
+    "address": "Rotonde 在 Place de la Bataille-de-Stalingrad, 75019 Paris；水池两岸为 quai de la Seine / quai de la Loire, 75019",
+    "arrondissement": 19,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "岸边步道免费、24 小时可走，一路可走到 Parc de la Villette。Rotonde 自 2009 年起作为餐厅与当代艺术空间使用，内部按店家营业时间（商业餐饮）。",
+    "best_time": "傍晚（第 13 条线终点收尾）",
+    "era": 2,
+    "associations": [
+      {
+        "type": "event",
+        "name": "包税人城墙的遗物 / le mur des Fermiers généraux",
+        "why_here": "Rotonde 是 Claude-Nicolas Ledoux 为包税人城墙设计的 54 座收税关卡中最宏伟的一座，也是仅存的 4 座之一（另三座在 Monceau、Trône、Denfert）",
+        "when": "Rotonde 1784–1788 建成；1907 年 4 月 24 日列为历史建筑；2009 年改作餐厅与画廊",
+        "detail": "那道墙极不得人心，博马舍的名句「Le mur murant Paris rend Paris murmurant」（围住巴黎的墙让巴黎怨声载道）就是说它——1789 年 7 月 12–13 日夜，攻占巴士底狱之前，暴动者先烧的就是这些关卡。这道税墙也正是第 14 条线 guinguette 起源的直接成因。",
+        "confidence": "L2",
+        "sources": [
+          "https://visites-guidees.net/la-rotonde-de-la-villette-ancien-bureau-doctroi-du-mur-des-fermiers-generaux/",
+          "https://en.wikipedia.org/wiki/Bassin_de_la_Villette"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "拿破仑的供水工程与刻意挑的放水日 / la mise en eau du 2 décembre 1808",
+        "why_here": "放水那天的日期是刻意挑的——12 月 2 日既是拿破仑加冕日也是奥斯特利茨胜利日",
+        "when": "1802 年拿破仑下令开挖乌尔克运河；1808 年 12 月 2 日放水入池；1821 圣但尼运河通航，1825 圣马丁运河通航",
+        "detail": "当天把拦水的堤坝掘开，让水「正式进入巴黎」。水池本体 800 米 × 70 米；再往北经 1885 年建的克里米亚街升降桥（85 吨，巴黎最后一座升降桥）进入第二段 730 米 × 30 米的窄水面。",
+        "confidence": "L2",
+        "sources": [
+          "https://aufildelourcq.org/histoire/",
+          "https://www.travelfranceonline.com/bassin-de-la-villette-canal-de-lourcq/"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "1878 年世博会钢构做的仓库 / les magasins en fer de 1880",
+        "why_here": "两岸现存的两座铁架仓库用的是回收材料",
+        "when": "1880 年建成，用 1878 年世博会展廊拆下来的钢构",
+        "detail": "原本这一带有 12 座，现在只剩 2 座，今天是 MK2 电影院。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.travelfranceonline.com/bassin-de-la-villette-canal-de-lourcq/",
+          "https://en.wikipedia.org/wiki/Bassin_de_la_Villette"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-13"
+    ],
+    "badges": []
+  },
+  {
+    "id": "grande-mosquee-de-paris",
+    "name_zh": "巴黎大清真寺（浴室与薄荷茶露台）",
+    "name_fr": "La Grande Mosquée de Paris",
+    "name_en": "Grand Mosque of Paris",
+    "address": "茶室/餐厅/浴室入口 39 rue Geoffroy-Saint-Hilaire, 75005 Paris；参观入口 2 parvis Abdelkader-Mesli / 2bis place du Puits-de-l'Ermite, 75005",
+    "arrondissement": 5,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "三块（清真寺、茶室餐厅、浴室）都在营业。茶室/餐厅每日 9:00–00:00 全年无休，薄荷茶 2 €、东方点心 2 €/件，点心自己走到柜台拿，没人来催台。浴室 550 m²，单次入场 30 €（含毛巾 + 薄荷茶），搓背 18–20 €，按摩 10/20/30 分钟 13/26/37 €，套餐 50/60/75 €，十次卡 190 €；每日 10:00–21:00（周五 14:00 起），无需预约。⚠️ 男女日程信源直接冲突，落地前必须致电 01 43 31 38 20 确认，文案不要写死。清真寺参观 3 €，每日 9:00–18:00（或 9–12 / 14–18），周五及穆斯林节日闭馆。",
+    "best_time": "茶室可待到午夜（第 15 条线的核心卖点）",
+    "era": 5,
+    "associations": [
+      {
+        "type": "event",
+        "name": "为一战阵亡穆斯林士兵而建 / construite en hommage aux soldats musulmans",
+        "why_here": "法国本土最古老的清真寺，1922 年动工是为了纪念一战中为法国阵亡的约 10 万名穆斯林士兵",
+        "when": "1922 动工，1926 落成，由摩洛哥苏丹主持；浴室 2019 年全面翻修",
+        "detail": "建筑外形仿摩洛哥非斯的 el-Qaraouiyyîn 清真寺，大内庭院仿格拉纳达阿尔罕布拉宫，宣礼塔 33 米。茶室是一个带遮阴的小露台加一个铺满 zellige 彩瓷的内庭院。",
+        "confidence": "L1",
+        "sources": [
+          "https://www.pariszigzag.fr/bar-restaurant/restaurant/salon-the-grande-mosquee-paris/",
+          "https://www.linternaute.com/sortir/guide-des-loisirs/2214769-mosquee-de-paris-visite-hammam-et-salon-de-the/",
+          "https://www.grandemosqueedeparis.fr/post/notre-mosquee-n-37-fraternite-oubliee"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "伊玛目 Abdelkader Mesli 与 1940 年维希外交部档案",
+        "why_here": "这是关于本寺二战角色唯一可安全讲述的版本：1940 年维希政府外交部有一份官方文件，怀疑大清真寺签发伪造的穆斯林宗教归属证明，文件中点名了伊玛目 Abdelkader Mesli",
+        "when": "1940 年文件；Mesli 1942 年底被调往波尔多，1944 年被盖世太保逮捕、关入达豪，幸存，1961 年去世",
+        "detail": "Mesli 被 Benghabrit 调往波尔多、任西南部拘留营随军神职人员并被嘱咐「极度谨慎」；后加入抵抗网络提供假证件。一个便于落地的细节：清真寺的主参观入口今天就叫 parvis Abdelkader-Mesli。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.cairn.info/revue-archives-juives1-2012-1-page-116.htm",
+          "https://www.telerama.fr/radio/podcast-le-fondateur-de-la-grande-mosquee-de-paris-etait-il-un-juste-7007660.php"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "「数百名犹太儿童被藏在清真寺地下室」/ les enfants juifs cachés dans la mosquée",
+        "why_here": "这是至今被史学界争论的一桩事，绝不可写成事实",
+        "when": "指称发生于 1940–1944 年德占期间",
+        "detail": "Yad Vashem 的 Benghabrit 档案至今未完成；律师 Serge Klarsfeld 公开表示「存疑」（dubitatif）；现任院长 Chems-Eddine Hafiz 表示要「极度谨慎」（extrêmement prudent）；历史学者综述的结论是真实获救案例可能只有少数几例，且「无法在不交叉验证的情况下提供确凿证据」。相关的 Salim Halali 一说（被 Benghabrit 出具穆斯林证明保下、在 Bobigny 公墓伪造其父墓碑）以口述为主，被 2011 年电影《自由人》推广，缺乏档案佐证。首任院长 Si Kaddour Benghabrit（1868–1954）本人的复杂性也必须交代：他是法国外交高级官员，1939 年获荣誉军团大十字勋章，占领期间与德方保持「礼节性」往来，甚至为德国军官办过招待会。",
+        "confidence": "L4",
+        "sources": [
+          "https://www.telerama.fr/radio/podcast-le-fondateur-de-la-grande-mosquee-de-paris-etait-il-un-juste-7007660.php",
+          "https://www.cairn.info/revue-archives-juives1-2012-1-page-116.htm",
+          "https://islamenfrance.canalblog.com/archives/2012/11/07/25915946.html"
+        ],
+        "caveat": "内容红线：讲这个故事时必须明确说「这是一桩至今被史学界争论的事」，绝不可写成「这里曾藏匿数百名犹太儿童」。可安全讲的替代版本见上一条 association。"
+      }
+    ],
+    "storylines": [
+      "line-15"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "jardin-du-luxembourg",
+    "name_zh": "卢森堡公园（那些绿色铁椅）",
+    "name_fr": "Jardin du Luxembourg (les chaises vertes)",
+    "name_en": "Jardin du Luxembourg (the green chairs)",
+    "address": "Rue de Médicis / Rue de Vaugirard / Place Edmond Rostand, 75006 Paris",
+    "arrondissement": 6,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费。开园 7:15–8:15 之间，闭园 14:45–21:30 之间，随季节每半个月调整一次，以参议院官网为准。园内约 4,500 张椅子（该数字来自 Time Out Paris 单一信源），可自由搬动。",
+    "best_time": "全天，建议待 2–4 小时",
+    "era": 5,
+    "associations": [
+      {
+        "type": "event",
+        "name": "这把椅子曾经要收钱 / quand les chaises étaient payantes",
+        "why_here": "最能讲的细节是这椅子曾经收费，而收费的是一个专门的职业：chaisière（女椅管员）",
+        "when": "1923 年投入使用；1923 年到 1970 年代中期收费；1974 年起免费",
+        "detail": "坐一把普通椅子约 20 生丁，带扶手的沙发椅要再加 10 生丁，躺椅最贵、多半被有钱的老先生老太太占着。chaisière 这个词只有阴性形式，因为男人不干这行；她们全天守在户外，按椅子种类给你不同颜色的票；亨利·特罗亚在书里写过她们裹着披肩、冻得「鼻子通红」的样子。设计上的关键：椅背略微后倾、坐面偏低，就是为了让人读书、打盹、发呆，而且轻到能自己拖到任何一棵树下。",
+        "confidence": "L3",
+        "sources": [
+          "https://www.lemonde.fr/m-styles/article/2023/05/12/sous-la-chaise-du-design-3-15-la-luxembourg_6173106_4497319.html",
+          "https://www.timeout.fr/paris/actualites/la-chaise-la-plus-celebre-de-paris-cache-une-histoire-folle-depuis-1923-051526",
+          "https://www.pariszigzag.fr/insolite/histoire-insolite-paris/petite-histoire-des-chaises-du-luxembourg/",
+          "https://podcloud.fr/podcast/les-dessous-de-lhistoire/episode/quelle-etait-la-fonction-des-chaisieres"
+        ],
+        "caveat": "「1974 年起免费」这个具体年份目前只有一处信源（Choses à Savoir 历史播客）。1923 年启用、曾经收费、chaisière 职业存在这三点有多源支撑。标 L3 待补证，文案可写「1970 年代中期起免费」。"
+      },
+      {
+        "type": "work",
+        "name": "「参议院椅」与 Fermob 复产 / la chaise Sénat",
+        "why_here": "这把椅子本身就是巴黎的设计遗产，跟 Wallace 饮水泉、Morris 广告柱同级",
+        "when": "1923 年由巴黎市立工坊匿名设计制造；1990 年参议院招标由 Fermob 接手复产；2004 年设计师 Frédéric Sofia 改为铝制版本对外发售",
+        "detail": "原名「参议院椅」（chaise Sénat）——花园归法国参议院管辖，至今如此。现有 24 种配色，哈佛大学一口气买了 600 张。",
+        "confidence": "L3",
+        "sources": [
+          "https://www.lemonde.fr/m-styles/article/2023/05/12/sous-la-chaise-du-design-3-15-la-luxembourg_6173106_4497319.html",
+          "https://www.pariszigzag.fr/insolite/histoire-insolite-paris/petite-histoire-des-chaises-du-luxembourg/"
+        ],
+        "caveat": "Fermob 接手年份：Paris ZigZag 与 Paperblog 写 1990 年参议院招标；sabz.fr 与 Marie Claire 写 2003/2004 年 Sofia 改版；Time Out 写 Fermob 自 2004 年起为经销商、实际制造方是 Edmond & Fils。这其实是先后两步（1990 复产原版，2004 推出铝制大众版），但口径不一。"
+      }
+    ],
+    "storylines": [
+      "line-15"
+    ],
+    "badges": []
+  },
+  {
+    "id": "palais-royal-colonnes-buren",
+    "name_zh": "皇家宫殿花园与布伦柱《两个平台》",
+    "name_fr": "Jardin du Palais-Royal / Daniel Buren, Les Deux Plateaux",
+    "name_en": "Palais-Royal Garden / Buren's Columns",
+    "address": "8 rue de Montpensier, 75001 Paris（另可由 Place Colette、Place du Palais-Royal 进入）",
+    "arrondissement": 1,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费，向所有人开放。4 月 1 日–9 月 30 日 8:00–22:30；10 月 1 日–3 月 31 日 8:00–20:30（Centre des monuments nationaux 官方数据）。柱子 2007–2011 年整体修复过，现状完好。庭院周边的拱廊有长椅和树荫，花园本体有大量座椅。",
+    "best_time": "全天，建议待 2–4 小时",
+    "era": 7,
+    "associations": [
+      {
+        "type": "work",
+        "name": "《两个平台》/ Les Deux Plateaux (Daniel Buren)",
+        "why_here": "为什么能待很久：Buren 明确把它设计成可以坐、可以跨、可以爬的东西——他要打破艺术只能在美术馆里被瞻仰的规矩",
+        "when": "1983 决定改造；1985 选定方案并动工；1986 年 7 月 30 日揭幕；1994 年连同作品一起列入历史建筑；2007–2011 修复",
+        "detail": "260 根卡拉拉白大理石与比利牛斯黑大理石的截断圆柱，铺满 3,000 m² 的庭院，间距 3.19 米，全部对齐奥尔良廊柱的轴线。黑白条纹宽度统一 8.7 厘米——这个数字来自 Buren 年轻时在 Saint-Pierre 布料市场买到的标准遮阳篷条纹布，他从 1960 年代起一直用这个宽度。柱子高度不一，差值 53.7 厘米正好是古埃及的一「王室腕尺」。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.domaine-palais-royal.fr/visiter/informations-pratiques",
+          "https://passerelles.essentiels.bnf.fr/fr/image/204fb75e-95fe-46b3-85f0-60e53f71245d-colonnes-buren-palais-royal",
+          "https://www.parisladouce.com/2018/11/paris-les-deux-plateaux-grandeur-et.html"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "法国当代艺术史上最大的一次公共舆论爆炸 / la polémique des colonnes",
+        "why_here": "1983 年密特朗想改造荣誉庭——当时那里是国务委员会公务员的停车场——目标是赶走汽车 + 放一件艺术品",
+        "when": "1985 年密特朗本人选中方案；1986 年 2 月工程被叫停；4 月历史建筑高级委员会投票反对完工；5 月新任文化部长 François Léotard 拍板做完；7 月 30 日低调揭幕",
+        "detail": "文化部长雅克·朗发起公共委托。施工一开始就炸了：《费加罗报》带头开火，周边居民请愿不断，官司缠身。1986 年 5 月共治政府新任文化部长 François Léotard（接替雅克·朗）以「艺术家精神权利」为由拍板做完。",
+        "confidence": "L2",
+        "sources": [
+          "https://passerelles.essentiels.bnf.fr/fr/image/204fb75e-95fe-46b3-85f0-60e53f71245d-colonnes-buren-palais-royal",
+          "https://fr.wikipedia.org/wiki/Colonnes_de_Buren",
+          "https://www.parisladouce.com/2018/11/paris-les-deux-plateaux-grandeur-et.html"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-15"
+    ],
+    "badges": []
+  },
+  {
+    "id": "jardin-des-plantes",
+    "name_zh": "巴黎植物园（国立自然史博物馆）",
+    "name_fr": "Jardin des Plantes (Muséum national d'Histoire naturelle)",
+    "name_en": "Jardin des Plantes",
+    "address": "57 rue Cuvier, 75005 Paris",
+    "arrondissement": 5,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "园区免费（玫瑰园、植物学校、各主题园全免），24 公顷、12 座主题花园、无需预约。4–9 月 7:30–20:00；3 月与 10 月 8:00–18:30；11–2 月 8:00–17:30；12 月 25 日闭园。高山园每年 11 月初至 2 月底冬季关闭。温室、动物园、各展厅另行收费。⚠️ 中央草坪禁止入内、不能野餐，只有长椅可坐——想躺草地要去旁边的 Arènes de Lutèce（步行 5 分钟）。",
+    "best_time": "全天，建议待 2–4 小时",
+    "era": 1,
+    "associations": [
+      {
+        "type": "event",
+        "name": "从皇家药用植物园到国立自然史博物馆 / du Jardin royal des plantes médicinales au Muséum",
+        "why_here": "法国最古老的科学场址之一，一开始的用途是免费开放的植物学、化学、解剖学公开课",
+        "when": "1635 年由路易十三的御医 Guy de La Brosse 创立（另有 1640 年开放一说）；18 世纪在布丰手里变成世界级研究中心；1793 年由 12 位教授联名改组为国立自然史博物馆",
+        "detail": "法国大革命期间巴黎许多机构被毁，它因研究价值被保留。同年（1793）创建的动物园（Ménagerie）用来收容凡尔赛皇家兽苑的动物，是世界上仍在运营的最古老动物园之一。1994 年演化大展厅翻新重开。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.offi.fr/a-travers-paris/jardin-des-plantes-2531.html",
+          "http://monumentsdeparis.net/jardin-des-plantes"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "高山植物园与 1715 年的性别证明 / le jardin alpin et le pistachier de Vaillant",
+        "why_here": "最值得讲的角落都是「几乎没人去」的那几处——这正是「没人来赶你」的空间基础",
+        "when": "黄连木约 1700 年前后由 Sébastien Vaillant 栽下；1715 年首次证明植物有性别",
+        "detail": "高山植物园（jardin alpin）藏在植物学校下面，要穿过一条地下石砌通道才能进，比主园低 3 米，里面有一棵约 1700 年前后栽下的黄连木——正是用这棵树，1715 年首次证明了植物有性别。另一处是「迷宫」那座小土丘，顶上是 Gloriette de Buffon，属于世界上最早的金属结构建筑之一，而且几乎没人上去，安静得不像在 5 区。",
+        "confidence": "L2",
+        "sources": [
+          "https://cityguideparis.fr/jardin-alpin-paris.html",
+          "http://monumentsdeparis.net/jardin-des-plantes"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-15"
+    ],
+    "badges": []
+  },
+  {
+    "id": "parc-de-bagatelle",
+    "name_zh": "巴加泰勒公园（玫瑰园）",
+    "name_fr": "Parc de Bagatelle (La Roseraie)",
+    "name_en": "Parc de Bagatelle (The Rose Garden)",
+    "address": "Route de Sèvres à Neuilly, Bois de Boulogne, 75016 Paris（入口：Grille d'Honneur / Grille de Sèvres）",
+    "arrondissement": 16,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "2026 年 9 月为每日 9:30–20:00（开放时间来自 paris.fr，可信）。⚠️ 门票约 2.50 €（旺季全票）、10 月 1 日至 3 月 31 日淡季免费——该票价与免费期仅见于一个非官方信源（cityguideparis.fr），paris.fr 官方页面只给了票务页链接（billetterie-jardin-botanique.paris.fr），上线前须以官方票务页为准。可线上购票直接入场。交通：公交只有 43 路（仅周末与节假日）和 244 路。园内有小卖部与 Les Jardins de Bagatelle 餐厅；儿童游乐区部分关闭整修中；禁止宠物。paris.fr 另提到 2026 年 9 月 19–20 日（文化遗产日）与 9 月 26–27 日（花园节）免费。",
+    "best_time": "玫瑰花期（国际赛季）；全巴黎最偏远、人最少的大园之一",
+    "era": 4,
+    "associations": [
+      {
+        "type": "event",
+        "name": "世界上第一个国际新玫瑰品种评选赛 / le premier concours international de roses nouvelles",
+        "why_here": "这个赛事就诞生在这里，而且至今每年举办——参观时可以给你喜欢的新品种投票（国际赛的公众票环节）",
+        "when": "1907 年玫瑰园落成 + 首届国际新玫瑰赛；赛事至今每年举办",
+        "detail": "由巴黎市公园园林主管 Jean-Claude-Nicolas Forestier 推动；建园用的种苗来自收藏家 Jules Gravereaux 捐赠的 1,500 余个玫瑰种与品种——他也是瓦勒德马恩省 L'Haÿ-les-Roses 玫瑰园的创建者。园里有莲花池对面的岩洞、中式塔、大岩石、观景台、巨大的木兰树，还有野餐桌和饮水点。全园有免费手机应用 AudioSpot，中/英以外还专门做了视障人士适配路线。24 公顷，属巴黎植物园四大园区之一，获「Jardin remarquable」标识。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.paris.fr/lieux/parc-de-bagatelle-1808",
+          "http://www.perso-jardins-bagatelle.net/site_htm/htm/concours_roses.htm",
+          "https://www.paris.fr/pages/5-raisons-de-visiter-le-parc-de-bagatelle-27269"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-15"
+    ],
+    "badges": [
+      "booking"
+    ]
+  },
+  {
+    "id": "le-passe-muraille",
+    "name_zh": "穿墙人雕像",
+    "name_fr": "Le Passe-Muraille",
+    "name_en": "Le Passe-Muraille (The Man Who Walked Through Walls)",
+    "address": "Place Marcel Aymé, 75018（rue Norvins 与未完工的 avenue Junot 交界处的小广场；地铁 Abbesses 12 号线）。雕像高 2.30 米，直接嵌在广场一侧墙面上",
+    "arrondissement": 18,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "完全免费，24 小时户外。",
+    "best_time": null,
+    "era": 7,
+    "associations": [
+      {
+        "type": "work",
+        "name": "马塞尔·埃梅《穿墙人》/ Le Passe-Muraille de Marcel Aymé (1943)",
+        "why_here": "让·马莱（法国演员）做的青铜雕塑致敬作家埃梅——而埃梅本人住 rue Norvins 2 号，和让·马莱是邻居",
+        "when": "小说 1943 年出版；马莱 1967 年（埃梅去世次年）起意，1989 年 2 月 25 日揭幕",
+        "detail": "小说主角杜蒂耶尔（Dutilleul）是个平庸的公务员，突然获得穿墙能力，化名 Garou-Garou 到处偷珠宝，最后吃错药卡死在墙里。雕塑只露出头、右臂、左腿和左手——故意还原小说结尾「半个身子还在墙里」的状态。隐藏梗：马莱把杜蒂耶尔的脸雕成了埃梅本人的脸，所以这是「作家本人被困在自己写的角色身体里」。小说里还有个细节：画家 Gen Paul 会抱着吉他到这条街上给困在石头里的杜蒂耶尔唱歌。",
+        "confidence": "L2",
+        "sources": [
+          "https://parissecret.com/histoire-de-la-plus-atypique-des-sculptures-le-passe-muraille-de-montmartre-paris/",
+          "https://secretparisien.com/le-passe-muraille-de-marcel-ayme/",
+          "https://www.travelfranceonline.com/le-passe-muraille-montmartre-paris/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": []
+  },
+  {
+    "id": "villa-leandre",
+    "name_zh": "莱昂德尔巷（伪伦敦小巷）",
+    "name_fr": "Villa Léandre",
+    "name_en": "Villa Léandre",
+    "address": "入口在 avenue Junot 23 bis / 23 ter, 75018（部分信源写 25 号）；死胡同，全长约 69 米，宽不到 7 米；地铁 Lamarck-Caulaincourt（12 号线）",
+    "arrondissement": 18,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费。居民区，可自由步行进入——住户在住，别大声。",
+    "best_time": null,
+    "era": 5,
+    "associations": [
+      {
+        "type": "event",
+        "name": "「10 Downing Street」的英式玩笑",
+        "why_here": "一条完全不像巴黎的巷子——红砖、石板屋顶、凸窗（bow-window）、小前院，整条是英式/盎格鲁-诺曼底风格",
+        "when": "1926 年开辟，原名 villa Junot；1936 年改名纪念蒙马特漫画家 Charles Léandre",
+        "detail": "10 号门口有块小牌子写着「10 Downing Street」——住户自己开的英式玩笑，蹭伦敦首相府。这是整条巷子最好拍的一个点，走进去不留神会错过（牌子在入口右手边）。",
+        "confidence": "L2",
+        "sources": [
+          "https://fr.wikipedia.org/wiki/Villa_L%C3%A9andre",
+          "https://www.pariszigzag.fr/sortir-paris/balade-paris/la-villa-leandre-une-impasse-pittoresque-aux-faux-airs-britanniques/",
+          "https://www.parisladouce.com/2016/01/paris-villa-leandre-faux-airs.html"
+        ],
+        "caveat": "入口门牌号两说：23 bis / 23 ter（parisladouce、actu.fr、solosophie）vs 25（Paris ZigZag），按 C4 两个都列。Charles Léandre 生年 1862（fr.wikipedia）vs 1865（parisladouce）。另 solosophie 称 Villa Léandre 15 号为 1926 年 Tristan Tzara 所建——可能是张冠李戴（广为人知的 Tzara 之家是 Adolf Loos 设计的 15 avenue Junot），已判定不采用此说法。"
+      },
+      {
+        "type": "event",
+        "name": "建在「蒙马特丛林」废墟上 / le maquis de Montmartre",
+        "why_here": "19 世纪这里是拾荒者和穷艺术家的贫民窟",
+        "when": "1902 年起开发商进场；1926 年开辟本巷",
+        "detail": "最后一把来路可疑的大火把棚户区烧光，之后才有这条巷子。",
+        "confidence": "L2",
+        "sources": [
+          "https://fr.wikipedia.org/wiki/Villa_L%C3%A9andre",
+          "https://www.parisladouce.com/2016/01/paris-villa-leandre-faux-airs.html"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": [
+      "quiet"
+    ]
+  },
+  {
+    "id": "mur-des-je-taime",
+    "name_zh": "爱墙",
+    "name_fr": "Le Mur des Je t'aime",
+    "name_en": "The I Love You Wall",
+    "address": "Square Jehan Rictus, 14 place des Abbesses, 75018；出地铁 Abbesses（12 号线）即到。墙面约 40 平米（10 × 4 米）",
+    "arrondissement": 18,
+    "coordinates": null,
+    "still_exists": "restricted",
+    "access_note": "⚠️ 墙还在，但自 2026 年 3 月起被围挡 + 木支撑围起来，无法靠近。paris.fr 的 Square Jehan Rictus 页面现挂着「Le mur des Je t'aime est inaccessible pour des raisons de sécurité」。原因是承重结构劣化、有坍塌风险；市府称正在找解决方案。注意：2024 年刚为奥运做过一次修缮，两年后又出问题。上线前必须再核一次 paris.fr 页面。公园开放时间内免费。",
+    "best_time": null,
+    "era": 7,
+    "associations": [
+      {
+        "type": "work",
+        "name": "612 块 A4 大小的火山岩方砖 / 612 carreaux de lave émaillée",
+        "why_here": "诗人/词作者 Frédéric Baron 从 1992 年开始在巴黎街头挨个敲门，请人用母语在纸上手写「我爱你」，收了 1500 多份手稿",
+        "when": "2000 年 10 月 12 日揭幕（部分报道写 2001 年）",
+        "detail": "书法家 Claire Kito 统一誊写上墙，壁画师 Daniel Boulogne 施工。由 612 块奥弗涅沃尔维克火山岩（lave émaillée）蓝釉方砖拼成，每块 21×29.7 cm——这个尺寸就是 A4 纸，因为原始的「我爱你」就是写在 A4 纸上的，Kito 是照着原稿的笔迹一比一复刻的。另一个细节：墙上散落的红色色块是一颗碎掉的心的碎片，拼起来是完整的一颗。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.paris.fr/lieux/square-jehan-rictus-2658",
+          "https://fr.wikipedia.org/wiki/Mur_des_je_t'aime",
+          "https://www.lebonbon.fr/paris/news/a-montmartre-mur-je-t-aime-a-deux-doigts-s-effondrer/"
+        ],
+        "caveat": "落成年份 2000 年 10 月 12 日（fr.wikipedia、parisladouce、paris.fr）vs 2001 年（actu.fr 2026 年报道）；语言数 250 种（fr.wikipedia、paris.fr、Montmartre Addict）vs 280 种（parisladouce、picture-worl.org）。按 C1/C6 取多源占优值并标注异说。"
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": [
+      "outside_only"
+    ]
+  },
+  {
+    "id": "fontaine-stravinsky",
+    "name_zh": "斯特拉文斯基喷泉（机器人喷泉）",
+    "name_fr": "Fontaine Stravinsky (Fontaine des Automates)",
+    "name_en": "Stravinsky Fountain",
+    "address": "Place Igor-Stravinsky / rue Brisemiche, 75004，蓬皮杜中心脚下、圣梅里教堂旁；水池 580 平米",
+    "arrondissement": 4,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费，户外。状态很好——2022 年整修，2023 年重新运转，当年满 40 岁。",
+    "best_time": null,
+    "era": 7,
+    "associations": [
+      {
+        "type": "work",
+        "name": "16 座机械雕塑对应 16 部斯特拉文斯基作品 / 16 sculptures, 16 œuvres",
+        "why_here": "Niki de Saint Phalle（彩色部分）和 Jean Tinguely（全黑的机械部分）夫妻档作品，每一座雕塑都对应一部具体作品",
+        "when": "1983 年落成",
+        "detail": "16 座是《美人鱼》《拉格泰姆》《小丑帽》《狐狸》《心》《对角线》《大象》《生命》《夜莺》《蛇》《死亡》《火鸟》《高音谱号》《爱》《螺旋》《青蛙》。整体灵感来自 1913 年在香榭丽舍剧院首演被骂到炸的《春之祭》（当时被讽为「春之屠杀」）。硬核细节：喷泉自 1983 年起就是闭路循环，100% 的水都回收再用。那只《火鸟》是同一年 Niki 给加州大学圣地亚哥分校做的巨型《Sun God》的小妹妹。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.paris.fr/pages/la-fontaine-stravinsky-retrouve-son-eclat-decouvrez-ses-secrets-24204",
+          "https://www.pariszigzag.fr/sortir-paris/tendances-culture/fontaine-stravinsky-sculptures-paris/",
+          "https://www.lequotidiendelart.com/articles/20808-la-fontaine-stravinsky-va-%C3%AAtre-restaur%C3%A9e.html"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "希拉克与皮埃尔·布列兹 / Jacques Chirac & Pierre Boulez",
+        "why_here": "时任巴黎市长希拉克在巴塞尔看过 Tinguely 的狂欢节喷泉后拍板做这件；广场名字是 IRCAM 首任所长、作曲家皮埃尔·布列兹起的",
+        "when": "1983 年落成前后",
+        "detail": "这是一件由「市长的一次出差观感」直接催生的公共艺术。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.paris.fr/pages/la-fontaine-stravinsky-retrouve-son-eclat-decouvrez-ses-secrets-24204",
+          "https://www.pariszigzag.fr/sortir-paris/tendances-culture/fontaine-stravinsky-sculptures-paris/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": []
+  },
+  {
+    "id": "place-stravinsky-wall",
+    "name_zh": "斯特拉文斯基广场巨墙（Chuuuttt!!! + Obey + Invader）",
+    "name_fr": "Le grand mur de la place Stravinsky (Chuuuttt !!! + Obey + Invader)",
+    "name_en": "The Place Stravinsky Street Art Wall",
+    "address": "Place Igor-Stravinsky, 75004，从 IRCAM 一直连到圣梅里教堂（église Saint-Merri）的那面大山墙，正对喷泉。Chuuuttt 的面积 350 平米，约 25 米高",
+    "arrondissement": 4,
+    "coordinates": null,
+    "still_exists": "uncertain",
+    "access_note": "免费，户外。⚠️ 《Chuuuttt!!!》状态不确定：原本说好 2014 年外墙翻新时铲掉，结果没铲；多个信源确认到 2019 年 8 月仍在（当时 Obey 的新壁画贴到了它旁边），但 2020 年之后无任何明确确认它现存的可靠信源，法语维基的 Jef Aérosol 词条也完全没写现状。不要作为主推站点。建议把这站包装成「这面墙」而非「这幅画」——整面墙的街头艺术生态（Obey 2019、Invader PA_1432）是确定存在的。",
+    "best_time": null,
+    "era": 7,
+    "associations": [
+      {
+        "type": "work",
+        "name": "Jef Aérosol《Chuuuttt !!!》",
+        "why_here": "很多人以为那张脸是达利，其实是 Jef Aérosol 本人（本名 Jean-François Perroy，1958 年生，法国模板涂鸦先驱）的巨型自画像",
+        "when": "2011 年 6 月 18 日揭幕（6 月 11–16 日施工，5–6 天，4 名助手）",
+        "detail": "他本人说「我完全忘了那是我自己，那就是一个在说『嘘』的人」。他强调这个「嘘」不是叫人闭嘴，是叫人「听听城市的交响——不只是警笛和马达，还有小孩踢球、鸟叫、春天姑娘的高跟鞋声」。",
+        "confidence": "L2",
+        "sources": [
+          "https://autour-de-paris.com/project/interview-jef-aerosol-autoportrait-beaubourg-fresque-chuuuttt",
+          "https://allcityblog.fr/20857-jef-aerosol-place-stravinski/",
+          "https://www.leparisien.fr/paris-75/paris-obey-fait-son-effet-a-cote-de-jef-aerosol-06-08-2019-8129682.php"
+        ],
+        "caveat": "作品本身存续状态不确定（最后可靠确认 2019 年 8 月，Le Parisien），按 C7 以最新时间戳信源为准并标注核查日期 2026-09-22。"
+      },
+      {
+        "type": "work",
+        "name": "Shepard Fairey（Obey）《Connaissance et Action》",
+        "why_here": "2019 年 7 月由市政府安排贴在 Chuuuttt 旁边——完全没跟 Jef Aérosol 商量",
+        "when": "2019 年 7 月",
+        "detail": "Jef Aérosol 公开表达过不满（「对街头艺术的追捧经常把水平拉低」）。同一堵墙上 Invader 也放了 PA_1432（2019 年）。三层叠加的街头艺术史就在这一面墙上。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.leparisien.fr/paris-75/paris-obey-fait-son-effet-a-cote-de-jef-aerosol-06-08-2019-8129682.php",
+          "https://autour-de-paris.com/project/interview-jef-aerosol-autoportrait-beaubourg-fresque-chuuuttt"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": [
+      "outside_only"
+    ]
+  },
+  {
+    "id": "invader-pa-1500-pompidou",
+    "name_zh": "Invader 第 1500 号巴黎马赛克（蓬皮杜中心）",
+    "name_fr": "Invader PA_1500, Centre Pompidou",
+    "name_en": "Invader's 1500th Paris Mosaic (PA_1500)",
+    "address": "Centre Pompidou 外立面，贴在其中一根彩色管道/烟囱上，Place Georges-Pompidou, 75004。抬头找，别低头",
+    "arrondissement": 4,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "街头观看和 FlashInvaders App 都免费（官方版免费）。⚠️ Invader 的作品整体消亡率很高：2025 年 5 月有一波集中破坏（PA_35、PA_1524 被人拿凿子铲走，PA_35 是 1998 年首批之一）。建议产品侧不要硬编码具体编号，而是把 Invader Spotter（invader-spotter.art）的状态标记（OK / damaged / destroyed）当成动态数据源。",
+    "best_time": null,
+    "era": 7,
+    "associations": [
+      {
+        "type": "work",
+        "name": "FlashInvaders 与 100 分满分目标 / FlashInvaders & le score 100",
+        "why_here": "这是全线最「游戏化」的一站，也是「街头扭蛋」这个主题的事实基础：官方免费 App 把马赛克变成可计分的捕捉游戏，分数是 Invader 本人在安装时给每件作品定的，10 到 100 分",
+        "when": "PA_1500 于 2024 年 1 月 25 日贴上；配合 Invader 2024 年 2 月 17 日–5 月 5 日在《解放报》旧址（11 rue Béranger）的 3500–4000 平米大展",
+        "detail": "对着马赛克拍照，识别成功会响一段胜利音效并计分。PA_1500 是满分 100 分的稀有目标（全球只有 101 个 100 分的，巴黎占 30 个），flash 成功后弹出的验证文字是「PA_1500 ON CENTRE POMPIDOU – YEAH !!!」。顺手可以提的两个：PA_1525（place d'Italie，2024 年 11 月，12×6 米 = 72 平米，250 块瓷砖，全球最大的一个，准备了 8 年，盖在 Saeio 一幅贴了 12 年的旧壁画上，被骂后 Invader 回应说旧画「完好地保存在下面，还部分可见」）；PA_1431 在埃菲尔铁塔顶，是全巴黎最高的一个。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.space-invaders.com/about/",
+          "https://www.beauxarts.com/grand-format/le-plus-grand-invader-au-monde-installe-place-ditalie/",
+          "https://www.invader-spotter.art/stats.php"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "Invader（本名普遍认为是 Franck Slama）",
+        "why_here": "他从 1998 年起在全球墙上贴《太空侵略者》像素马赛克",
+        "when": "1998 年起（艺术家官网口径）",
+        "detail": "截至目前，社群数据库 Invader Spotter 记录巴黎 1598 个、全球 4433 个、89 个城市/地区、33 个国家。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.space-invaders.com/about/",
+          "https://www.invader-spotter.art/stats.php"
+        ],
+        "caveat": "起始年 1998（艺术家官网 + Beaux Arts）vs 英文维基含糊写「1990 年代」、部分二手资料写 1996。以官网 1998 为准。"
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": [
+      "outside_only"
+    ]
+  },
+  {
+    "id": "maison-de-nicolas-flamel",
+    "name_zh": "尼古拉·弗拉梅尔之家（「大山墙」）",
+    "name_fr": "Maison de Nicolas Flamel (Le Grand Pignon)",
+    "name_en": "House of Nicolas Flamel",
+    "address": "51 rue de Montmorency, 75003；地铁 Rambuteau / Arts et Métiers。从街上看底层石砌立面即可",
+    "arrondissement": 3,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "外部观看免费。立面于 1911 年 9 月 23 日列为历史古迹（monument historique），法国文化部描述为「probablement la plus ancienne maison de Paris」（很可能是巴黎最古老的房子）。内部目前是餐厅，不算在这条线里。",
+    "best_time": null,
+    "era": 1,
+    "associations": [
+      {
+        "type": "person",
+        "name": "尼古拉·弗拉梅尔 / Nicolas Flamel",
+        "why_here": "他是巴黎大学的宣誓抄写员/手稿商人，1397 年妻子 Pernelle 去世后，他拿出一部分家产盖了这栋房子收容穷人：底层做生意，楼上免费住人",
+        "when": "1407 年竣工（底层上方的横饰带刻着建造铭文，年份就刻在上面）",
+        "detail": "住进来是有条件的——铭文明确写了，受收容的穷人必须每天早晚各做一次祷告，为弗拉梅尔夫妇祈福。这是一份刻在石头上的、1407 年的租约条款。另外它原本有个高高的山墙，所以中世纪时这房子有个名字叫「Le Grand Pignon」（大山墙）；山墙后来没了，名字留下来了。底层石面上还能看到刻的天使、圣人像和 N、F 两个首字母。",
+        "confidence": "L2",
+        "sources": [
+          "https://fr.wikipedia.org/wiki/Maison_de_Nicolas_Flamel",
+          "https://paris-promeneurs.com/la-maison-de-nicolas-flamel/",
+          "https://www.peaches.fr/maison-vie-pratique/plus-vieille-maison-de-paris-ce-refuge-lie-a-nicolas-flamel-cache-un-passe-que-vous-ignorez-totalement-228640.html"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "「弗拉梅尔是炼金术士」的传说 / la légende de l'alchimiste",
+        "why_here": "「他炼出了贤者之石、长生不老」的说法是他死后几个世纪才附会上去的，再由《哈利·波特与魔法石》带进当代流行文化",
+        "when": "传说形成于弗拉梅尔死后数个世纪；《哈利·波特与魔法石》1997 年出版",
+        "detail": "《哈利·波特与魔法石》里那个 665 岁的弗拉梅尔就是从这个传说来的。这一站的真实故事（刻在石头上的 1407 年慈善租约条款）其实比炼金术传说更硬。",
+        "confidence": "L5",
+        "sources": [
+          "https://fr.wikipedia.org/wiki/Maison_de_Nicolas_Flamel",
+          "https://paris-promeneurs.com/la-maison-de-nicolas-flamel/",
+          "https://www.linternaute.com/sortir/magazine/1033303-ces-sites-francais-battent-tous-les-records/1033321-plus-ancienne-maison-de-paris"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": [
+      "outside_only"
+    ]
+  },
+  {
+    "id": "rue-du-chat-qui-peche",
+    "name_zh": "钓鱼猫街",
+    "name_fr": "Rue du Chat-qui-Pêche",
+    "name_en": "Rue du Chat-qui-Pêche (Street of the Fishing Cat)",
+    "address": "连接 rue de la Huchette 与 quai Saint-Michel, 75005；地铁 Saint-Michel。长 26–29 米，最宽 1.80 米，最窄 1.57 米",
+    "arrondissement": 5,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费，公共道路。",
+    "best_time": null,
+    "era": 1,
+    "associations": [
+      {
+        "type": "event",
+        "name": "街名来自一块店招 / l'enseigne du chat qui pêche",
+        "why_here": "街名来源有两个版本，互相不矛盾但可靠度差很多——这个是可靠版",
+        "when": "1540 年开辟（原名 ruelle des Étuves，澡堂巷）；现名最早见于 17 世纪初；Marville 照片约 1865 年",
+        "detail": "摄影师 Charles Marville 大约 1865 年拍的照片上，还能看到巷内一家店（客栈？鱼铺？说不清）墙上画着一只猫在抓鱼——在「用名人名字命名街道」流行起来之前，巴黎街道基本都这么取名。这条街后来陆续叫过 rue des Bouticles、rue du Renard、rue Neuve des Lavandières（洗衣妇街）；当年塞纳河边的房子几乎是脚泡在水里的，这条巷子是居民下河取水的近道。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.parisladouce.com/2020/09/rue-du-chat-qui-peche-paris-5.html",
+          "https://www.lessentiel.fr/paris/notre-ville/2026-07-22/dou-vient-le-nom-de-la-rue-du-chat-qui-peche-dans-le-5e-26244"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "Dom Perlet 与黑猫炼金术传说 / la légende de Dom Perlet",
+        "why_here": "传说版：15 世纪有个叫 Dom Perlet 的教士在这儿搞炼金术，养了只黑猫，这猫能一爪子从塞纳河里捞鱼",
+        "when": "传说设定在 15 世纪",
+        "detail": "三个学生认定人猫一体、是魔鬼，把猫杀了扔进河里；教士随后消失。几周后教士回来了（说是出门旅行），猫也回来了，继续在河边淡定钓鱼。这个版本查无实据，从来没有被真正考证过。",
+        "confidence": "L4",
+        "sources": [
+          "https://www.pariszigzag.fr/insolite/histoire-insolite-paris/letonnante-legende-de-la-rue-du-chat-qui-peche/",
+          "https://www.parisladouce.com/2020/09/rue-du-chat-qui-peche-paris-5.html"
+        ],
+        "caveat": "传说类素材，无一手史料，按判真法则标 L4，不作主推。"
+      },
+      {
+        "type": "event",
+        "name": "「巴黎最窄的街」是假的 / la rue la plus étroite, c'est faux",
+        "why_here": "它最窄 1.57 米；12 区的樱桃木小径最窄 87 厘米——而巴黎市政方仍在传这个谣",
+        "when": "维基百科明确指出巴黎市政方仍将钓鱼猫街列为全市最窄、宽 1.80 米",
+        "detail": "尽管巴黎官方道路名录（nomenclature officielle des voies）里记录了大量比它更窄的道路。这是一个「官方口径和官方数据库互相打架」的现成案例（C5）。中间还夹着好几条：玛黑区的 rue du Prévôt（1.80 米）、帕西的 rue Berton（1.50 米）都在争这个头衔；20 区的 passage de la Duée 曾宽 80 厘米（比樱桃木小径还窄），但右半部分现已被拆除改建。顺手纠正一个常被混淆的相邻谣言：最短的街是 2 区的 rue des Degrés，长 5.75 米（一说 5.60 米），实际就是 14 级台阶，它宽 3.30 米，一点也不窄。",
+        "confidence": "L5",
+        "sources": [
+          "https://wikimonde.com/article/Sentier_des_Merisiers",
+          "https://www.parisladouce.com/2020/09/rue-du-chat-qui-peche-paris-5.html",
+          "https://www.lessentiel.fr/paris/notre-ville/2026-07-22/dou-vient-le-nom-de-la-rue-du-chat-qui-peche-dans-le-5e-26244"
+        ]
+      },
+      {
+        "type": "person",
+        "name": "约兰·福尔德斯《钓鱼猫街》/ Jolán Földes, La Rue du Chat-qui-Pêche (1937)",
+        "why_here": "匈牙利作家福尔德斯 1930 年代住在附近，她最有名的小说就叫这个名字",
+        "when": "小说 1937 年出版",
+        "detail": "这是这条巷子在文学史上的一次实名出场。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.parisladouce.com/2020/09/rue-du-chat-qui-peche-paris-5.html",
+          "https://www.pariszigzag.fr/insolite/histoire-insolite-paris/letonnante-legende-de-la-rue-du-chat-qui-peche/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": []
+  },
+  {
+    "id": "medaillons-arago",
+    "name_zh": "阿拉戈铜牌（《向阿拉戈致敬》）",
+    "name_fr": "Les Médaillons Arago (Hommage à Arago)",
+    "name_en": "The Arago Medallions",
+    "address": "沿巴黎子午线从北到南穿过 18、9、2、1、6、14 区，全长约 9–9.5 公里。最容易找到的几个：卢浮宫拿破仑中庭（金字塔后方，5 枚）、卢浮宫黎塞留翼与德农翼室内（各 3 枚）、Palais-Royal 的 Montpensier 与 Chartres 柱廊 / place Colette（7 枚）、卢森堡公园、天文台、Parc Montsouris、79 rue Lepic、3 和 10 avenue Junot。每枚直径 12 厘米，嵌在地面，要低头找",
+    "arrondissement": 1,
+    "coordinates": null,
+    "still_exists": "uncertain",
+    "access_note": "户外的全免费（卢浮宫内部那几枚需要买票进馆）。⚠️ 原装 135 枚，若干枚已被偷走、被施工混凝土盖住或误移位，目前没有权威的实时存量统计（一个信源写「现存 131 枚覆盖 9.5 公里」，但未注明统计时间）。所以这站的正确玩法是「沿路碰运气找」，不承诺某一枚一定能找到——正好符合这条线的调性。",
+    "best_time": null,
+    "era": 7,
+    "associations": [
+      {
+        "type": "work",
+        "name": "Jan Dibbets《向阿拉戈致敬》/ Hommage à Arago (1994)",
+        "why_here": "这是一件「看不见的纪念碑」，而且它的构思建立在两个缺席之上",
+        "when": "1994 年安装，纪念 François Arago（1786–1853）诞辰 200 周年",
+        "detail": "① Arago 原本在天文台对面（place de l'Île-de-Sein）有一座雕像，二战德占期间被拆走熔掉造武器了，只剩一个空底座。Dibbets 的做法不是重塑雕像，而是说：既然子午线本来就是一条想象的线，那就做一座想象的纪念碑。② 135 枚里只有 134 枚嵌在地上，第 135 枚是竖着钉在那个空底座上的。每枚铜牌中央刻大写「ARAGO」，两侧有 N 和 S 两个缺口指示子午线方向。",
+        "confidence": "L2",
+        "sources": [
+          "https://fr.wikipedia.org/wiki/Hommage_%C3%A0_Arago",
+          "https://www.secretsdeparisiennes.com/meridien-de-paris"
+        ],
+        "caveat": "现存数与起止点两说：135 枚 / Porte de Montmartre → Cité Universitaire（solosophie）vs 131 枚、9.5 公里 / Porte de Clignancourt → Gentilly（stickymangorice，未注明统计时间）。按 C6 取区间并标注无权威实时统计。"
+      },
+      {
+        "type": "work",
+        "name": "《达芬奇密码》的「玫瑰线」/ la Rose Line du Da Vinci Code",
+        "why_here": "小说把阿拉戈铜牌说成一条古老神秘的「玫瑰线」——这个名字是丹·布朗发明的，巴黎人从来不这么叫",
+        "when": "小说 2003 年出版；电影 2006 年；铜牌 1994 年安装",
+        "detail": "巴黎人只叫 médaillons Arago 或 méridien de Paris。小说把两条不同的线当成了一条：圣叙尔比斯教堂地上那条黄铜线是真的，但它属于一具日晷仪（gnomon）——本堂神父定制的，用来根据太阳位置精确推算复活节日期，与阿拉戈铜牌那条相距 115 米。最好笑的一层：电影版为这条「古老神秘子午线」付了版权费，因为铜牌是在世艺术家 Jan Dibbets 1994 年的作品。",
+        "confidence": "L5",
+        "sources": [
+          "https://thisfrench.life/blog/the-paris-rose-line",
+          "https://www.solosophie.com/paris-meridian/",
+          "https://bonjourparis.com/history/hidden-treasures-of-paris-in-plain-sight/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": [
+      "outside_only"
+    ]
+  },
+  {
+    "id": "sentier-des-merisiers",
+    "name_zh": "樱桃木小径",
+    "name_fr": "Sentier des Merisiers",
+    "name_en": "Sentier des Merisiers",
+    "address": "101 boulevard Soult ↔ 3 rue du Niger, 75012，Bel-Air 街区；有轨电车 T3a 站 Alexandra David-Néel（步行 1 分钟）。长 100 米，平均宽约 1 米，最窄处 87 厘米；不是直的，中间拐两个弯",
+    "arrondissement": 12,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费，公共道路，可自由通行。⚠️ 直通两侧住户的后花园，请轻声。",
+    "best_time": null,
+    "era": 3,
+    "associations": [
+      {
+        "type": "event",
+        "name": "巴黎实际最窄的官方道路 / la voie la plus étroite de Paris",
+        "why_here": "这才是巴黎实际最窄的官方道路，比游客都去的钓鱼猫街窄一半还多（87 厘米 vs 1.57 米）",
+        "when": "约 1857 年开辟；1863 年 5 月 23 日法令正式并入巴黎市政道路",
+        "detail": "它是从前 Saint-Mandé 村的一条村道，开在梯也尔城墙（1841–44 年建）8 号棱堡的「禁建区」上。城墙 1919–29 年拆掉后周边被密集开发，这条缝奇迹般地被漏掉了。",
+        "confidence": "L2",
+        "sources": [
+          "https://wikimonde.com/article/Sentier_des_Merisiers",
+          "https://www.parisladouce.com/2024/01/sentier-des-merisiers-paris-12-la-rue.html"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "1980 年代才装上的、跟标准街具不一样的路灯 / les lampadaires non standards",
+        "why_here": "这条 87 厘米的缝长期又黑又像凶案现场，附近居民都绕着走",
+        "when": "1980 年代市政府给它装了路灯",
+        "detail": "而且用的灯具款式跟巴黎标准街具不一样。这条缝直通两侧住户的后花园，其中有一栋半木结构（colombages）的房子——这在巴黎极其罕见，从 rue du Niger 那头进去就能看到。",
+        "confidence": "L2",
+        "sources": [
+          "http://belairsud.blogspirit.com/archive/2012/08/07/les-tresors-caches-du-12e-1.html",
+          "https://www.parisladouce.com/2024/01/sentier-des-merisiers-paris-12-la-rue.html"
+        ]
+      },
+      {
+        "type": "work",
+        "name": "莫迪亚诺《多拉·布吕代》/ Patrick Modiano, Dora Bruder (1997)",
+        "why_here": "莫迪亚诺在书里提到过这条小径",
+        "when": "1997 年出版；Denis Tillinac《元帅大道》2000 年",
+        "detail": "Denis Tillinac 在《元帅大道》（2000）里专门写过一段走进去的感受。",
+        "confidence": "L4",
+        "sources": [
+          "https://wikimonde.com/article/Sentier_des_Merisiers"
+        ],
+        "caveat": "单一信源（wikimonde 转 Fierro《巴黎街名史》），降 L4。"
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": [
+      "quiet"
+    ]
+  },
+  {
+    "id": "rue-denoyez",
+    "name_zh": "德诺瓦耶街（涂鸦街）",
+    "name_fr": "Rue Dénoyez",
+    "name_en": "Rue Dénoyez",
+    "address": "Rue Dénoyez, 75020，地铁 Belleville（2、11 号线）步行 1–5 分钟；全长 150–156 米",
+    "arrondissement": 20,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费。法兰西岛官方旅游局 VisitParisRegion 现把它列为「全年每天开放、免费」的景点。作品持续更新到 2025 年 10 月仍有新记录。",
+    "best_time": null,
+    "era": 7,
+    "associations": [
+      {
+        "type": "event",
+        "name": "市政府认输、把墙让给艺术家 / la mairie a cédé les murs",
+        "why_here": "巴黎最有名的「自由涂鸦区」：从 2000 年代起街头艺术家进驻，一开始市政府不断刷白墙，后来市政府认输",
+        "when": "街道本身 1812 年首次出现在地籍图上（当时美丽城还是独立市镇，1860 年才并入巴黎）；涂鸦生态自 2000 年代成型",
+        "detail": "规则是不成文的：谁来都能画，新的盖旧的，没人保存。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.visitparisregion.com/fr/rue-denoyez",
+          "https://monpetit20e.com/street-art-ne-manquez-pas-la-rue-denoyez-a-belleville/"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "2015 年清退与一个反转结局 / l'expulsion de 2015 et le retournement",
+        "why_here": "2014 年这里挂过一条横幅「Sauvons la rue Dénoyez」（拯救德诺瓦耶街），抗议市政府在 18–26 bis 号建社会住房和托儿所",
+        "when": "2014 年横幅；2015 年 3 月艺术家团体被清退交钥匙",
+        "detail": "但结局是个反转：新楼盖起来之后，新楼的墙也被一点点画满了。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.leparisien.fr/paris-75/paris-75020/a-belleville-les-artistes-contraints-de-quitter-la-rue-du-graffiti-29-03-2015-4647427.php",
+          "https://monpetit20e.com/street-art-ne-manquez-pas-la-rue-denoyez-a-belleville/"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "街名来自 La Folie Dénoyez 舞厅与 1918 年的那发炮弹",
+        "why_here": "街名来自 Dénoyez 家族，他们在 1830 年代在这儿开过一家叫「La Folie Dénoyez」的公共舞厅，是当年的著名玩乐场",
+        "when": "舞厅 1830 年代；1918 年 3 月德军「大贝尔莎」巨炮的一发炮弹炸在这条街 10 号",
+        "detail": "另外这条名字听起来像「淹死的人街」（noyés）的街上，2009 年开了一家游泳池。",
+        "confidence": "L4",
+        "sources": [
+          "https://monpetit20e.com/street-art-ne-manquez-pas-la-rue-denoyez-a-belleville/"
+        ],
+        "caveat": "1812/1830s/1918/2014 这几个细节全部只见于 monpetit20e 一处街区媒体，无第二独立域名佐证，降 L4。"
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": []
+  },
+  {
+    "id": "statue-liberte-ile-aux-cygnes",
+    "name_zh": "天鹅岛自由女神像",
+    "name_fr": "Statue de la Liberté, Île aux Cygnes",
+    "name_en": "Statue of Liberty, Île aux Cygnes",
+    "address": "天鹅岛（Île aux Cygnes）下游端，紧邻 Pont de Grenelle, 75015；地铁 Javel（10 号线）或 Bir-Hakeim（6 号线）。从格勒内勒桥直接走下岛。像高 11.50 米（纽约版的 1/4）",
+    "arrondissement": 15,
+    "coordinates": null,
+    "still_exists": "open",
+    "access_note": "免费，户外。",
+    "best_time": null,
+    "era": 4,
+    "associations": [
+      {
+        "type": "event",
+        "name": "朝向错了 48 年 / 48 ans dans le mauvais sens",
+        "why_here": "这座像的朝向是一场持续 48 年的外交事故",
+        "when": "1889 年 7 月 4 日揭幕（选的是美国国庆日），由卡诺总统主持，巴托尔迪本人在场；1937 年万国博览会才转向",
+        "detail": "巴托尔迪明确要求让她面朝纽约（西），但当局不干——那样揭幕时总统要么得坐船过去，要么就得对着雕像的后背；而且朝西还意味着她背对爱丽舍宫（共和国象征）。于是 1889 年她被安成了面朝东，结果就是背对美国，巴托尔迪很不爽。直到 1937 年万国博览会，才终于把她转了 180 度朝向纽约。另外 1968 年重建格勒内勒桥时，她整个被往下游挪了几米。手里的铭牌上刻着两个日期：「IV JUILLET 1776 = XIV JUILLET 1789」。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.parisladouce.com/2024/11/statue-de-la-liberte-replique-ile-aux.html",
+          "https://autour-de-paris.com/project/avant-apres-statu-liberte-paris15-evolution",
+          "https://www.carnetsdeweekends.fr/7-repliques-parisiennes-de-statue-de-liberte/"
+        ]
+      },
+      {
+        "type": "event",
+        "name": "巴黎美国人委员会的回礼 / le cadeau des Américains de Paris",
+        "why_here": "巴黎至少有 6–7 座自由女神复制品，这是最大也最有名的一座；而赠送的顺序是反的",
+        "when": "巴黎美国人委员会从 1884 年起募捐；纽约那座 1886 年落成；这座 1889 年落成",
+        "detail": "它是作为法国大革命 100 周年的回礼送给法国的——法国先送了纽约那座（1886 年落成），美国侨民再回送这座。青铜由 Thiébaut frères 铸造。",
+        "confidence": "L2",
+        "sources": [
+          "https://www.parisladouce.com/2024/11/statue-de-la-liberte-replique-ile-aux.html",
+          "https://www.carnetsdeweekends.fr/7-repliques-parisiennes-de-statue-de-liberte/"
+        ]
+      }
+    ],
+    "storylines": [
+      "line-16"
+    ],
+    "badges": []
+  }
+]
