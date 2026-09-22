@@ -162,6 +162,7 @@ paris-storymap/
 │   ├── index.html
 │   └── README.md                         预览方式与页面说明
 ├── docs/
+│   ├── status.md                         ⭐ 项目进度、语料家底、待办
 │   ├── PRD.md                            ⭐ 产品需求文档（含截图与流程图）
 │   ├── content-guidelines.md             内容判真法则与置信度分级
 │   ├── storylines.md                     16 条故事线总览
@@ -196,20 +197,24 @@ paris-storymap/
 
 ## 进度
 
+**详细进度、语料家底、实测验证结论与完整待办 👉 [docs/status.md](./docs/status.md)**
+
 | 阶段 | 状态 | 产物 |
 |---|---|---|
 | 参考项目深度分析 | ✅ | [reference-project-analysis.md](./research/reference-project-analysis.md) |
 | 需求 Spec 定稿 | ✅ | [requirements.md](./specs/requirements.md) |
 | PRD | ✅ | [PRD.md](./docs/PRD.md) |
-| 16 条故事线素材搜集与交叉验证 | ✅ | [research/storyline-*.md](./research/) |
+| 16 条主题线定名与人格映射 | ✅ | [storylines.md](./docs/storylines.md) |
+| 第 10–16 条线素材搜集与交叉验证 | ✅ | [research/storyline-*.md](./research/) |
 | 57 站正式清单 | ✅ | [station-list.md](./docs/station-list.md) |
 | 交互原型（4 个核心页面） | ✅ | [在线预览](https://zhengxinyu31-byte.github.io/paris-storymap/demo/) · [demo/](./demo/) |
 | 语料结构化入库 + 校验门禁 | ✅ | [data/](./data/) · [validate_corpus.py](./scripts/validate_corpus.py) |
-| 坐标地理编码 | ⬜ | — |
+| **第 1–9 条线字段级语料** | ⬜ | 只有主题名与人格标签，`corpus_status: pending` |
+| 坐标地理编码 | ⬜ | 55/55 为空 |
 | 构建管道与正式开发 | ⬜ | — |
 
 ### 下一步要做的三件事
 
-1. **坐标地理编码** — 55 个 POI 的 `coordinates` 目前全为空，走 Nominatim / BAN（法国官方地址库）。校验脚本已内置巴黎大区边界检查，填入后经纬度写反会立刻报错。
-2. **待核实项收口** — station-list 里标 ⚠️ 的状态项（爱墙封闭、Chuuuttt 存续、巴加泰勒票价、清真寺浴室日程）需要在上线前逐个确认。
-3. **第一批 9 条线补齐同等深度的语料** — 目前只有第二批 7 条线做到了字段级信源标注，这 9 条线的 `corpus_status` 为 `pending`、`stations` 为空数组——**不编造站点**。
+1. **坐标地理编码** — 55 个 POI 的 `coordinates` 全为空，走 Nominatim / BAN（法国官方地址库）。校验脚本已内置巴黎大区边界检查，填入后经纬度写反会立刻报错。
+2. **第 1–9 条线补齐同等深度的语料** — 目前只有第 10–16 条线做到字段级信源标注。这 9 条线 `stations` 为空数组——**不编造站点**，校验脚本特意允许 pending 线站点为空就是为此。
+3. **待核实项收口** — station-list 里标 ⚠️ 的 14 处状态项（爱墙封闭、Chuuuttt 存续、巴加泰勒票价、清真寺浴室日程等）需在上线前逐个确认。
