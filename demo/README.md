@@ -32,13 +32,13 @@ python3 -m http.server 8080
 
 ## 底图方案
 
-**MapLibre GL JS + CARTO basemaps**（公开瓦片，无需 key）。
+**MapLibre GL JS + [OpenFreeMap](https://openfreemap.org/) positron** —— 真正零 key、无配额、无需注册的矢量瓦片服务。
 
-项目明确不商业化，底图选型以「能用好用」为准。详见 [requirements.md](../specs/requirements.md) §4.2.1 的三级兜底路径。
+可缩放至单栋建筑级别（`maxZoom: 20`），街道名称清晰可读。positron 为低饱和浅灰白，让彩色 POI marker 成为画面主体，与全站「老地图 / 旧书封面 / 法式海报」的视觉语言统一。
 
-底图配色取低饱和单色调，让彩色 POI marker 成为画面主体，与全站「老地图 / 旧书封面 / 法式海报」的视觉语言统一。
+attribution 显示 `© OpenStreetMap contributors © OpenFreeMap`。
 
-> 若打开后看到「地图瓦片加载失败」，说明当前网络访问不到 CARTO 的瓦片服务，换网络或代理即可。attribution 显示 `© OpenStreetMap contributors © CARTO` 表示底图已正确接入。
+> ⚠️ **踩过的坑**：初版用的是 CARTO 的**矢量**瓦片端点，它需要 API key。未授权时它不报错，而是返回一张印着 `API KEY REQUIRED` 却同时画了淡灰街道线和 `PARIS` 字样的**占位纹理**——乍看很像成功加载的复古地图，极易误判。识别方法：放大后看不到任何街道名。详见 [requirements.md](../specs/requirements.md) §4.2.1。
 
 ---
 

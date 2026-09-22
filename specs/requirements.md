@@ -360,15 +360,19 @@ user_confirmed: true
 
 | 优先级 | 方案 | 说明 |
 |---|---|---|
-| **首选** | **MapLibre GL JS + 免 key 的公开矢量瓦片** | 矢量瓦片支持无级缩放、旋转、自定义配色，最贴合「老地图 / 旧书封面」视觉。可直接用公开的 OSM 矢量瓦片服务或自托管 Protomaps pmtiles（巴黎单城约 100MB，静态托管即可） |
-| **次选** | **MapLibre / Leaflet + OSM 栅格瓦片** | `tile.openstreetmap.org`、Stadia Maps Stamen（Toner / Watercolor 复古风，与项目调性极搭）、CARTO Positron / Dark Matter。接入简单、零配置 |
+| **首选** | **MapLibre GL JS + OpenFreeMap** | `tiles.openfreemap.org/styles/positron`。**真正零 key、无配额、无需注册**的矢量瓦片服务。positron 为低饱和浅灰白，最贴合「老地图 / 旧书封面」视觉。矢量瓦片支持无级缩放、旋转、自定义配色 |
+| **次选** | **MapLibre / Leaflet + 免 key 栅格瓦片** | CARTO 的**栅格**端点 `basemaps.cartocdn.com/light_all/`（免 key）、`tile.openstreetmap.org`、Stadia Maps Stamen。接入简单、零配置 |
 | **兜底** | 任何能立刻跑通的公开瓦片源 | **绝不因为选型犹豫而退回示意图** |
 
-**视觉要求**：底图配色需与全站的「老地图 / 旧书封面 / 法式海报」视觉语言统一——建议低饱和米黄或墨黑单色调，让彩色 POI marker 成为画面主体。Stamen Toner / Watercolor 可直接满足，自定义 style JSON 亦可。
+> ⚠️ **踩过的坑：CARTO 的矢量瓦片端点需要 API key。** 未授权时它不会报错，而是返回一张**占位纹理**——上面印着 `API KEY REQUIRED / carto.com/basemaps/apikey`，但同时画了淡灰街道线、塞纳河形状和 `PARIS` 字样，**乍看很像一张成功加载的复古地图**，极易被误判为「底图已接上」。
+>
+> **识别方法**：放大后看不到任何街道名称（rue / boulevard / avenue），且反复出现 `API KEY REQUIRED` 水印。
+>
+> **自查项**：页面上不得出现 `API KEY REQUIRED` / `apikey` 字样或任何授权占位纹理。
+
+**视觉要求**：底图配色需与全站的「老地图 / 旧书封面 / 法式海报」视觉语言统一——建议低饱和米黄或墨黑单色调，让彩色 POI marker 成为画面主体。OpenFreeMap positron 可直接满足，自定义 style JSON 亦可。
 
 **必须具备的地图能力**：缩放（滚轮 + 按钮）、拖拽平移、`flyTo` 平滑飞行（主题线联动依赖）、marker 图层、GeoJSON 折线（主题线轨迹）、attribution 显示。
-
-**当前落地方案**：原型已采用 **MapLibre GL JS + CARTO 公开矢量瓦片**（次选路径，免 key、零配置、低饱和单色底图），attribution 为 `© OpenStreetMap contributors © CARTO`。若后续需要更强的视觉定制或离线能力，再切换到自托管 Protomaps pmtiles。
 
 ### 4.3 POI 详情页
 
@@ -486,6 +490,7 @@ user_confirmed: true
 
 - [ ] 首页时间轴拖动时，地图 marker 与计数实时同步
 - [ ] **底图为真实街道级地图**：可看清街道名与建筑轮廓、可缩放至单栋建筑、可拖拽平移、支持 `flyTo` 平滑飞行。示意图 / 色块 / 静态截图均不通过
+- [ ] **底图无授权占位纹理**：页面上不出现 `API KEY REQUIRED` / `apikey` 字样。此项须单独核验——占位纹理会伪装成复古地图（见 4.2.1）
 - [ ] 底图配色与全站「老地图」视觉语言统一，不喧宾夺主
 - [ ] 首页同时提供「地图自由探索」与「人格测试」两个入口
 - [ ] **12 题人格测试计分正确**：4 维各 3 题、0/1/2 计分、维度总分 ≥4 判「高」

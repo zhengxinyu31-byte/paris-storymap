@@ -21,7 +21,7 @@
 | 📖 **主题线页** | 左侧时间轴 ⟷ 右侧地图轨迹双向联动；自动播放逐站推进 |
 | 📍 **POI 详情页** | 置信度徽章、辟谣卡片、关联名人与影视场景 |
 
-原型里的巴黎内容是**真实素材**，不是占位文案。底图为 MapLibre GL JS + CARTO 真实街道瓦片，左下角 attribution 显示 `© OpenStreetMap contributors © CARTO`。
+原型里的巴黎内容是**真实素材**，不是占位文案。底图为 MapLibre GL JS + OpenFreeMap（零 key、无配额），可缩放至建筑级别，attribution 显示 `© OpenStreetMap contributors © OpenFreeMap`。
 
 ---
 
@@ -141,7 +141,7 @@
 | | |
 |---|---|
 | 形态 | 纯静态站，桌面优先，无需登录 |
-| 地图 | MapLibre GL JS + CARTO 公开矢量瓦片（低饱和单色底图，无需 key） |
+| 地图 | MapLibre GL JS + OpenFreeMap positron（零 key、无配额，低饱和单色底图） |
 | 坐标 | 全程 WGS84（境外无需 GCJ-02 纠偏，相对参考项目是负改造量） |
 | 数据流 | Markdown 语料 → parser → builder → renderer → 静态 HTML |
 | 语言 | 中英双语 + 全局语言切换，法文原名在两种语言下始终显示 |
@@ -159,6 +159,7 @@ paris-storymap/
 │   ├── index.html
 │   └── README.md                         预览方式与页面说明
 ├── docs/
+│   ├── PRD.md                            ⭐ 产品需求文档（含截图与流程图）
 │   ├── content-guidelines.md             内容判真法则与置信度分级
 │   ├── storylines.md                     16 条故事线总览
 │   └── station-list.md                   57 站正式清单（站序/距离/状态）
@@ -188,6 +189,7 @@ paris-storymap/
 |---|---|---|
 | 参考项目深度分析 | ✅ | [reference-project-analysis.md](./research/reference-project-analysis.md) |
 | 需求 Spec 定稿 | ✅ | [requirements.md](./specs/requirements.md) |
+| PRD | ✅ | [PRD.md](./docs/PRD.md) |
 | 16 条故事线素材搜集与交叉验证 | ✅ | [research/storyline-*.md](./research/) |
 | 57 站正式清单 | ✅ | [station-list.md](./docs/station-list.md) |
 | 交互原型（4 个核心页面） | ✅ | [在线预览](https://zhengxinyu31-byte.github.io/paris-storymap/demo/) · [demo/](./demo/) |
