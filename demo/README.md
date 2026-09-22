@@ -4,20 +4,11 @@
 
 ## 在线预览
 
-原型是纯静态站，任意静态托管都能跑。
+**👉 [https://zhengxinyu31-byte.github.io/paris-storymap/demo/](https://zhengxinyu31-byte.github.io/paris-storymap/demo/)**
 
-**方式一：GitHub Pages**（推荐，配置一次即可持续访问）
+已通过 GitHub Pages 部署（`main` 分支 `/ (root)`），点开即用。
 
-1. 仓库页面 → **Settings** → 左侧 **Pages**
-2. **Source** 选 `Deploy from a branch`
-3. **Branch** 选 `main`，目录选 `/ (root)`，点 **Save**
-4. 等 1–2 分钟，访问：
-
-   ```
-   https://zhengxinyu31-byte.github.io/paris-storymap/demo/
-   ```
-
-**方式二：本地跑**
+**本地跑**
 
 ```bash
 git clone https://github.com/zhengxinyu31-byte/paris-storymap.git

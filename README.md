@@ -10,7 +10,7 @@
 
 **👉 [https://zhengxinyu31-byte.github.io/paris-storymap/demo/](https://zhengxinyu31-byte.github.io/paris-storymap/demo/)**
 
-> 首次访问前需在 **Settings → Pages** 里把 Source 设为 `main` 分支 `/ (root)`，等 1–2 分钟生效。也可以直接本地跑，见 [demo/README.md](./demo/README.md)。
+> 已通过 GitHub Pages 部署，点开即用。也可以本地跑，见 [demo/README.md](./demo/README.md)。
 
 原型覆盖 4 个核心页面，全部可交互：
 
@@ -21,7 +21,7 @@
 | 📖 **主题线页** | 左侧时间轴 ⟷ 右侧地图轨迹双向联动；自动播放逐站推进 |
 | 📍 **POI 详情页** | 置信度徽章、辟谣卡片、关联名人与影视场景 |
 
-原型里的巴黎内容是**真实素材**，不是占位文案。
+原型里的巴黎内容是**真实素材**，不是占位文案。底图为 MapLibre GL JS + CARTO 真实街道瓦片，左下角 attribution 显示 `© OpenStreetMap contributors © CARTO`。
 
 ---
 
@@ -155,7 +155,7 @@
 ```
 paris-storymap/
 ├── README.md                             本文件
-├── demo/                                 ⭐ 可交互原型（GitHub Pages 可直接发布）
+├── demo/                                 ⭐ 可交互原型（已部署至 GitHub Pages）
 │   ├── index.html
 │   └── README.md                         预览方式与页面说明
 ├── docs/
@@ -190,7 +190,7 @@ paris-storymap/
 | 需求 Spec 定稿 | ✅ | [requirements.md](./specs/requirements.md) |
 | 16 条故事线素材搜集与交叉验证 | ✅ | [research/storyline-*.md](./research/) |
 | 57 站正式清单 | ✅ | [station-list.md](./docs/station-list.md) |
-| 交互原型（4 个核心页面） | ✅ | [demo/](./demo/) |
+| 交互原型（4 个核心页面） | ✅ | [在线预览](https://zhengxinyu31-byte.github.io/paris-storymap/demo/) · [demo/](./demo/) |
 | 语料入库与构建管道 | ⬜ | — |
 | 正式开发 | ⬜ | — |
 
