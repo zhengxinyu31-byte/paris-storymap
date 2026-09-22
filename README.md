@@ -4,7 +4,24 @@
 
 **Paris StoryMap** is a bilingual (中文 / English) spatio-temporal culture map of Paris. Unlike guidebooks that tell you *what to see*, it tells you *what happened here, when, and why anyone should care* — with every claim traced to at least two independent sources.
 
-当前阶段：**需求定稿，原型迭代中**。尚未进入开发。
+当前阶段：**需求定稿，原型可交互**。尚未进入正式开发。
+
+## 🖥️ 在线预览原型
+
+**👉 [https://zhengxinyu31-byte.github.io/paris-storymap/demo/](https://zhengxinyu31-byte.github.io/paris-storymap/demo/)**
+
+> 首次访问前需在 **Settings → Pages** 里把 Source 设为 `main` 分支 `/ (root)`，等 1–2 分钟生效。也可以直接本地跑，见 [demo/README.md](./demo/README.md)。
+
+原型覆盖 4 个核心页面，全部可交互：
+
+| 页面 | 试试这些 |
+|---|---|
+| 🗺️ **首页：全城地图 + 时间轴** | 滚轮缩放到单栋建筑；拖时间轴看 POI 实时显隐与计数变化；hover 出卡片、双击进详情 |
+| 🧭 **人格测试 + 结果页** | **点选项就自动跳下一题**，没有「下一题」和「提交」按钮；答完直接出人格与推荐线路 |
+| 📖 **主题线页** | 左侧时间轴 ⟷ 右侧地图轨迹双向联动；自动播放逐站推进 |
+| 📍 **POI 详情页** | 置信度徽章、辟谣卡片、关联名人与影视场景 |
+
+原型里的巴黎内容是**真实素材**，不是占位文案。
 
 ---
 
@@ -124,7 +141,7 @@
 | | |
 |---|---|
 | 形态 | 纯静态站，桌面优先，无需登录 |
-| 地图 | MapLibre GL JS + 公开 OSM 瓦片（Stamen Toner / Watercolor 等复古风底图） |
+| 地图 | MapLibre GL JS + CARTO 公开矢量瓦片（低饱和单色底图，无需 key） |
 | 坐标 | 全程 WGS84（境外无需 GCJ-02 纠偏，相对参考项目是负改造量） |
 | 数据流 | Markdown 语料 → parser → builder → renderer → 静态 HTML |
 | 语言 | 中英双语 + 全局语言切换，法文原名在两种语言下始终显示 |
@@ -138,6 +155,9 @@
 ```
 paris-storymap/
 ├── README.md                             本文件
+├── demo/                                 ⭐ 可交互原型（GitHub Pages 可直接发布）
+│   ├── index.html
+│   └── README.md                         预览方式与页面说明
 ├── docs/
 │   ├── content-guidelines.md             内容判真法则与置信度分级
 │   ├── storylines.md                     16 条故事线总览
@@ -162,12 +182,20 @@ paris-storymap/
 
 ---
 
-## 状态
+## 进度
 
-- [x] 参考项目深度分析
-- [x] 需求 Spec 定稿
-- [x] 16 条故事线素材搜集与交叉验证
-- [x] 57 站正式清单
-- [ ] 原型迭代
-- [ ] 语料入库与构建管道
-- [ ] 开发
+| 阶段 | 状态 | 产物 |
+|---|---|---|
+| 参考项目深度分析 | ✅ | [reference-project-analysis.md](./research/reference-project-analysis.md) |
+| 需求 Spec 定稿 | ✅ | [requirements.md](./specs/requirements.md) |
+| 16 条故事线素材搜集与交叉验证 | ✅ | [research/storyline-*.md](./research/) |
+| 57 站正式清单 | ✅ | [station-list.md](./docs/station-list.md) |
+| 交互原型（4 个核心页面） | ✅ | [demo/](./demo/) |
+| 语料入库与构建管道 | ⬜ | — |
+| 正式开发 | ⬜ | — |
+
+### 下一步要做的三件事
+
+1. **语料结构化入库** — 把 `research/` 下的 4 份 Markdown 语料转成结构化字段，跑通置信度分级与冲突规则的自动判定。
+2. **待核实项收口** — station-list 里标 ⚠️ 的状态项（爱墙封闭、Chuuuttt 存续、巴加泰勒票价、清真寺浴室日程）需要在上线前逐个确认。
+3. **第一批 9 条线补齐同等深度的语料** — 目前只有第二批 7 条线做到了字段级信源标注。

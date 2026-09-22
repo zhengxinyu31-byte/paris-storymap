@@ -368,6 +368,8 @@ user_confirmed: true
 
 **必须具备的地图能力**：缩放（滚轮 + 按钮）、拖拽平移、`flyTo` 平滑飞行（主题线联动依赖）、marker 图层、GeoJSON 折线（主题线轨迹）、attribution 显示。
 
+**当前落地方案**：原型已采用 **MapLibre GL JS + CARTO 公开矢量瓦片**（次选路径，免 key、零配置、低饱和单色底图），attribution 为 `© OpenStreetMap contributors © CARTO`。若后续需要更强的视觉定制或离线能力，再切换到自托管 Protomaps pmtiles。
+
 ### 4.3 POI 详情页
 
 - **页面用途**：讲透一个地点的所有故事。
